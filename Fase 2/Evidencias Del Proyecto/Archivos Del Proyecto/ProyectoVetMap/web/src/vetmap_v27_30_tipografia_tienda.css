@@ -1,0 +1,31 @@
+/* VetMap V27.30: la tipografía de Inicio en las secciones internas de Tienda. */
+html body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page, .vm-my-profile) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Aplicarla directamente para reemplazar fuentes decorativas heredadas. */
+html body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page, .vm-my-profile)
+  :is(h1, h2, h3, h4, h5, h6, p, span, strong, small, em, b, i, a,
+      label, button, input, select, textarea, option, legend, th, td, dt, dd, li) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Títulos de banner: misma letra y grosor que el saludo de Inicio. */
+html body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page, .vm-my-profile)
+  :is(.vm-clinic-section-heading, .vm-v26-heading, .vm-my-profile-heading)
+  :is(h1, h2) {
+  font-weight: 900 !important;
+  font-style: normal !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.12 !important;
+}
+
+/* Títulos de tarjetas y formularios: acabado de las tarjetas de Inicio. */
+html body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page, .vm-my-profile) :is(h3, h4, h5, h6) {
+  font-weight: 900 !important;
+  font-style: normal !important;
+}

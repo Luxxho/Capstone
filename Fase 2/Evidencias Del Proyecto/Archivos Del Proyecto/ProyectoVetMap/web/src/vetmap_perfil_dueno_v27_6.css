@@ -1,0 +1,217 @@
+/* ===============================================================
+   VetMap V27.6 - PERFIL DEL DUEÑO
+   Coherente con el Inicio de VetMap. Solo aplica al rol owner.
+   =============================================================== */
+.vm-owner-v15-shell .vm-my-profile {
+  box-sizing: border-box !important;
+  width: calc(100% - 44px) !important;
+  max-width: 1370px !important;
+  margin: 22px auto 38px !important;
+  padding: 0 0 18px !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #102a56 !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+.vm-owner-v15-shell .vm-my-profile *,
+.vm-owner-v15-shell .vm-my-profile *::before,
+.vm-owner-v15-shell .vm-my-profile *::after { box-sizing: border-box; }
+.vm-owner-v15-shell .vm-my-profile :is(h1, h2, h3, h4, p, small, strong, label, button, input, select, textarea) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+/* Banda principal como la bienvenida del Inicio */
+.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  min-height: 178px !important;
+  margin: 0 !important;
+  padding: 30px 34px !important;
+  border: 1px solid #c7ebe5 !important;
+  border-radius: 23px !important;
+  background: linear-gradient(112deg, #d5f8f2 0%, #c8f3ec 54%, #b4ebe3 100%) !important;
+  box-shadow: 0 13px 30px rgba(17, 96, 89, .055) !important;
+}
+.vm-owner-v15-shell .vm-my-profile-heading > div:first-child { flex: 1 1 390px; min-width: 0; }
+.vm-owner-v15-shell .vm-my-profile-heading .vm-kicker {
+  display: block !important;
+  margin: 0 0 11px !important;
+  color: #077f7a !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  font-weight: 850 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase;
+}
+.vm-owner-v15-shell .vm-my-profile-heading h2 {
+  display: block !important;
+  margin: 0 0 9px !important;
+  color: #102a56 !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(29px, 3.05vw, 42px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+}
+.vm-owner-v15-shell .vm-my-profile-heading > div:first-child > p:last-child {
+  max-width: 730px !important;
+  margin: 0 !important;
+  color: #3d6472 !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  font-weight: 450 !important;
+}
+.vm-owner-v15-shell .vm-my-profile-heading-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 !important;
+}
+.vm-owner-v15-shell .vm-my-profile-heading-actions button {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  min-width: 148px !important;
+  min-height: 46px !important;
+  padding: 11px 19px !important;
+  border: 1px solid #079a94 !important;
+  border-radius: 13px !important;
+  color: #fff !important;
+  background: linear-gradient(135deg,#0db8ae,#079a94) !important;
+  box-shadow: 0 9px 21px rgba(6,146,137,.15) !important;
+  font-size: 13px !important;
+  font-weight: 850 !important;
+  white-space: nowrap !important;
+  cursor: pointer;
+}
+.vm-owner-v15-shell .vm-my-profile-heading-actions button:hover { filter: brightness(.96); transform: translateY(-1px); }
+.vm-owner-v15-shell .vm-my-profile-heading-actions button:focus-visible { outline: 3px solid #1777bb !important; outline-offset: 3px; }
+/* Tarjetas blancas con iconos vectoriales y contenido legible */
+.vm-owner-v15-shell .vm-profile-summary-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin: 18px 0 0 !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  min-height: 163px !important;
+  margin: 0 !important;
+  padding: 20px 22px !important;
+  border: 1px solid #d9e9e6 !important;
+  border-radius: 19px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 22px rgba(22,77,85,.045) !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-card > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 auto !important;
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 0 7px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: #e1f7f1 !important;
+  color: #099b90 !important;
+  line-height: 1 !important;
+  font-size: 22px !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-card > span:first-child > svg {
+  display: block !important;
+  width: 21px !important;
+  height: 21px !important;
+  color: inherit !important;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+.vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card:nth-child(2) > span:first-child,
+.vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card:nth-child(5) > span:first-child { background: #e7f1ff !important; color: #2775cf !important; }
+.vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card:nth-child(3) > span:first-child { background: #fff1de !important; color: #d88620 !important; }
+.vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card:nth-child(6) > span:first-child { background: #fff0f2 !important; color: #d85c7b !important; }
+.vm-owner-v15-shell .vm-profile-summary-card small {
+  margin: 0 !important;
+  color: #6e8692 !important;
+  font-size: 10.5px !important;
+  line-height: 1.3 !important;
+  font-weight: 850 !important;
+  letter-spacing: .085em !important;
+  text-transform: uppercase !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-card strong {
+  display: block !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  color: #102a56 !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  font-weight: 800 !important;
+  overflow-wrap: anywhere !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-card em {
+  margin: 0 !important;
+  color: #8b7051 !important;
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  font-style: normal !important;
+}
+.vm-owner-v15-shell .vm-profile-summary-card.vm-role-readonly {
+  border-color: #eedfc8 !important;
+  background: #fffdf9 !important;
+}
+/* Editor: mismo criterio visual de las tarjetas */
+.vm-owner-v15-shell .vm-my-profile .vm-profile-edit-form {
+  margin: 18px 0 0 !important;
+  padding: 24px !important;
+  border: 1px solid #d9e9e6 !important;
+  border-radius: 19px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 22px rgba(22,77,85,.045) !important;
+}
+.vm-owner-v15-shell .vm-profile-edit-form :is(input,select,textarea) {
+  max-width: 100% !important;
+  min-height: 43px !important;
+  border: 1px solid #d5e5e2 !important;
+  border-radius: 11px !important;
+  background: #fbfefd !important;
+  color: #123456 !important;
+  font-size: 13px !important;
+  padding: 9px 12px !important;
+}
+.vm-owner-v15-shell .vm-profile-edit-form :is(input,select,textarea):focus-visible {
+  outline: 2px solid rgba(13,170,161,.55) !important;
+  outline-offset: 1px;
+}
+.vm-owner-v15-shell .vm-profile-edit-form .vm-field > span,
+.vm-owner-v15-shell .vm-profile-edit-form label > span { color: #2b5061 !important; font-size: 12px !important; font-weight: 750 !important; }
+.vm-owner-v15-shell .vm-profile-edit-form .vm-role-lock-box { background: #fffaf2 !important; border-color: #eadfc8 !important; }
+.vm-owner-v15-shell .vm-profile-edit-form .vm-profile-password-box { background: #f7fcfa !important; border-color: #dbe9e5 !important; }
+.vm-owner-v15-shell .vm-profile-form-actions { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
+.vm-owner-v15-shell .vm-profile-form-actions button { min-height: 42px !important; border-radius: 11px !important; padding: 9px 17px !important; font-size: 12px !important; font-weight: 800 !important; }
+.vm-owner-v15-shell .vm-profile-form-actions .vm-primary { background: #0daaa2 !important; border-color: #0daaa2 !important; color: #fff !important; }
+.vm-owner-v15-shell .vm-profile-form-actions .vm-secondary { background: #fff !important; border-color: #d0e7e2 !important; color: #103259 !important; }
+@media (max-width: 1120px) {
+  .vm-owner-v15-shell .vm-profile-summary-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+@media (max-width: 730px) {
+  .vm-owner-v15-shell .vm-my-profile { width: calc(100% - 24px) !important; margin: 12px auto 24px !important; }
+  .vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading { padding: 23px 19px !important; min-height: 0 !important; }
+  .vm-owner-v15-shell .vm-my-profile-heading > div:first-child { flex-basis: 100%; }
+  .vm-owner-v15-shell .vm-my-profile-heading h2 { font-size: 29px !important; }
+  .vm-owner-v15-shell .vm-profile-summary-grid { grid-template-columns: 1fr !important; gap: 11px !important; }
+  .vm-owner-v15-shell .vm-profile-summary-grid > .vm-profile-summary-card { min-height: 134px !important; padding: 16px 18px !important; }
+  .vm-owner-v15-shell .vm-my-profile .vm-profile-edit-form { padding: 17px !important; }
+  .vm-owner-v15-shell .vm-my-profile-heading-actions { width: 100% !important; }
+  .vm-owner-v15-shell .vm-my-profile-heading-actions button { width: 100% !important; }
+}

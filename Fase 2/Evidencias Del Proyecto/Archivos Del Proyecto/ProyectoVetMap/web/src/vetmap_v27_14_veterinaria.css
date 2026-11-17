@@ -1,0 +1,219 @@
+/* VETMAP V27.14 · VETERINARIA · estética del prototipo de 6 pantallas
+   NO carga imágenes, fotos ni archivos externos; todos los iconos son SVG vectoriales embebidos.
+   CSS únicamente. Se aplica SOLO si el menú del rol Veterinaria está presente. */
+
+/* Identidad del módulo, sin afectar a dueño, tienda o admin */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) {
+  --vet14-dark: #053a4c;
+  --vet14-blue: #0a5b78;
+  --vet14-mint: #0fb3a9;
+  --vet14-ink: #102c53;
+  --vet14-border: #d9ebef;
+  background: #eef8fb !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-dashboard.vm-v22-classic,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Menú de Veterinaria con un acento turquesa distinto al administrador */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) nav.vm-member-nav--vet {
+  background: linear-gradient(175deg, #082e44 0%, #073c52 54%, #08283f 100%) !important;
+  border-color: rgba(255,255,255,.07) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) nav.vm-member-nav--vet .vm-member-menu > button:not(.active) {
+  color: #edf9ff !important;
+  opacity: 1 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) nav.vm-member-nav--vet .vm-member-menu > button.active {
+  background: linear-gradient(115deg,#0a8a94,#079b9a) !important;
+  border-color: rgba(148,239,231,.42) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(1,62,75,.19) !important;
+}
+
+/* Banner de inicio realmente usado por la web: vm-v22-hero */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero {
+  position: relative !important;
+  isolation: isolate;
+  min-height: 205px !important;
+  margin: 0 0 16px !important;
+  padding: clamp(24px,3vw,37px) !important;
+  border: 1px solid rgba(59,181,186,.27) !important;
+  border-radius: 24px !important;
+  background: radial-gradient(circle at 80% 15%,rgba(30,177,184,.27),transparent 32%),
+              linear-gradient(112deg,#073e50 0%,#07596a 59%,#026773 100%) !important;
+  box-shadow: 0 15px 32px rgba(8,74,103,.12) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero::before {
+  content:""; position:absolute; z-index:-1; inset:0; pointer-events:none;
+  background: radial-gradient(circle at 79% 45%,transparent 0 69px,rgba(181,249,241,.18) 70px 72px,transparent 73px 113px,rgba(181,249,241,.11) 114px 115px,transparent 116px),
+              linear-gradient(171deg,transparent 73%,rgba(9,169,171,.25) 73%);
+  border-radius:inherit;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy {z-index:2;max-width:min(67%,690px);}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy::before {
+  content:"CLÍNICA VETERINARIA";display:block; margin:0 0 12px;
+  color:#8bf4e7;font-size:11px;font-weight:900;letter-spacing:.17em;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero h1 {
+  color:#fff !important;font-size:clamp(31px,3.1vw,49px) !important;
+  letter-spacing:-1.1px !important;line-height:1.08 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy p {
+  color:#e3f7fb !important;font-size:clamp(13px,1.15vw,16px) !important;line-height:1.5 !important;
+}
+/* Nota de bienvenida: sin tarjeta blanca; el icono flota sobre el mismo azul del banner. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note {
+  position:relative; z-index:2; width:165px; min-height:135px; padding:14px;
+  border:1px solid rgba(211,255,251,.28) !important;
+  border-radius:19px !important;
+  background:rgba(1,51,67,.20) !important;
+  color:#fff !important; box-shadow:none !important;
+  backdrop-filter:blur(2px);
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note::before {
+  content:"";display:block;width:37px;height:37px;margin:0 auto 8px;
+  background-position:center;background-size:contain;background-repeat:no-repeat;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%239beae4%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%225.5%22%20cy%3D%228%22%20r%3D%221.3%22%2F%3E%3Ccircle%20cx%3D%2210.3%22%20cy%3D%225.5%22%20r%3D%221.3%22%2F%3E%3Ccircle%20cx%3D%2215.5%22%20cy%3D%226.4%22%20r%3D%221.3%22%2F%3E%3Ccircle%20cx%3D%2219.7%22%20cy%3D%229.5%22%20r%3D%221.3%22%2F%3E%3Cpath%20d%3D%22M8.6%2013c-1.3%201.3-3%202.7-2.6%204.5.4%201.5%202.1%202.2%203.6%201.5%201.6-.7%203.3-.7%204.9%200%201.5.7%203.5%200%203.8-1.7.4-1.8-1.4-3.3-2.8-4.5-1.9-1.7-3.8-1.4-5.4.7z%22%2F%3E%3C%2Fsvg%3E");
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note strong {
+  color:#fff !important;font-size:12px !important;line-height:1.42 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note > span {
+  color:#69f0d9 !important;font-size:17px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-kpis {gap:13px !important;}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-tile,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-card,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-summary-tile {
+  background:#fff !important;border:1px solid #d6e9ee !important;
+  border-radius:21px !important;box-shadow:0 7px 19px rgba(13,79,103,.06) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-tile {
+  min-height:95px !important;padding:14px 17px !important;
+}
+
+/* Encabezados de Agenda, Pacientes, Historial, Recetas. Solo páginas de veterinaria. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading {
+  display:flex !important;position:relative !important;isolation:isolate;
+  flex-wrap:wrap;align-items:center !important;justify-content:space-between !important;
+  gap:20px !important; min-height:170px !important;
+  padding:clamp(24px,3vw,38px) !important;margin:0 0 18px !important;
+  border-radius:23px !important;
+  border:1px solid rgba(50,168,185,.3) !important;
+  background: radial-gradient(circle at 91% 4%,rgba(20,164,177,.27),transparent 32%),
+              linear-gradient(116deg,#064352 0%,#09556b 56%,#076f7e 100%) !important;
+  box-shadow:0 10px 23px rgba(9,73,96,.08) !important;
+  overflow:hidden !important;
+  color:white !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::before {
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle at 80% 48%,transparent 0 44px,rgba(147,243,240,.15) 45px 46px,transparent 47px 84px,rgba(147,243,240,.12) 85px 86px,transparent 87px);
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+  content:"";position:absolute;z-index:0;right:clamp(25px,7%,120px);top:50%;
+  transform:translateY(-50%);width:91px;height:91px;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23b5f7ed%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%223%22%20width%3D%2214%22%20height%3D%2219%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M9%208h6M12%2011v7M8.5%2014.5h7%22%2F%3E%3C%2Fsvg%3E");background-position:center;background-repeat:no-repeat;background-size:contain;
+  opacity:.72;pointer-events:none;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading::after {background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23b5f7ed%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2218%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M7%203v4M17%203v4M3%2010h18M8%2015l3%203%205-5%22%2F%3E%3C%2Fsvg%3E");}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-patient-filters) > .vm-clinic-section-heading::after {background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23b5f7ed%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%228%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22M3%2021v-2a6%206%200%200%201%2012%200v2M17%2011a3%203%200%200%200%200-6M18%2014a5%205%200%200%201%203%205v1%22%2F%3E%3C%2Fsvg%3E");}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-clinic-prescription-search) > .vm-clinic-section-heading::after {background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23b5f7ed%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%207h16M7%203v7M17%203v7M5%207v14h14V7M12%2012v6M9%2015h6%22%2F%3E%3C%2Fsvg%3E");}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23b5f7ed%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%228%22%20r%3D%223.5%22%2F%3E%3Cpath%20d%3D%22M3%2021c.4-4.5%203-7%208-7s7.6%202.5%208%207M18%2012l2%202%202-2%22%2F%3E%3C%2Fsvg%3E");}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > :is(div,button),
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > :is(div,button) {position:relative;z-index:2;}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {max-width:min(80%,850px);min-width:0;}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading .vm-kicker,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading .vm-kicker {
+  color:#8af5ec !important;font-size:11px !important;font-weight:900 !important;letter-spacing:.16em !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading h2,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading h2 {
+  color:white !important; font-family:Inter,"Segoe UI",Arial,sans-serif !important;
+  font-weight:900 !important;font-size:clamp(29px,3vw,43px) !important;
+  letter-spacing:-.8px !important;line-height:1.14 !important;margin:5px 0 9px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading p:not(.vm-kicker),
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading p:not(.vm-kicker) {
+  color:#e4f9ff !important;max-width:760px !important;font-size:clamp(13px,1.08vw,15px) !important;
+  line-height:1.6 !important;margin:0 !important;
+}
+/* Botones de acción sobre banner: claros, legibles y con los eventos originales. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading button,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading button {
+  position:relative; z-index:3;
+  background:#f7fffe !important;color:#076674 !important;
+  border:1px solid rgba(255,255,255,.86) !important;
+  border-radius:14px !important;min-height:44px !important;
+  padding:10px 16px !important;font-weight:800 !important;
+  box-shadow:0 6px 13px rgba(2,29,54,.1) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading button:hover,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading button:hover {
+  background:#e3fffa !important;
+}
+
+/* Filtros y formularios a juego con el prototipo */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-filter-panel,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-prescription-search {
+  padding:18px 20px !important;
+  margin:0 0 17px !important;
+  border:1px solid #d4e9ec !important;border-radius:21px !important;
+  background:#fff !important;box-shadow:0 6px 17px rgba(13,62,86,.035) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-filter-panel label,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-prescription-search label {
+  min-width:0;font-size:12px !important;color:#18445e !important;font-weight:750 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page :is(.vm-clinic-filter-panel,.vm-clinic-prescription-search) :is(input,select) {
+  min-height:45px !important;max-width:100% !important;
+  background:#fbfeff !important;color:#133453 !important;
+  border:1px solid #cddfe8 !important;border-radius:13px !important;
+  font-size:13px !important;box-shadow:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-patient-card,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-file-card,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-prescription-card,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile .vm-profile-summary-card {
+  border:1px solid #d5e9ea !important;
+  background:#fff !important;border-radius:20px !important;
+  box-shadow:0 7px 20px rgba(10,69,93,.06) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile .vm-profile-summary-grid {gap:15px !important;}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile .vm-profile-summary-card {
+  min-width:0 !important;overflow-wrap:anywhere;
+  padding:19px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile .vm-profile-summary-card > small {
+  color:#24727d !important;font-weight:800 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile .vm-profile-summary-card > strong {
+  color:#102d53 !important;
+}
+/* No tocar los datos de pacientes, fotografías auténticas registradas por los usuarios ni la lógica. */
+@media (max-width:850px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+    opacity:.18;width:75px;height:75px;right:18px;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note {display:none !important;}
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy {max-width:100%;}
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {max-width:100%;}
+}
+@media (max-width:480px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading {
+    min-height:155px !important;padding:22px 17px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero {min-height:165px !important;padding:20px !important;}
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading h2,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading h2 {font-size:26px !important;}
+}

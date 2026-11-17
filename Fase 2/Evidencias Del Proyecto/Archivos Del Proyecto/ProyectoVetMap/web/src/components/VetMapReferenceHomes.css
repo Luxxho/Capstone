@@ -1,0 +1,252 @@
+/* VetMap referencia V17. Todo está limitado a las vistas Tienda y Veterinaria. */
+.vmh16-shell:has(.vmref-store) { background:#fff8ef!important; }
+.vmh16-shell:has(.vmref-vet) { background:#f0f7ff!important; }
+.vmh16-shell:has(.vmref-dashboard) > .vm-member-nav { background:#fff!important; border-right:1px solid #e9edf4!important; box-shadow:none!important; }
+.vmh16-shell:has(.vmref-store) > .vm-member-nav { background:#fffaf5!important; border-right-color:#f6e5d4!important; }
+.vmh16-shell:has(.vmref-dashboard) .vm-member-menu { display:flex!important; flex-direction:column!important; gap:4px!important; margin-top:10px!important; padding:0 9px!important; }
+.vmh16-shell:has(.vmref-dashboard) .vm-member-menu > button { display:flex!important; align-items:center!important; gap:12px!important; min-height:42px!important; width:100%!important; font-size:13px!important; line-height:1.25!important; font-weight:700!important; padding:10px 13px!important; color:#243b63!important; border:0!important; border-radius:11px!important; background:transparent!important; box-shadow:none!important; transform:none!important; text-align:left!important; letter-spacing:0!important; }
+.vmh16-shell:has(.vmref-dashboard) .vm-member-menu > button:hover { background:#eff5fc!important; }
+.vmh16-shell:has(.vmref-vet) .vm-member-menu > button.active { background:linear-gradient(110deg,#086df4,#1583ec)!important; color:#fff!important; box-shadow:0 6px 16px rgba(0,106,226,.16)!important; }
+.vmh16-shell:has(.vmref-store) .vm-member-menu > button.active { background:linear-gradient(110deg,#f56f13,#ff982c)!important; color:#fff!important; box-shadow:0 6px 16px rgba(235,115,17,.15)!important; }
+.vmh16-shell:has(.vmref-dashboard) .vmref-nav-svg { display:block; flex-shrink:0; }
+.vmh16-shell:has(.vmref-dashboard) > header.vmh16-topbar { background:rgba(255,255,255,.96)!important; border-bottom-color:#e2e8f0!important; }
+.vmh16-shell:has(.vmref-store) > header.vmh16-topbar { background:#fff8f0!important; }
+.vmh16-shell:has(.vmref-vet) > header.vmh16-topbar { background:#f2f8ff!important; }
+/* El contenido de referencia reemplaza por completo los antiguos dashboards verdes. */
+.vmref-dashboard { --vmref-ink:#102852; --vmref-muted:#527092; width:100%; min-width:0; color:var(--vmref-ink)!important; font-family:Inter,system-ui,"Segoe UI",sans-serif; padding:10px 12px 28px; }
+.vmref-dashboard *, .vmref-dashboard *::before, .vmref-dashboard *::after { box-sizing:border-box; }
+.vmref-dashboard button { font-family:inherit; cursor:pointer; }
+.vmref-dashboard button:focus-visible { outline:3px solid #57a9fa!important; outline-offset:2px; }
+.vmref-dashboard h1,.vmref-dashboard h2,.vmref-dashboard h3,.vmref-dashboard p { margin:0; }
+.vmref-store { background:#fff8ef; --vmref-primary:#f17b20; --vmref-hair:#f3e1d0; }
+.vmref-vet { background:#f0f7ff; --vmref-primary:#116ef0; --vmref-hair:#dce9f8; }
+.vmref-dashboard .vmref-hero { position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:center; min-height:176px; width:100%; border-radius:18px; margin-bottom:10px; padding:24px 27px; }
+.vmref-store-hero { background:linear-gradient(105deg,#fff5e9 0%,#ffebd5 60%,#e7a76b 100%); }
+.vmref-vet-hero { background:linear-gradient(105deg,#e8f4ff 0%,#d8eaff 58%,#b3d8fb 100%); }
+.vmref-dashboard .vmref-hero-copy { position:relative; z-index:2; flex:1; max-width:61%; }
+.vmref-dashboard .vmref-hero h1 { color:#0e2b59!important; font-size:clamp(24px,2.35vw,36px)!important; line-height:1.14!important; letter-spacing:-1.5px!important; font-weight:880!important; }
+.vmref-dashboard .vmref-hero h1 span { font-size:.83em; font-weight:normal; }
+.vmref-dashboard .vmref-hero p { margin-top:8px; font-size:clamp(12px,.95vw,15px)!important; line-height:1.5; font-weight:500; color:#274267!important; }
+.vmref-dashboard .vmref-hero-illustration { position:absolute; right:4%; bottom:0; width:35%; height:96%; z-index:1; background-position:right bottom; background-repeat:no-repeat; background-size:contain; pointer-events:none; mix-blend-mode:multiply; }
+.vmref-dashboard .vmref-hero-store-art { background-image:url('../assets/vmref_tienda_mascota.png'); }
+.vmref-dashboard .vmref-hero-vet-art { background-image:url('../assets/vmref_veterinaria_mascotas.png'); right:9%; width:33%; }
+.vmref-dashboard .vmref-hero-tag { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; min-width:100px; min-height:118px; padding:11px; margin-left:auto; border-radius:15px; background:rgba(255,255,255,.88); box-shadow:0 4px 14px rgba(174,113,51,.09); color:#a64a12; text-align:center; font-size:12px; font-weight:800; line-height:1.3; }
+.vmref-dashboard .vmref-vet-tag { position:relative; z-index:2; margin-left:auto; padding:10px 11px; max-width:120px; background:rgba(255,255,255,.88); border-radius:13px; color:#153b84; font-weight:800; font-size:12px; line-height:1.3; text-align:center; box-shadow:0 5px 13px rgba(28,99,170,.06); }
+.vmref-dashboard .vmref-vet-tag svg { display:block; margin:5px auto 0; color:#8052b5; fill:#8052b5; }
+.vmref-dashboard .vmref-vet-hero h1 { display:flex; align-items:center; gap:7px; }
+.vmref-dashboard .vmref-vet-hero h1 svg { color:#2784f2; fill:#2784f2; }
+.vmref-dashboard .vmref-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:10px; }
+.vmref-dashboard .vmref-kpi { display:flex; align-items:center; gap:12px; min-width:0; padding:18px 15px; border-radius:14px; background:#fff; box-shadow:0 3px 14px rgba(39,65,112,.035); border:1px solid #edf0f5; }
+.vmref-dashboard .vmref-kpi-icon { display:grid; place-items:center; flex:0 0 42px; height:42px; width:42px; border-radius:13px; background:#edf4ff; color:#1071fb; }
+.vmref-dashboard .tone-orange { background:#fff0e1; color:#f57912; }
+.vmref-dashboard .tone-rose { background:#ffeff1; color:#ff405c; }
+.vmref-dashboard .tone-amber { background:#fff0df; color:#ff971b; }
+.vmref-dashboard .tone-teal { background:#e7f9f4; color:#00ad9c; }
+.vmref-dashboard .tone-blue { background:#e9f3ff; color:#1478fa; }
+.vmref-dashboard .vmref-kpi strong { display:block; font-size:clamp(17px,1.4vw,24px); line-height:1.07; font-weight:900; white-space:nowrap; color:var(--vmref-ink)!important; letter-spacing:-.5px; }
+.vmref-dashboard .vmref-kpi small { display:block; margin-top:5px; font-size:11px; font-weight:600; color:#6c7e9a!important; line-height:1.2; }
+.vmref-dashboard .vmref-store-columns { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+.vmref-dashboard .vmref-vet-columns { display:grid; grid-template-columns:1.08fr 1fr .85fr; gap:10px; margin-bottom:10px; }
+.vmref-dashboard .vmref-block { min-width:0; border-radius:15px; background:#fff; border:1px solid #edf1f8; box-shadow:0 3px 14px rgba(35,60,108,.028); padding:14px 15px; }
+.vmref-dashboard .vmref-block-title { display:flex; align-items:center; justify-content:space-between; gap:7px; margin:0 0 10px; padding:0; background:transparent!important; border:0!important; box-shadow:none!important; min-height:18px; }
+.vmref-dashboard .vmref-block-title h2 { color:#102852!important; font-size:15px!important; font-weight:850!important; letter-spacing:-.24px!important; line-height:1.25!important; }
+.vmref-dashboard .vmref-text-action { display:inline-flex; align-items:center; gap:3px; flex-shrink:0; font-size:11px!important; color:var(--vmref-primary)!important; background:transparent!important; border:0!important; box-shadow:none!important; padding:5px 1px!important; font-weight:750!important; white-space:nowrap; }
+.vmref-dashboard .vmref-list { min-height:175px; display:flex; flex-direction:column; }
+.vmref-dashboard .vmref-list > button { display:flex!important; flex-direction:row!important; align-items:center!important; gap:10px!important; width:100%!important; padding:9px 0!important; margin:0!important; background:transparent!important; border:0!important; box-shadow:none!important; border-radius:0!important; text-align:left!important; color:#162b54!important; min-width:0; }
+.vmref-dashboard .vmref-list > button + button { border-top:1px solid #e9eff6!important; }
+.vmref-dashboard .vmref-list > button:hover { background:rgba(236,242,251,.45)!important; }
+.vmref-dashboard .vmref-thumbnail { display:grid; place-items:center; flex:0 0 37px; width:37px; height:39px; border-radius:10px; background:#fff3e6; color:#e88c34; overflow:hidden; }
+.vmref-vet .vmref-thumbnail { background:#e6f2ff; color:#237cef; }
+.vmref-dashboard .vmref-thumbnail img { width:100%;height:100%;object-fit:cover; }
+.vmref-dashboard .vmref-row-text { display:flex; flex-direction:column; min-width:0; flex:1; gap:4px; }
+.vmref-dashboard .vmref-row-text strong { font-weight:850; color:#102852!important; font-size:12px!important; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.vmref-dashboard .vmref-row-text small { color:#6b83a2!important; font-size:10px!important; line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.vmref-dashboard .vmref-row-money { display:flex; flex-direction:column; align-items:flex-start; gap:4px; min-width:66px; }
+.vmref-dashboard .vmref-row-money strong { font-size:12px!important; font-weight:850; color:#102852!important; }
+.vmref-dashboard .vmref-row-money small { font-size:10px!important; color:#8c9bb0!important; }
+.vmref-dashboard .vmref-status { display:inline-flex; align-items:center; justify-content:center; min-width:70px; padding:7px 9px; border-radius:9px; font-size:10px!important; font-weight:700; background:#fff2e2; color:#d46b10; }
+.vmref-dashboard .status-delivered,.vmref-dashboard .status-confirmed { background:#e0faf2; color:#079b86; }
+.vmref-dashboard .status-preparing,.vmref-dashboard .status-ready { background:#eaf4ff; color:#1c71d1; }
+.vmref-dashboard .status-cancelled { background:#fce8e8; color:#d24150; }
+.vmref-dashboard .vmref-product-line .vmref-row-text small { color:#f34958!important; font-weight:750; }
+.vmref-dashboard .vmref-low-stock .vmref-block-title h2 { color:#ef3e4e!important; }
+.vmref-dashboard .vmref-low-stock .vmref-text-action { color:#ea4652!important; }
+.vmref-dashboard .vmref-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:138px; padding:18px; text-align:center; color:#62ad96; gap:7px; }
+.vmref-dashboard .vmref-empty strong { color:#16305a!important; font-size:12px!important; font-weight:800!important; }
+.vmref-dashboard .vmref-empty small { font-size:11px!important; color:#9aa9bf!important; }
+.vmref-dashboard .vmref-store-bottom { display:grid; grid-template-columns:1.48fr 1fr; gap:10px; }
+.vmref-dashboard .vmref-feature-products { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; min-height:92px; }
+.vmref-dashboard .vmref-popular { display:flex;align-items:center;gap:8px;text-align:left; background:#fff!important; border:1px solid #edf0f5!important; border-radius:11px!important; padding:12px 8px!important; box-shadow:none!important; min-width:0; }
+.vmref-dashboard .vmref-popular strong { display:block; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; color:#19365e!important; font-size:11px!important; }
+.vmref-dashboard .vmref-popular small { color:#7f91a9!important; font-size:10px!important; }
+.vmref-dashboard .vmref-popular span:last-child { min-width:0; }
+.vmref-dashboard .vmref-promo { position:relative; display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:122px;padding:22px;border-radius:16px;background:linear-gradient(120deg,#ffe3c9,#fff0df 74%,#ffe2bf);color:#82401f;overflow:hidden; }
+.vmref-dashboard .vmref-promo strong { display:block;font-size:20px!important;font-weight:900;letter-spacing:-.5px;line-height:1.15; }
+.vmref-dashboard .vmref-promo p { margin-top:5px;font-size:13px!important;font-weight:550; }
+.vmref-dashboard .vmref-promo > svg { color:#f4ac65; }
+.vmref-dashboard .vmref-promo button { position:absolute;right:12px;bottom:10px;border:0!important;color:#f19339!important;background:transparent!important;padding:4px!important; }
+.vmref-dashboard .vmref-clinic-appt time { flex:0 0 42px; color:#243d67; font-weight:800;font-size:11px; }
+.vmref-dashboard .vmref-patient-link { color:#1e80f4;font-size:10px;font-weight:750;white-space:nowrap;background:#edf5ff;padding:6px;border-radius:8px; }
+.vmref-dashboard .vmref-quick-actions { display:flex;flex-direction:column;gap:9px;margin-top:5px; }
+.vmref-dashboard .vmref-quick-actions button { display:flex!important;flex-direction:row!important;align-items:center!important;gap:9px!important;width:100%!important;min-height:43px;padding:8px!important;color:#294572!important;background:#fdfefe!important;border:1px solid #e8f0fb!important;border-radius:10px!important;box-shadow:none!important;text-align:left!important;font-size:11px!important;font-weight:700!important; }
+.vmref-dashboard .vmref-quick-actions button > svg:first-child { box-sizing:content-box;padding:7px;border-radius:8px;background:#e8f3ff;color:#197afa; width:19px;height:19px;flex-shrink:0; }
+.vmref-dashboard .vmref-quick-actions button > svg:last-child { margin-left:auto;width:15px;height:15px;color:#a1b6ce; }
+.vmref-dashboard .vmref-vet-bottom { display:grid;grid-template-columns:2.5fr 1fr;gap:10px; }
+.vmref-dashboard .vmref-clinic-summary { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px; }
+.vmref-dashboard .vmref-clinic-summary .vmref-kpi { border:0;box-shadow:none;padding:10px 5px;gap:7px; }
+.vmref-dashboard .vmref-clinic-summary .vmref-kpi-icon { width:36px;flex-basis:36px;height:36px; }
+.vmref-dashboard .vmref-clinic-summary .vmref-kpi strong { font-size:21px; }
+.vmref-dashboard .vmref-clinic-summary .vmref-kpi small { font-size:10px; }
+.vmref-dashboard .vmref-vet-promo { display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:18px;border-radius:16px;background:linear-gradient(115deg,#d7e9ff,#b8d9fb);color:#174578; }
+.vmref-dashboard .vmref-vet-promo strong { font-size:16px;font-weight:850;line-height:1.25; }
+.vmref-dashboard .vmref-vet-promo > svg { color:#4e9ee3;fill:#a4ccf1; }
+.vmref-dashboard .vmref-vet-promo div svg {display:block;margin-top:7px;color:#4f87c9;}
+.vmref-dashboard .vmref-extra-head { padding:17px 24px;margin-bottom:10px;border-radius:16px;background:#fff; }
+.vmref-dashboard .vmref-extra-head span {font-weight:900;font-size:10px;letter-spacing:1.5px;color:var(--vmref-primary)}
+.vmref-dashboard .vmref-extra-head h1 {font-size:30px;color:#102852;font-weight:900;margin-top:4px;}
+.vmref-dashboard .vmref-extra-head p {font-size:13px;margin-top:4px;color:#526b8e;}
+.vmref-dashboard .vmref-data-list {display:flex;flex-direction:column;}
+.vmref-dashboard .vmref-data-line {display:flex;align-items:center;gap:12px;padding:14px 7px;border-bottom:1px solid #e6eff9;color:#17305b;}
+.vmref-dashboard .vmref-data-line > div:nth-child(2) {flex:1;}
+.vmref-dashboard .vmref-data-line strong {display:block;font-size:14px;font-weight:800;}
+.vmref-dashboard .vmref-data-line small {display:block;font-size:11px;color:#6883a5;margin-top:4px;}
+.vmref-dashboard .vmref-bad-qty {font-size:12px;font-weight:800;color:#dd4552;}
+.vmref-dashboard .vmref-avatar-initial {display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:100%;background:#fff0e0;color:#ae5a11;font-weight:800;}
+.vmref-dashboard .vmref-info {display:flex;gap:22px;align-items:center;padding:20px;color:#dd8d3b;}
+.vmref-dashboard .vmref-info h2 {font-size:22px;color:#133361;}
+.vmref-dashboard .vmref-info p {font-size:13px;color:#7890a7;margin-top:5px;}
+.vmref-dashboard .vmref-services {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;}
+.vmref-dashboard .vmref-service {display:flex;align-items:center;gap:8px;padding:18px;border:1px solid #e2ecfa;border-radius:12px;color:#174578;font-size:13px;}
+.vmref-dashboard .vmref-service svg {color:#1a83fb;}
+@media(max-width:1180px){.vmref-dashboard .vmref-vet-columns{grid-template-columns:repeat(2,minmax(0,1fr));}.vmref-dashboard .vmref-vet-columns>.vmref-block:last-child{grid-column:1/-1}.vmref-dashboard .vmref-stats{gap:7px}.vmref-dashboard .vmref-kpi{padding:13px 9px;gap:8px}.vmref-dashboard .vmref-kpi-icon{width:36px;flex-basis:36px;height:36px}.vmref-dashboard .vmref-kpi strong{font-size:19px}.vmref-dashboard .vmref-kpi small{font-size:10px}.vmref-dashboard .vmref-vet-bottom{grid-template-columns:1fr}.vmref-dashboard .vmref-store-bottom{grid-template-columns:1fr}.vmref-dashboard .vmref-clinic-summary .vmref-kpi{padding:8px;}}
+@media(max-width:850px){.vmref-dashboard .vmref-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.vmref-dashboard .vmref-store-columns,.vmref-dashboard .vmref-vet-columns{grid-template-columns:1fr}.vmref-dashboard .vmref-vet-columns>.vmref-block:last-child{grid-column:auto}.vmref-dashboard .vmref-hero-copy{max-width:70%}.vmref-dashboard .vmref-hero h1{font-size:24px!important}.vmref-dashboard .vmref-hero-tag,.vmref-dashboard .vmref-vet-tag{display:none}.vmref-dashboard .vmref-hero-illustration{right:0;width:34%;opacity:.85}.vmref-dashboard .vmref-feature-products{grid-template-columns:1fr}}
+@media(max-width:540px){.vmref-dashboard{padding:9px 7px}.vmref-dashboard .vmref-hero{min-height:155px;padding:19px}.vmref-dashboard .vmref-hero-copy{max-width:85%}.vmref-dashboard .vmref-hero-illustration{opacity:.33;width:57%}.vmref-dashboard .vmref-kpi{min-height:74px}.vmref-dashboard .vmref-clinic-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.vmref-dashboard .vmref-status{min-width:0;font-size:9px}.vmref-dashboard .vmref-row-money{display:none}}
+
+
+/* VETMAP_V17_1_LIMPIEZA_VISUAL */
+/* Alineacion con los dashboards Admin / Dueno sin afectar sus vistas. */
+
+/* El CSS global de VetMap tiene header::before { content: "🐶🐱" };
+   se aplicaba por accidente a CADA cabecera de tarjeta de V17. */
+.vmref-dashboard header.vmref-block-title,
+.vmref-dashboard .vmref-block > header.vmref-block-title {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  position: relative !important;
+  min-height: 0 !important;
+  height: auto !important;
+  width: 100% !important;
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.vmref-dashboard header.vmref-block-title::before,
+.vmref-dashboard header.vmref-block-title::after,
+.vmref-dashboard .vmref-block-title h2::before,
+.vmref-dashboard .vmref-block-title h2::after {
+  content: none !important;
+  display: none !important;
+}
+.vmref-dashboard .vmref-block-title h2 {
+  display: block !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+  font-family: inherit !important;
+  color: #112950 !important;
+  text-align: left !important;
+  letter-spacing: -.2px !important;
+}
+.vmref-dashboard .vmref-low-stock .vmref-block-title h2 { color: #e03c50 !important; }
+
+/* Retirar ilustraciones de IA/stock en heroes; conservar retratos reales
+   de pacientes guardados por el usuario en el listado. */
+.vmref-dashboard .vmref-hero-illustration,
+.vmref-dashboard .vmref-hero-store-art,
+.vmref-dashboard .vmref-hero-vet-art { display: none !important; background-image: none !important; }
+.vmref-dashboard .vmref-store-hero {
+  background: linear-gradient(108deg,#fff6eb 0%,#ffe9d2 70%,#ffddb8 100%) !important;
+}
+.vmref-dashboard .vmref-vet-hero {
+  background: linear-gradient(108deg,#eaf4ff 0%,#dcecff 70%,#c4e0ff 100%) !important;
+}
+.vmref-dashboard .vmref-hero-copy { max-width: min(72%, 730px) !important; }
+
+/* Menus oscuros, como los paneles estables de Administrador y Dueno. */
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) > nav.vm-member-nav {
+  background: linear-gradient(170deg,#1b3459,#0e2445) !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) > .vm-member-nav > .vm-member-menu {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  gap: 5px !important;
+}
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) > .vm-member-nav > .vm-member-menu > button {
+  min-height: 44px !important;
+  padding: 10px 12px !important;
+  color: #e8f1fb !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) > .vm-member-nav > .vm-member-menu > button:hover {
+  background: #254872 !important;
+  color: white !important;
+}
+.vm-member-shell.vmh16-shell:has(.vmref-store) > .vm-member-nav > .vm-member-menu > button.active {
+  color: #fff !important;
+  background: linear-gradient(110deg,#ea7928,#fa953a) !important;
+  border-color: #ffae61 !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vmh16-shell:has(.vmref-vet) > .vm-member-nav > .vm-member-menu > button.active {
+  color: #fff !important;
+  background: linear-gradient(110deg,#1e69bb,#1679ed) !important;
+  border-color: #65a0ef !important;
+  box-shadow: none !important;
+}
+/* Quitar iconos antiguos inyectados con ::before, dejando Lucide SVG. */
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) .vm-member-menu > button::before,
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) .vm-member-menu > button::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Mismos contenedores, radios, bordes y sombras que Admin/Dueno. */
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) { background: #eef5fb !important; }
+.vm-member-shell.vmh16-shell:has(.vmref-dashboard) > header.vmh16-topbar {
+  background: linear-gradient(105deg,#f9fcff,#eaf4fe) !important;
+  border-bottom: 1px solid #d6e4f0 !important;
+}
+.vmref-dashboard.vmref-store { background: #f7f7f5 !important; }
+.vmref-dashboard.vmref-vet { background: #eef5fb !important; }
+.vmref-dashboard .vmref-block,
+.vmref-dashboard .vmref-kpi {
+  background: #fff !important;
+  border: 1px solid #d5e6e2 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 3px 14px rgba(19,48,83,.035) !important;
+}
+.vmref-dashboard .vmref-hero { border-radius: 19px !important; }
+.vmref-dashboard .vmref-hero h1 { letter-spacing: -1.1px !important; }
+.vmref-dashboard .vmref-hero-tag,
+.vmref-dashboard .vmref-vet-tag {
+  box-shadow: none !important;
+  border: 1px solid rgba(255,255,255,.7) !important;
+}
+
+@media (max-width: 850px) {
+  .vmref-dashboard .vmref-hero-copy { max-width: 100% !important; }
+}

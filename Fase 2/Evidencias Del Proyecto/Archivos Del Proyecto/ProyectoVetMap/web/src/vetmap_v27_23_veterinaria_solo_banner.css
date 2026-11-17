@@ -1,0 +1,74 @@
+/* Veterinaria: conservar el icono del banner principal y usar texto en el contenido. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform:has(> nav.vm-member-nav--vet)
+  :is(.vm-clinic-section-heading, .vm-my-profile-heading)::before,
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform:has(> nav.vm-member-nav--vet)
+  :is(.vm-clinic-section-heading, .vm-my-profile-heading)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Recuperar el espacio reservado a los adornos de cada encabezado. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform:has(> nav.vm-member-nav--vet)
+  .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform:has(> nav.vm-member-nav--vet)
+  .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform:has(> nav.vm-member-nav--vet)
+  .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  flex: 1 1 260px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* Las tarjetas conservan sus cantidades, etiquetas y enlaces. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-v22-classic
+  :is(.vm-v22-tile, .vm-v22-summary-tile) {
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-v22-classic
+  .vm-v22-appointment {
+  grid-template-columns: 40px minmax(0, 1fr) auto !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-v22-classic
+  .vm-v22-actions > button {
+  grid-template-columns: minmax(0, 1fr) 15px !important;
+}
+
+/* Para pacientes sin foto se muestra su inicial, sin símbolos de animales. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  :is(.vm-v22-patient-photo, .vm-clinic-patient-photo, .vm-clinic-file-photo,
+      .vm-clinic-inline-patient-photo, .vm-clinic-action-patient-icon) {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-vet-patient-initial {
+  display: inline !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  :is(.vm-v22-patient-photo, .vm-clinic-inline-patient-photo) > span {
+  font-size: 20px !important;
+}
+
+/* Los avisos y estados vacíos mantienen todo su texto. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  :is(.vm-clinic-inline-history-loading, .vm-clinic-inline-history-empty,
+      .vm-clinic-file-owner, .vm-clinic-file-info-title, .vm-clinic-action-patient) {
+  gap: 10px !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  .vm-clinic-action-form-heading > div:first-child:empty {
+  display: none !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-clinic-file-owner {
+  grid-template-columns: minmax(0, 1fr) !important;
+}

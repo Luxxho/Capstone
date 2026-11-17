@@ -1,0 +1,22 @@
+VetMap V27.12 — Renovación de Administrador
+==========================================
+
+Actualiza el banner del Inicio del Administrador, quita la superposición
+con los indicadores, alinea encabezados y tarjetas de usuarios.
+No cambia la lógica de la plataforma.
+
+1. Descomprime el ZIP.
+2. Copia instalar_diseno_admin_v27_12.py y vetmap_admin_v27_12.css
+   a la raíz de ProyectoVetMap, junto a las carpetas web, backend y mobile.
+3. En la terminal de VS Code ubicada en ProyectoVetMap:
+     python .\instalar_diseno_admin_v27_12.py
+4. Abre la web y pulsa Ctrl+F5.
+
+El instalador solo añade CSS al FINAL de web/src/index.css (marcado
+con BEGIN/END V27.12) y respalda su versión anterior automáticamente.
+
+PARA DESHACER EL DISEÑO V27.12:
+     python .\instalar_diseno_admin_v27_12.py --deshacer
+
+No es necesario reiniciar PostgreSQL ni FastAPI para este cambio.
+No altera el módulo Veterinaria, Tienda, Dueño ni la app móvil.

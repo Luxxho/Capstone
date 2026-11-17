@@ -1,0 +1,67 @@
+/* VETMAP V27.8 - Banners oscuros, únicamente para Inicios de Dueño y Veterinaria. */
+/* DUEÑO: color de la muestra azul petróleo (#193f4a → #143945). */
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero {
+  background: linear-gradient(114deg, #193f4a 0%, #173e49 52%, #123540 100%) !important;
+  border-color: #275869 !important;
+  box-shadow: 0 12px 28px rgba(10, 39, 52, .13) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.09) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-eyebrow {
+  color: #94f0e5 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-copy > p:not(.vm-o15-eyebrow) {
+  color: #e1f1f4 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-link {
+  color: #124752 !important;
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 5px 16px rgba(0,0,0,.12) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-link:hover {
+  background: #e9fffb !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-orbit {
+  border-color: rgba(203, 244, 237, .25) !important;
+  background: rgba(255,255,255,.025) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-big-paw {
+  opacity: .20 !important;
+  filter: grayscale(1) brightness(2.5) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-note {
+  border-color: rgba(255,255,255,.55) !important;
+  background: rgba(255,255,255,.94) !important;
+  color: #123750 !important;
+}
+
+/* VETERINARIA: un azul marino propio, más oscuro que el celeste anterior. */
+.vm-member-shell.vm-role-vet .vm-vet-home-premium .vm-vet-premium-hero {
+  background: linear-gradient(112deg, #214a79 0%, #173961 57%, #112b4e 100%) !important;
+  border-color: #2c567e !important;
+  box-shadow: 0 12px 26px rgba(12, 40, 82, .13) !important;
+}
+.vm-member-shell.vm-role-vet .vm-vet-premium-hero .vm-vet-premium-hero-copy h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.08) !important;
+}
+.vm-member-shell.vm-role-vet .vm-vet-premium-hero .vm-vet-premium-hero-copy .vm-kicker {
+  color: #9bcfff !important;
+}
+.vm-member-shell.vm-role-vet .vm-vet-premium-hero .vm-vet-premium-hero-copy > p:not(.vm-kicker) {
+  color: #e2edfa !important;
+}
+.vm-member-shell.vm-role-vet .vm-vet-premium-hero .vm-vet-premium-hero-art {
+  background: rgba(255,255,255,.94) !important;
+  color: #142e51 !important;
+}
+
+@media (max-width: 700px) {
+  .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero,
+  .vm-member-shell.vm-role-vet .vm-vet-home-premium .vm-vet-premium-hero {
+    border-radius: 18px !important;
+  }
+}

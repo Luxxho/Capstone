@@ -1,0 +1,264 @@
+/* ==========================================================
+   VetMap V27.19 | Banners iconos premium de Inicio
+   REFERENCIA: icono de Admin, pero colores propios de cada rol
+   SVG inline en React. SIN fotos, PNG/JPG, assets, emojis flotantes.
+   Solo Dueño de mascota y Veterinaria. Ningún otro rol.
+   ========================================================== */
+
+/* No dejes que los estilos de las V27.10-V27.18 vuelvan a mostrar
+   el icono viejo, la huellita duplicada o el texto decorativo. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-decor,
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-note,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-note {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* El saludo queda limpio, tal como en las referencias aprobadas. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero h1 > span[aria-hidden="true"] {
+  display: none !important;
+}
+
+/* Dos gradientes diferenciados, sobre el mismo sistema de diseño. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page section.vm-o15-hero.vm-v2719-hero {
+  background: linear-gradient(116deg,#063c49 0%,#07535a 58%,#058b82 100%) !important;
+  background-image: linear-gradient(116deg,#063c49 0%,#07535a 58%,#058b82 100%) !important;
+  border:1px solid rgba(25,171,170,.23) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 14px 32px rgba(9,67,79,.11) !important;
+  min-height: 220px !important;
+  padding: 34px 42px !important;
+  isolation: isolate !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic section.vm-v22-hero.vm-v2719-hero {
+  background: linear-gradient(115deg,#07365b 0%,#075976 54%,#079e96 100%) !important;
+  background-image: linear-gradient(115deg,#07365b 0%,#075976 54%,#079e96 100%) !important;
+  border:1px solid rgba(52,168,183,.25) !important;
+  border-radius: 24px !important;
+  box-shadow:0 14px 30px rgba(6,56,88,.11) !important;
+  min-height: 218px !important;
+  padding: 34px 42px !important;
+  isolation:isolate !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+/* Eliminar decoraciones antiguas que se cruzaban sobre el texto. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page section.vm-o15-hero.vm-v2719-hero::before,
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page section.vm-o15-hero.vm-v2719-hero::after,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic section.vm-v22-hero.vm-v2719-hero::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic section.vm-v22-hero.vm-v2719-hero::after {
+  display:none !important;
+  content:none !important;
+}
+
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy {
+  position:relative !important;
+  z-index:6 !important;
+  max-width:calc(100% - 190px) !important;
+  min-width:0 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero h1,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero h1 {
+  color:#fff !important;
+  font-family:Inter,'Segoe UI',Arial,sans-serif !important;
+  font-size:clamp(32px,3.4vw,52px) !important;
+  font-weight:900 !important;
+  letter-spacing:-.035em !important;
+  line-height:1.12 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-eyebrow,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy::before {
+  color:#9ff5ef !important;
+  font-weight:900 !important;
+  letter-spacing:.16em !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy > p:not(.vm-o15-eyebrow),
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy p {
+  color:#e6f9fa !important;
+  font-weight:550 !important;
+  line-height:1.5 !important;
+  font-size:clamp(13px,1.15vw,17px) !important;
+  text-shadow:none !important;
+}
+
+/* NUEVA composición: 2 anillos discretos y una sola ficha celeste. */
+body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual {
+  position:absolute !important;
+  right:clamp(26px,5vw,82px) !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:grid !important;
+  place-items:center !important;
+  flex:none !important;
+  width:154px !important;
+  height:154px !important;
+  min-width:154px !important;
+  min-height:154px !important;
+  z-index:8 !important;
+  pointer-events:none !important;
+  isolation:isolate !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-ring {
+  position:absolute !important;
+  z-index:-1 !important;
+  display:block !important;
+  border:1px solid rgba(201,255,255,.22) !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  pointer-events:none !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-ring--one {
+  width:270px !important;
+  height:270px !important;
+  top:-59px !important;
+  left:-60px !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-ring--two {
+  width:365px !important;
+  height:365px !important;
+  top:-107px !important;
+  left:-107px !important;
+  border-color:rgba(212,255,255,.12) !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile {
+  width:138px !important;
+  height:138px !important;
+  padding:0 !important;
+  display:grid !important;
+  place-items:center !important;
+  position:relative !important;
+  z-index:1 !important;
+  flex:none !important;
+  border:1px solid rgba(255,255,255,.96) !important;
+  border-radius:31px !important;
+  box-shadow:0 15px 28px rgba(0,20,37,.26),inset 0 2px 0 rgba(255,255,255,.95) !important;
+  opacity:1 !important;
+  background:linear-gradient(145deg,#f5ffff 0%,#b6f4f0 100%) !important;
+}
+body .vm-v22-hero.vm-v2719-hero .vm-v2719-icon-tile {
+  background:linear-gradient(145deg,#f6ffff,#c8f9f5) !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol {
+  display:block !important;
+  visibility:visible !important;
+  width:83px !important;
+  height:83px !important;
+  min-width:83px !important;
+  min-height:83px !important;
+  max-width:83px !important;
+  max-height:83px !important;
+  color:#056a70 !important;
+  fill:currentColor;
+  filter:none !important;
+  opacity:1 !important;
+}
+body .vm-v22-hero.vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol {
+  color:#075b6b !important;
+  fill:none;
+}
+
+@media (max-width:950px) {
+  body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+  body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual {
+    right:22px !important;
+    width:98px !important;
+    height:98px !important;
+    min-width:98px !important;
+    min-height:98px !important;
+  }
+  body .vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile {
+    width:94px !important;
+    height:94px !important;
+    border-radius:24px !important;
+  }
+  body .vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol {
+    width:57px !important;height:57px !important;
+    min-width:57px !important;min-height:57px !important;
+  }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy {
+    max-width:calc(100% - 117px) !important;
+  }
+}
+@media (max-width:610px) {
+  body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+  body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual {
+    display:none !important;
+  }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy {
+    max-width:100% !important;
+  }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-page section.vm-o15-hero.vm-v2719-hero,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic section.vm-v22-hero.vm-v2719-hero {
+    padding:25px 22px !important;
+    min-height:175px !important;
+  }
+}
+
+/* VETMAP V27.20 - INICIO AJUSTE TAMANO ICONOS */
+/* Dueño y Veterinaria: mismo tamaño aproximado de la ficha de Admin.
+   El icono sigue siendo el SVG premium V27.19, sin emojis ni imagenes. */
+body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual {
+  width: 116px !important;
+  height: 116px !important;
+  min-width: 116px !important;
+  min-height: 116px !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile,
+body .vm-v22-hero.vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile {
+  width: 96px !important;
+  height: 96px !important;
+  min-width: 96px !important;
+  min-height: 96px !important;
+  border-radius: 24px !important;
+}
+body .vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol,
+body .vm-v22-hero.vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
+}
+/* Mantener el espacio de respiro adecuado al icono mas pequeño. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy {
+  max-width: calc(100% - 145px) !important;
+}
+@media (max-width:950px) {
+  body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+  body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual {
+    width: 96px !important; height: 96px !important;
+    min-width: 96px !important; min-height: 96px !important;
+  }
+  body .vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile,
+  body .vm-v22-hero.vm-v2719-hero .vm-v2719-visual .vm-v2719-icon-tile {
+    width: 82px !important; height: 82px !important;
+    min-width: 82px !important; min-height: 82px !important;
+    border-radius: 20px !important;
+  }
+  body .vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol,
+  body .vm-v22-hero.vm-v2719-hero .vm-v2719-visual .vm-v2719-symbol {
+    width: 49px !important; height: 49px !important;
+    min-width: 49px !important; min-height: 49px !important;
+    max-width: 49px !important; max-height: 49px !important;
+  }
+}
+@media (max-width:610px) {
+  /* Respeta el comportamiento mobile ya existente de V27.19. */
+  body .vm-o15-hero.vm-v2719-hero > .vm-v2719-visual,
+  body .vm-v22-hero.vm-v2719-hero > .vm-v2719-visual { display:none !important; }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero.vm-v2719-hero .vm-o15-hero-copy,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero.vm-v2719-hero .vm-v22-hero-copy {
+    max-width:100% !important;
+  }
+}
+/* VETMAP V27.20 - FIN AJUSTE TAMANO ICONOS */

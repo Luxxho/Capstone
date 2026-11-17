@@ -1,0 +1,20 @@
+/* VetMap V27.29: menú de Tienda con las curvas del Administrador. */
+html body .vm-member-shell.vmh16-shell
+  > nav.vm-member-nav--store.vm-v24-store-sidebar {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+html body .vm-member-shell.vmh16-shell
+  > nav.vm-member-nav--store.vm-v24-store-sidebar .vm-member-menu > button,
+html body .vm-member-shell.vmh16-shell
+  > nav.vm-member-nav--store.vm-v24-store-sidebar .vm-member-menu > button:is(.active, :hover, :focus-visible) {
+  border-radius: 999px !important;
+}
+
+/* Cuando el menú pasa a horizontal, redondear el contenedor completo. */
+@media (max-width: 1100px) {
+  html body .vm-member-shell.vmh16-shell
+    > nav.vm-member-nav--store.vm-v24-store-sidebar {
+    border-radius: 22px !important;
+  }
+}

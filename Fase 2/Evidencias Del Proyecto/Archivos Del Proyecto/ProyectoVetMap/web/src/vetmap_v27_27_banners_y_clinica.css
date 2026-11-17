@@ -1,0 +1,116 @@
+/* Tienda: mismo tratamiento de ficha e icono que Dueño y Veterinaria. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 116px !important;
+  width: 116px !important;
+  height: 116px !important;
+  min-width: 116px !important;
+  min-height: 116px !important;
+  z-index: 1 !important;
+  isolation: isolate !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero .vm-v2719-visual .vm-v2719-icon-tile {
+  display: grid !important;
+  place-items: center !important;
+  width: 96px !important;
+  height: 96px !important;
+  min-width: 96px !important;
+  min-height: 96px !important;
+  padding: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .96) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(145deg, #fffdf7, #ffe5c1) !important;
+  box-shadow: 0 15px 28px rgba(60, 29, 8, .23), inset 0 2px 0 rgba(255, 255, 255, .95) !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero .vm-v2719-visual .vm-v2725-store-symbol.vm-v2719-symbol {
+  display: block !important;
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
+  color: #95501e !important;
+  fill: none !important;
+  opacity: 1 !important;
+}
+
+/* Identidad de la clínica que entrega el panel de la cuenta veterinaria. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet)
+  .vm-v22-hero-copy .vm-v2727-clinic-identity {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 6px 12px !important;
+  margin-top: 17px !important;
+  min-width: 0 !important;
+  line-height: 1.5 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet)
+  .vm-v2727-clinic-identity small {
+  color: #a8eee6 !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet)
+  .vm-v2727-clinic-identity strong {
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  overflow-wrap: anywhere !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet)
+  .vm-v2727-clinic-commune {
+  color: #e0f5f7 !important;
+  font-size: 12px !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media (max-width: 950px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+    flex-basis: 96px !important;
+    width: 96px !important;
+    height: 96px !important;
+    min-width: 96px !important;
+    min-height: 96px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-hero .vm-v2719-visual .vm-v2719-icon-tile {
+    width: 82px !important;
+    height: 82px !important;
+    min-width: 82px !important;
+    min-height: 82px !important;
+    border-radius: 20px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-hero .vm-v2719-visual .vm-v2725-store-symbol.vm-v2719-symbol {
+    width: 49px !important;
+    height: 49px !important;
+    min-width: 49px !important;
+    min-height: 49px !important;
+    max-width: 49px !important;
+    max-height: 49px !important;
+  }
+}
+
+@media (max-width: 610px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+    display: none !important;
+  }
+}

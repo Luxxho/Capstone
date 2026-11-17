@@ -1,0 +1,28 @@
+VetMap V27 - Chat web + móvil + clientes/tiendas/veterinarias/repartidores
+
+Versión de prueba instalable para el código VetMap V26 verificado en GitHub.
+NO SE HA APLICADO A TU REPOSITORIO NI A TU PC. Se entrega separada, para instalar y probar localmente.
+
+INSTRUCCIONES WINDOWS
+1. Descarga y descomprime el ZIP.
+2. Copia TODOS los archivos descomprimidos a la carpeta raíz del proyecto:
+   C:\Users\papit\Documents\ProyectoVetMap
+3. Abre PowerShell en esa carpeta.
+4. Ejecuta: python .\instalar_chat_v27.py
+5. Reinicia FastAPI, Vite y Expo. Usa tus comandos habituales.
+6. Haz una copia de PostgreSQL antes de hacer pruebas con usuarios reales.
+
+El instalador hace respaldo de los archivos reemplazados (carpeta respaldo_antes_chat_v27_FECHA),
+no modifica .env ni mobile/eas.json y comprueba archivos antes de editar.
+Si el código se actualizó desde V26, puede no coincidir y detenerse sin cambios.
+
+WEB: botón flotante "Mensajes" para cliente, tienda, veterinaria y repartidor.
+APP: botón 💬 en el encabezado. Iniciar sesión con la misma cuenta en Android.
+REPARTIDOR: la tienda debe crear el repartidor en el módulo existente (V26), después
+asignarle correo/contraseña inicial desde el chat de tienda. La cuenta nueva tiene rol driver.
+El repartidor entra con ese correo y contraseña en la app. Puedes abrir también en la web.
+
+Los chats se guardan en PostgreSQL y se consultan cada 5 segundos. No hay GPS en vivo.
+Los establecimientos demostrativos sin cuenta de tienda/veterinaria NO pueden responder.
+El cliente debe tener un pedido asignado para conversar con su repartidor.
+Esta es una versión de prueba. Recomendable verificar flujos, permisos y UI antes de publicar.

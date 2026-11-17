@@ -1,0 +1,69 @@
+/* VetMap V27.22 - iconos SVG consistentes para el contenido interno de Veterinaria.
+   Scope exclusivo: panel con nav de rol vet. No altera los iconos premium de los banners. */
+.vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-v27-icon {
+  display: inline-block; flex: 0 0 auto; vertical-align: middle; stroke-width: 2; overflow: visible;
+}
+/* Estados vacíos: calendario, búsqueda y ficha clínica. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-page .vm-clinic-empty > span.vm-v27-empty-icon {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 76px !important; height: 76px !important; border-radius: 22px !important;
+  padding: 0 !important; margin: 0 auto 10px !important; font-size: 0 !important; line-height: 1 !important;
+  color: #117c9e !important; background: linear-gradient(140deg,#e4f8ff,#caeff5) !important;
+  border: 1px solid rgba(255,255,255,.8) !important; box-shadow: 0 8px 20px rgba(6,73,100,.08) !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-empty > span.vm-v27-empty-icon > svg {
+  width: 39px !important; height: 39px !important; stroke: currentColor !important; stroke-width: 1.8 !important;
+}
+/* Fotos subidas por el cliente NO se alteran; solo avatares de respaldo cuando no hay foto. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-patient-photo:has(.vm-v27-pet-icon) {
+  background: linear-gradient(140deg,#d9f7f5,#bde9ef) !important;
+  color: #086977 !important; border: 2px solid rgba(255,255,255,.8) !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-patient-photo .vm-v27-pet-icon {
+  display: block !important; width: 46px !important; height: 46px !important;
+  margin: auto !important; color: #086977 !important; stroke-width: 1.75 !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-patient-photo:has(.vm-v27-pet-icon) > span {
+  font-size: 0 !important; display:flex !important; align-items:center !important; justify-content:center !important;
+}
+/* Iconos pequeños dentro de la información del paciente. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-patient-data > span .vm-v27-inline-icon,
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-file-chips .vm-v27-inline-icon,
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-inline-history-chips .vm-v27-inline-icon {
+  width: 16px !important; height: 16px !important; color: #11969f !important;
+  margin-right: 5px !important; vertical-align: -3px !important; stroke-width: 2 !important;
+}
+/* Los indicadores de consultas, medicamentos, vacunas y recetas siguen teniendo sus cantidades reales. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-file-stats span.vm-v27-mini-tile,
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-file-info-title span.vm-v27-mini-tile {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 40px !important; height: 40px !important; border-radius: 12px !important;
+  color: #0c80a3 !important; background: #e3f5fc !important; font-size: 0 !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-file-stats span.vm-v27-mini-tile svg,
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-file-info-title span.vm-v27-mini-tile svg {
+  width: 22px !important; height: 22px !important;
+}
+/* Tarjetas del perfil (6 iconos): todos del mismo tamaño y acabado. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-my-profile-heading .vm-v27-profile-title-icon {
+  width: 32px !important; height: 32px !important; color: #eafaff !important;
+  margin-right: 9px !important; vertical-align: -4px !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-profile-summary-card > span.vm-v27-profile-badge {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 44px !important; height: 44px !important; min-height: 44px !important;
+  padding: 0 !important; margin: 0 0 10px !important;
+  border-radius: 13px !important; background: #dff4fa !important;
+  border: 1px solid #d1eaf3 !important; color: #0b7192 !important;
+  font-size: 0 !important; box-shadow: none !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-profile-summary-card > span.vm-v27-profile-badge svg {
+  width: 24px !important; height: 24px !important; color: inherit !important;
+}
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-profile-summary-card.vm-role-readonly > span.vm-v27-profile-badge {
+  background: #fff1df !important; border-color: #f6e5c8 !important; color: #a36b17 !important;
+}
+@media(max-width:700px){
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-empty > span.vm-v27-empty-icon { width:60px !important; height:60px !important; border-radius:17px !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--vet) .vm-clinic-empty > span.vm-v27-empty-icon > svg { width:31px !important; height:31px !important; }
+}

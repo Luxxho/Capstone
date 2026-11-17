@@ -1,0 +1,212 @@
+/* VetMap Admin V12 — solo administración. No altera otros roles. */
+.vm-admin-v10-mode .vmv12-editor {
+  width: min(100%, 1050px) !important;
+  max-width: 1050px !important;
+  margin: 16px auto 36px !important;
+  padding: clamp(20px, 3.3vw, 38px) !important;
+  border: 1px solid #d6e5f1 !important;
+  border-radius: 24px !important;
+  background: #fff !important;
+  box-shadow: 0 14px 35px rgba(17, 40, 77, .07) !important;
+  scroll-margin-top: 100px;
+  color: #122d58;
+  box-sizing: border-box;
+  overflow: visible !important;
+}
+.vm-admin-v10-mode .vmv12-editor *,
+.vm-admin-v10-mode .vmv12-editor *::before,
+.vm-admin-v10-mode .vmv12-editor *::after { box-sizing: border-box; }
+.vm-admin-v10-mode .vmv12-editor-head {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 0 0 18px;
+  margin: 0 0 15px !important;
+  border-bottom: 1px solid #e2ebf4;
+}
+.vm-admin-v10-mode .vmv12-editor-kicker {
+  margin-bottom: 7px;
+  color: #0eaaa7;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+}
+.vm-admin-v10-mode .vmv12-editor-head h2 {
+  margin: 0 0 9px !important;
+  font-size: clamp(25px,2.4vw,33px) !important;
+  line-height: 1.16 !important;
+  font-weight: 850 !important;
+  color: #102b57 !important;
+  letter-spacing: -.5px;
+}
+.vm-admin-v10-mode .vmv12-editor-head p {
+  margin: 0 !important;
+  max-width: 710px;
+  font-size: 13px !important;
+  line-height: 1.6;
+  color: #60758f !important;
+}
+.vm-admin-v10-mode .vmv12-editor-tag,
+.vm-admin-v10-mode .vmv12-editor-head > div.rounded-xl {
+  border: 1px solid #d9e8f4 !important;
+  padding: 9px 14px !important;
+  border-radius: 999px !important;
+  color: #315174 !important;
+  background: #f1f7fc !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.vm-admin-v10-mode .vmv12-back {
+  display: inline-flex;
+  width: auto;
+  min-height: 39px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 21px !important;
+  padding: 8px 14px !important;
+  border: 1px solid #d0e1ec !important;
+  border-radius: 11px !important;
+  background: #f4f8fc !important;
+  color: #173f6a !important;
+  font-size: 12px !important;
+  font-weight: 750 !important;
+  cursor: pointer;
+}
+.vm-admin-v10-mode .vmv12-back:hover { background: #e7f2fa !important; }
+.vm-admin-v10-mode .vmv12-editor-form {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  gap: 20px 22px !important;
+  align-items: start;
+  min-width: 0;
+}
+.vm-admin-v10-mode .vmv12-editor-form > div,
+.vm-admin-v10-mode .vmv12-editor-form > label {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.vm-admin-v10-mode .vmv12-editor-form > div.grid,
+.vm-admin-v10-mode .vmv12-field,
+.vm-admin-v10-mode .vmv12-editor-form label {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  color: #203c61 !important;
+}
+.vm-admin-v10-mode .vmv12-editor-form label,
+.vm-admin-v10-mode .vmv12-editor-form label.font-semibold,
+.vm-admin-v10-mode .vmv12-editor-form .vmv12-field > span {
+  font-weight: 750 !important;
+}
+.vm-admin-v10-mode .vmv12-editor-form input,
+.vm-admin-v10-mode .vmv12-editor-form select,
+.vm-admin-v10-mode .vmv12-editor-form textarea {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 47px !important;
+  padding: 11px 13px !important;
+  border: 1px solid #cfdeeb !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  background: #f9fbfe !important;
+  color: #1e3659 !important;
+  font-size: 13px !important;
+  font-weight: 550 !important;
+  transition: border-color .14s, box-shadow .14s, background .14s;
+}
+.vm-admin-v10-mode .vmv12-editor-form input:focus,
+.vm-admin-v10-mode .vmv12-editor-form select:focus,
+.vm-admin-v10-mode .vmv12-editor-form textarea:focus {
+  border-color: #0faeac !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(15,174,172,.12) !important;
+}
+.vm-admin-v10-mode .vmv12-editor-form input::placeholder { color: #8294a7 !important; }
+.vm-admin-v10-mode .vmv12-editor-form input:disabled,
+.vm-admin-v10-mode .vmv12-editor-form select:disabled { opacity: .65; cursor: not-allowed; }
+.vm-admin-v10-mode .vmv12-editor-form .vmv12-editor-note {
+  grid-column: 1 / -1;
+  padding: 13px 15px;
+  border: 1px solid #d7e9f4;
+  border-radius: 13px;
+  background: #f4f9ff;
+  color: #496580;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.vm-admin-v10-mode .vmv12-editor-actions {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 11px !important;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  bottom: 10px;
+  z-index: 10;
+  padding: 16px 0 0 !important;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.9), #fff 35%);
+  border-top: 1px solid #e2ebf3;
+}
+.vm-admin-v10-mode .vmv12-editor-actions button,
+.vm-admin-v10-mode .vmv12-editor-actions .vmv12-save,
+.vm-admin-v10-mode .vmv12-editor-actions .vmv12-cancel {
+  min-height: 44px !important;
+  padding: 10px 19px !important;
+  border-radius: 12px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  cursor: pointer;
+}
+.vm-admin-v10-mode .vmv12-editor-actions button[type="submit"] {
+  border: 1px solid #0caaa6 !important;
+  background: #0fb4b0 !important;
+  color: white !important;
+  box-shadow: 0 5px 15px rgba(15, 180, 176, .15);
+}
+.vm-admin-v10-mode .vmv12-editor-actions button[type="button"] {
+  border: 1px solid #d5e2ec !important;
+  background: #f6f9fc !important;
+  color: #173c62 !important;
+}
+/* Pantallas de gestión consistentes con el panel navy. */
+.vm-admin-v10-mode .vm-admin-people-section,
+.vm-admin-v10-mode .vm-admin-products-page,
+.vm-admin-v10-mode .vm-admin-pet-grid,
+.vm-admin-v10-mode .vm-admin-user-grid { max-width: 100% !important; min-width: 0 !important; }
+.vm-admin-v10-mode .vm-admin-user-card,
+.vm-admin-v10-mode .vm-admin-pet-card,
+.vm-admin-v10-mode .vm-product-editor-card {
+  border: 1px solid #d8e6f1 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 24px rgba(17,42,82,.05) !important;
+}
+.vm-admin-v10-mode .vm-admin-card-actions button { min-height: 39px; border-radius: 10px !important; }
+.vm-admin-v10-mode .vm-admin-id-pill { white-space: nowrap; }
+/* Huellas CSS heredadas, que a veces se dibujan encima de las acciones. */
+.vm-admin-v10-mode .vm-admin-user-card::before,
+.vm-admin-v10-mode .vm-admin-user-card::after,
+.vm-admin-v10-mode .vm-admin-pet-card::before,
+.vm-admin-v10-mode .vm-admin-pet-card::after,
+.vm-admin-v10-mode .vm-admin-id-pill::before,
+.vm-admin-v10-mode .vm-admin-id-pill::after,
+.vm-admin-v10-mode .vm-admin-card-actions button::before,
+.vm-admin-v10-mode .vm-admin-card-actions button::after,
+.vm-admin-v10-mode .vm-admin-section-heading::after {
+  content: none !important;
+  display: none !important;
+}
+@media(max-width: 850px) {
+  .vm-admin-v10-mode .vmv12-editor { padding: 18px !important; margin: 12px auto 26px !important; }
+  .vm-admin-v10-mode .vmv12-editor-form { grid-template-columns: minmax(0,1fr) !important; gap: 17px !important; }
+  .vm-admin-v10-mode .vmv12-editor-actions { position: static; }
+}

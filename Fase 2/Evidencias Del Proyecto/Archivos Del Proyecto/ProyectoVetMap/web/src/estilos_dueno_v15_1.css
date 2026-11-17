@@ -1,0 +1,383 @@
+/* VETMAP DUEÑO V15.1 - ACABADO VISUAL
+   Solo se aplica con vm-owner-v15-shell. No modifica funciones.
+   Los iconos del usuario siguen siendo los botones existentes con sus popovers.
+*/
+.vm-owner-v15-shell {
+  --o151-navy: #102a56;
+  --o151-teal: #0ca9a5;
+  --o151-line: #d7e9e5;
+  --o151-pale: #f2faf8;
+  background: #f1faf8 !important;
+}
+.vm-owner-v15-shell .vm-o15-page {
+  max-width: 1320px !important;
+  padding: 17px 20px 36px !important;
+  color: var(--o151-navy) !important;
+}
+/* Evitar la segunda ficha de usuario: se reutiliza arriba el menú original,
+   que es el que tiene las funciones reales de cerrar sesión y notificaciones. */
+.vm-owner-v15-shell .vm-o15-avatar-button { display: none !important; }
+.vm-owner-v15-shell .vm-o15-topbar {
+  gap: 12px !important;
+  min-height: 66px !important;
+  padding: 0 3px 14px !important;
+  justify-content: flex-start !important;
+}
+.vm-owner-v15-shell .vm-o15-context {
+  font-size: 13px !important;
+  flex: 0 0 auto !important;
+  gap: 9px !important;
+}
+.vm-owner-v15-shell .vm-o15-context-icon {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 18px !important;
+}
+.vm-owner-v15-shell .vm-o15-search {
+  width: min(100%, 520px) !important;
+  max-width: 520px !important;
+  min-height: 45px !important;
+  height: auto !important;
+  flex: 1 1 290px !important;
+  padding: 5px 7px 5px 13px !important;
+  gap: 5px !important;
+  border: 1px solid var(--o151-line) !important;
+  border-radius: 15px !important;
+  background: white !important;
+  box-shadow: 0 5px 18px rgba(16, 42, 86, .045) !important;
+}
+.vm-owner-v15-shell .vm-o15-search > span {
+  font-size: 21px !important;
+  margin: 0 3px 0 0 !important;
+}
+.vm-owner-v15-shell .vm-o15-search input {
+  width: auto !important;
+  min-width: 0 !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 6px 4px !important;
+  border: 0 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+}
+.vm-owner-v15-shell .vm-o15-search button {
+  min-height: 35px !important;
+  height: 35px !important;
+  padding: 7px 14px !important;
+  border-radius: 11px !important;
+  background: #e4f7f3 !important;
+  color: #087c79 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+}
+/* Bienvenida: mantener el dibujo CSS, no usar fotos generadas. */
+.vm-owner-v15-shell .vm-o15-page .vm-o15-hero {
+  min-height: 205px !important;
+  max-height: none !important;
+  padding: 25px 30px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(110deg, #defbf5 0%, #c7f4ec 56%, #b1ebe0 100%) !important;
+  box-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-o15-hero-copy { max-width: 590px !important; }
+.vm-owner-v15-shell .vm-o15-hero h1 {
+  font-size: clamp(27px, 3vw, 37px) !important;
+  letter-spacing: -.7px !important;
+  line-height: 1.15 !important;
+  color: var(--o151-navy) !important;
+}
+.vm-owner-v15-shell .vm-o15-hero-copy > p:not(.vm-o15-eyebrow) {
+  font-size: 13px !important;
+  max-width: 440px !important;
+}
+.vm-owner-v15-shell .vm-o15-eyebrow { font-size: 10px !important; }
+.vm-owner-v15-shell .vm-o15-hero-link {
+  min-height: 38px !important;
+  padding: 8px 14px !important;
+  margin-top: 15px !important;
+  background: #fff !important;
+  color: #067f7a !important;
+  font-size: 12px !important;
+}
+.vm-owner-v15-shell .vm-o15-hero-decor { transform: scale(.84); transform-origin: right center; }
+.vm-owner-v15-shell .vm-o15-hero-note { border-radius: 14px !important; }
+.vm-owner-v15-shell .vm-o15-hero-note strong { font-size: 14px !important; }
+.vm-owner-v15-shell .vm-o15-stat-grid { gap: 12px !important; margin: 13px 0 15px !important; }
+.vm-owner-v15-shell .vm-o15-stat {
+  min-height: 87px !important;
+  padding: 13px 15px !important;
+  gap: 11px !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--o151-line) !important;
+}
+.vm-owner-v15-shell .vm-o15-stat-icon { width: 44px !important; height: 44px !important; font-size: 22px !important; }
+.vm-owner-v15-shell .vm-o15-stat strong { font-size: 26px !important; }
+.vm-owner-v15-shell .vm-o15-stat small { font-size: 11px !important; }
+.vm-owner-v15-shell .vm-o15-page .vm-o15-panel { padding: 18px !important; border-radius: 18px !important; }
+.vm-owner-v15-shell .vm-o15-panel-head h2 { font-size: 17px !important; }
+.vm-owner-v15-shell .vm-o15-content-grid { gap: 14px !important; }
+/*  Mis mascotas - ficha detallada compacta con foto y dos botones en línea */
+.vm-owner-v15-shell .vm-owner-pets-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)) !important;
+  gap: 14px !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card {
+  display: flex !important;
+  flex-flow: row wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  justify-items: initial !important;
+  min-width: 0 !important;
+  min-height: 155px !important;
+  gap: 12px !important;
+  padding: 15px !important;
+  border: 1px solid var(--o151-line) !important;
+  border-radius: 17px !important;
+  box-shadow: 0 8px 25px rgba(16,42,86,.045) !important;
+  background: #fff !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-photo {
+  width: 108px !important;
+  height: 108px !important;
+  min-width: 108px !important;
+  flex: 0 0 108px !important;
+  border-radius: 16px !important;
+  background: #e5f7f2 !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-photo img { object-fit: cover !important; }
+.vm-owner-v15-shell .vm-owner-pet-card-copy {
+  flex: 1 1 175px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-copy h3 {
+  font-family: Inter, Arial, sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 850 !important;
+  line-height: 1.2 !important;
+  color: var(--o151-navy) !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-copy > p {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+  margin: 4px 0 8px !important;
+  color: #5a7180 !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-data { font-size: 11px !important; gap: 4px !important; }
+.vm-owner-v15-shell .vm-owner-pet-card-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 7px !important;
+  margin-top: 12px !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-actions button {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 36px !important;
+  padding: 8px 11px !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-actions .vm-primary {
+  background: #0eaaa3 !important;
+  border: 1px solid #0eaaa3 !important;
+  color: #fff !important;
+}
+.vm-owner-v15-shell .vm-owner-pet-card-actions .vm-secondary {
+  background: #f4fbf9 !important;
+  border: 1px solid #cfe9e3 !important;
+  color: var(--o151-navy) !important;
+}
+/* Dentro de cada tienda, dejar tarjetas lo bastante anchas para productos, 
+   sin quitar el carrito ni los botones de compra/comparación. */
+.vm-owner-v15-shell .vm-establishment-hero--store {
+  border-radius: 19px !important;
+  padding: 20px 23px !important;
+  min-height: 160px !important;
+}
+.vm-owner-v15-shell .vm-establishment-hero--store h2 {
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  line-height: 1.12 !important;
+}
+.vm-owner-v15-shell .vm-establishment-hero-copy > p:last-of-type { font-size: 12px !important; }
+.vm-owner-v15-shell .vm-establishment-meta-grid > span { font-size: 10px !important; padding: 5px 9px !important; }
+.vm-owner-v15-shell .vm-establishment-hero-cart { padding: 10px 13px !important; border-radius: 13px !important; }
+.vm-owner-v15-shell .vm-store-detail-toolbar {
+  top: 12px !important;
+  grid-template-columns: minmax(0,1fr) minmax(170px,230px) !important;
+  padding: 9px !important;
+}
+.vm-owner-v15-shell .vm-store-detail-content {
+  grid-template-columns: minmax(0,1fr) minmax(245px,275px) !important;
+  gap: 13px !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 13px !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-product-card {
+  min-width: 0 !important;
+  padding: 15px !important;
+  border-radius: 17px !important;
+  border-color: var(--o151-line) !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-product-image {
+  min-height: 125px !important;
+  height: 125px !important;
+  border-radius: 13px !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-product-image img { max-width: 100%; max-height: 100%; object-fit: contain !important; }
+.vm-owner-v15-shell .vm-store-detail-page .vm-product-card h3 { font-size: 17px !important; line-height: 1.35 !important; }
+.vm-owner-v15-shell .vm-store-detail-page .vm-market-card-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-market-card-actions button {
+  flex: 1 1 90px !important;
+  min-width: 0 !important;
+  min-height: 37px !important;
+  padding: 8px 9px !important;
+  font-size: 12px !important;
+  border-radius: 11px !important;
+  white-space: nowrap !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-market-card-actions .vm-primary {
+  background: #0eaaa3 !important; border-color: #0eaaa3 !important; color: #fff !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-market-card-actions .vm-secondary {
+  background: #f9fffd !important; border-color: #cfe9e3 !important; color: var(--o151-navy) !important;
+}
+.vm-owner-v15-shell .vm-store-detail-page .vm-cart-panel {
+  top: 86px !important;
+  max-height: calc(100vh - 105px) !important;
+  border-radius: 17px !important;
+  padding: 15px !important;
+}
+/* Menú funcional original arriba a la derecha del Dueño (toda la cuenta).
+   No escondemos el carrito ni la campana; ocultamos su barra vacía inferior. */
+@media (min-width: 1100px) {
+  .vm-owner-v15-shell > .vm-member-nav { z-index: 200 !important; }
+  .vm-owner-v15-shell > .vm-member-nav .vm-member-user {
+    position: fixed !important;
+    top: 24px !important;
+    right: 30px !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: min(330px, 40vw) !important;
+    min-height: 53px !important;
+    margin: 0 !important;
+    padding: 4px 7px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    border: 1px solid #d4e8e4 !important;
+    border-radius: 17px !important;
+    background: rgba(255,255,255,.97) !important;
+    box-shadow: 0 8px 24px rgba(16,42,86,.08) !important;
+    z-index: 2000 !important;
+  }
+  .vm-owner-v15-shell .vm-o15-topbar { padding-right: 308px !important; }
+  .vm-owner-v15-shell .vm-notification-bell,
+  .vm-owner-v15-shell .vm-header-cart-button {
+    width: 41px !important;
+    min-width: 41px !important;
+    height: 41px !important;
+    min-height: 41px !important;
+    border-radius: 11px !important;
+    background: #f4fbf9 !important;
+    border: 1px solid #d7ece7 !important;
+    box-shadow: none !important;
+  }
+  .vm-owner-v15-shell .vm-owner-user-menu { display: block !important; min-width: 0 !important; }
+  .vm-owner-v15-shell .vm-owner-user-trigger {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    min-height: 43px !important;
+    gap: 8px !important;
+    padding: 3px 7px !important;
+  }
+  .vm-owner-v15-shell .vm-owner-user-trigger .vm-owner-user-avatar {
+    display: grid !important;
+    width: 37px !important;
+    min-width: 37px !important;
+    height: 37px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #11b5ae, #167893) !important;
+    color: #fff !important;
+  }
+  .vm-owner-v15-shell .vm-owner-user-text {
+    display: grid !important;
+    min-width: 0 !important;
+    max-width: 120px !important;
+  }
+  .vm-owner-v15-shell .vm-owner-user-text strong {
+    font-size: 12px !important;
+    color: var(--o151-navy) !important;
+  }
+  .vm-owner-v15-shell .vm-owner-user-text small { font-size: 9px !important; }
+  .vm-owner-v15-shell .vm-notification-panel,
+  .vm-owner-v15-shell .vm-header-cart-panel,
+  .vm-owner-v15-shell .vm-owner-user-dropdown {
+    position: absolute !important;
+    top: calc(100% + 9px) !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 5000 !important;
+    max-width: min(360px, calc(100vw - 24px)) !important;
+  }
+  .vm-owner-v15-shell .vm-o15-context { max-width: 210px !important; }
+}
+@media (min-width: 1100px) and (max-width: 1350px) {
+  .vm-owner-v15-shell .vm-o15-context { display: none !important; }
+  .vm-owner-v15-shell .vm-o15-topbar { padding-right: 290px !important; }
+  .vm-owner-v15-shell .vm-store-detail-content {
+    grid-template-columns: minmax(0,1fr) minmax(225px,240px) !important;
+  }
+}
+@media (max-width: 1099px) {
+  .vm-owner-v15-shell .vm-member-user { position: relative !important; width: auto !important; }
+  .vm-owner-v15-shell .vm-owner-user-text { display: grid !important; }
+  .vm-owner-v15-shell .vm-store-detail-content { grid-template-columns: 1fr !important; }
+  .vm-owner-v15-shell .vm-store-detail-page .vm-cart-panel {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+  }
+  .vm-owner-v15-shell .vm-store-detail-toolbar { position: static !important; top: auto !important; }
+}
+@media (max-width: 700px) {
+  .vm-owner-v15-shell .vm-o15-page { padding: 12px 10px 28px !important; }
+  .vm-owner-v15-shell .vm-o15-topbar { padding: 4px 0 12px !important; }
+  .vm-owner-v15-shell .vm-o15-search { width: 100% !important; }
+  .vm-owner-v15-shell .vm-o15-page .vm-o15-hero { min-height: 180px !important; padding: 20px !important; }
+  .vm-owner-v15-shell .vm-o15-hero h1 { font-size: 28px !important; }
+  .vm-owner-v15-shell .vm-o15-hero-decor { display: none !important; }
+  .vm-owner-v15-shell .vm-o15-stat-grid { grid-template-columns: 1fr !important; }
+  .vm-owner-v15-shell .vm-owner-pets-grid { grid-template-columns: 1fr !important; }
+  .vm-owner-v15-shell .vm-owner-pet-card { padding: 13px !important; }
+  .vm-owner-v15-shell .vm-owner-pet-card-photo { width: 90px !important; height: 90px !important; min-width: 90px !important; flex-basis: 90px !important; }
+  .vm-owner-v15-shell .vm-store-detail-toolbar { grid-template-columns: 1fr !important; }
+  .vm-owner-v15-shell .vm-store-detail-page .vm-product-grid { grid-template-columns: 1fr !important; }
+}
+/* FINAL VETMAP_DUENO_V15_1 */

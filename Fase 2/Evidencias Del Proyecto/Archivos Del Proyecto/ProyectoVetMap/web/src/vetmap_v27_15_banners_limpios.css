@@ -1,0 +1,228 @@
+/* VetMap V27.15 — banners de Inicio, solo Dueño y Veterinaria.
+   Sin fotografías, sin recursos externos. Conserva datos y eventos existentes.
+   Los iconos son SVG inline ya presentes desde V27.13. */
+
+/* =========================================================
+   DUEÑO: banner compacto, sin textos secundarios a la derecha
+   ========================================================= */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page > .vm-o15-hero {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:24px !important;
+  min-height:206px !important;
+  padding:30px clamp(24px,3vw,42px) !important;
+  border:1px solid #206570 !important;
+  border-radius:24px !important;
+  background:linear-gradient(112deg,#194c56 0%,#114451 55%,#0b6773 100%) !important;
+  box-shadow:0 13px 27px rgba(15,62,79,.11) !important;
+  overflow:hidden !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page > .vm-o15-hero::before,
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page > .vm-o15-hero::after {
+  content:none !important;
+  display:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero > .vm-o15-hero-copy {
+  position:relative !important;
+  z-index:2 !important;
+  flex:1 1 auto !important;
+  max-width:min(75%,770px) !important;
+  min-width:0 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-eyebrow {
+  color:#9af4e8 !important;
+  letter-spacing:.17em !important;
+  font-size:11px !important;
+  font-weight:900 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero h1 {
+  margin:6px 0 8px !important;
+  color:#fff !important;
+  font-family:Inter,'Segoe UI',Arial,sans-serif !important;
+  font-weight:900 !important;
+  font-size:clamp(30px,3vw,46px) !important;
+  line-height:1.13 !important;
+  letter-spacing:-.9px !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-copy>p:not(.vm-o15-eyebrow) {
+  color:#e7f8fa !important;
+  font-size:clamp(13px,1.2vw,16px) !important;
+  line-height:1.5 !important;
+  max-width:500px !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-link {
+  margin-top:18px !important;
+  min-height:42px !important;
+  padding:10px 17px !important;
+  color:#0b4551 !important;
+  border:1px solid rgba(255,255,255,.8) !important;
+  border-radius:12px !important;
+  background:#fff !important;
+  font-size:13px !important;
+  font-weight:850 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-decor {
+  display:flex !important;
+  position:relative !important;
+  z-index:3 !important;
+  flex:0 0 110px !important;
+  width:110px !important;
+  min-width:110px !important;
+  min-height:110px !important;
+  height:110px !important;
+  align-self:center !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin:0 15px 0 0 !important;
+  transform:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-orbit,
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-big-paw {
+  display:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card {
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  display:flex !important;
+  flex:0 0 92px !important;
+  width:92px !important;
+  height:92px !important;
+  min-height:92px !important;
+  min-width:92px !important;
+  max-width:92px !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:18px !important;
+  margin:0 !important;
+  border:1px solid rgba(191,255,246,.35) !important;
+  border-radius:22px !important;
+  background:linear-gradient(143deg,#138e9e,#08727c) !important;
+  background-image:linear-gradient(143deg,#138e9e,#08727c) !important;
+  box-shadow:0 12px 22px rgba(0,35,53,.19),inset 0 1px rgba(255,255,255,.12) !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card > strong {
+  display:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card .vm-v2713-line-icon {
+  display:block !important;
+  flex:0 0 50px !important;
+  width:50px !important;
+  height:50px !important;
+  color:#ddfffa !important;
+  filter:none !important;
+}
+
+/* =========================================================
+   VETERINARIA: mismo lenguaje visual, identidad azul petróleo
+   ========================================================= */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:26px !important;
+  min-height:206px !important;
+  padding:30px clamp(24px,3vw,42px) !important;
+  border:1px solid #23738a !important;
+  border-radius:24px !important;
+  background:linear-gradient(110deg,#1c4370 0%,#145377 52%,#0b8089 100%) !important;
+  box-shadow:0 13px 27px rgba(20,52,99,.12) !important;
+  overflow:hidden !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero::after {
+  content:none !important;
+  display:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy {
+  position:relative !important;
+  flex:1 1 auto !important;
+  max-width:min(75%,770px) !important;
+  min-width:0 !important;
+  z-index:2 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy::before {
+  color:#9cefe7 !important;
+  letter-spacing:.17em !important;
+  font-size:11px !important;
+  font-weight:900 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero h1 {
+  color:#fff !important;
+  font-family:Inter,'Segoe UI',Arial,sans-serif !important;
+  font-weight:900 !important;
+  font-size:clamp(30px,3vw,46px) !important;
+  line-height:1.13 !important;
+  letter-spacing:-.9px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy p {
+  color:#e8f7ff !important;
+  font-size:clamp(13px,1.2vw,16px) !important;
+  line-height:1.5 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card {
+  display:flex !important;
+  position:relative !important;
+  z-index:3 !important;
+  flex:0 0 92px !important;
+  width:92px !important;
+  height:92px !important;
+  min-height:92px !important;
+  min-width:92px !important;
+  max-width:92px !important;
+  padding:18px !important;
+  margin:0 15px 0 0 !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:0 !important;
+  border:1px solid rgba(185,255,246,.38) !important;
+  border-radius:22px !important;
+  background:linear-gradient(143deg,#168fa9,#0c7892) !important;
+  background-image:linear-gradient(143deg,#168fa9,#0c7892) !important;
+  box-shadow:0 12px 22px rgba(2,35,70,.18),inset 0 1px rgba(255,255,255,.12) !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  transform:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card::after {
+  display:none !important;
+  content:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card > strong {
+  display:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card .vm-v2713-line-icon {
+  display:block !important;
+  flex:0 0 50px !important;
+  width:50px !important;
+  height:50px !important;
+  color:#e2fffc !important;
+  filter:none !important;
+}
+
+/* Pantallas pequeñas: preservar texto legible, no amontonar iconos. */
+@media (max-width:780px) {
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-page > .vm-o15-hero,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero {
+    min-height:184px !important;
+    padding:23px !important;
+  }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-decor,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card {
+    margin-right:0 !important;
+  }
+}
+@media (max-width:620px) {
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-decor,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note.vm-v2713-no-card {
+    display:none !important;
+  }
+  body .vm-member-shell.vm-owner-v15-shell .vm-o15-hero > .vm-o15-hero-copy,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-copy {
+    max-width:100% !important;
+  }
+}

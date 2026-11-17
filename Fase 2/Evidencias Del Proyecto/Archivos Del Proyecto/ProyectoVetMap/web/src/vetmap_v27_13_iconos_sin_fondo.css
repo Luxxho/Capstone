@@ -1,0 +1,145 @@
+/* VetMap V27.13. Solo los banners de Inicio de Dueño y Veterinaria.
+   SIN fondos blancos para el icono, SIN fotografias, SIN assets externos.
+   El SVG esta escrito en los componentes React (no es un archivo de imagen). */
+
+/* DUEÑO — banner petróleo con icono integrado, sin tarjeta flotante. */
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero {
+  background: linear-gradient(112deg,#174c55 0%,#114550 49%,#0c3947 100%) !important;
+  border-color: #286470 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-decor {
+  display: block !important;
+  position: relative !important;
+  flex: 0 0 min(29%,275px) !important;
+  min-width: 175px !important;
+  min-height: 170px !important;
+  transform: none !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-big-paw {
+  display: none !important; /* elimina emoji decorativo anterior */
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-orbit {
+  border-color: rgba(176,246,237,.24) !important;
+  background: transparent !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card {
+  position: absolute !important;
+  z-index: 4 !important;
+  top: 50% !important;
+  right: 0 !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  width: 210px !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 150px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 10px 4px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: center !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card strong {
+  max-width: 180px !important;
+  color: #e5fffb !important;
+  font-family: Inter,'Segoe UI',Arial,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  text-shadow: 0 1px 8px rgba(0,36,48,.30) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note.vm-v2713-no-card .vm-v2713-line-icon {
+  display: block !important;
+  width: 75px !important;
+  height: 75px !important;
+  flex: none !important;
+  color: #8ff0e2 !important;
+  filter: drop-shadow(0 4px 9px rgba(0,30,38,.17));
+}
+
+/* VETERINARIA — azul clínico/teal, no igual al Admin. */
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic > .vm-v22-hero {
+  background: linear-gradient(112deg,#194575 0%,#146179 60%,#078e90 100%) !important;
+  border-color: #2b8794 !important;
+}
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-copy::before {
+  color: #9affed !important;
+}
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-copy h1,
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-copy p {
+  color: #ffffff !important;
+}
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note.vm-v2713-no-card {
+  position: relative !important;
+  z-index: 4 !important;
+  flex: 0 0 min(27%,238px) !important;
+  width: 225px !important;
+  max-width: 26% !important;
+  min-width: 155px !important;
+  min-height: 155px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 10px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: center !important;
+}
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note.vm-v2713-no-card strong {
+  max-width: 190px !important;
+  color: #f0fffd !important;
+  font-family: Inter,'Segoe UI',Arial,sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 7px rgba(0,32,54,.25) !important;
+}
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note.vm-v2713-no-card .vm-v2713-line-icon {
+  display: block !important;
+  flex: none !important;
+  width: 78px !important;
+  height: 78px !important;
+  color: #96fff0 !important;
+  filter: drop-shadow(0 5px 9px rgba(0,30,50,.18));
+}
+
+/* Mantiene iconos visibles en escritorio compacto y evita solapamientos. */
+@media (max-width: 900px) {
+  .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-decor {
+    min-width: 135px !important;
+    flex-basis: 160px !important;
+  }
+  .vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note.vm-v2713-no-card {
+    flex-basis: 155px !important;
+    min-width: 155px !important;
+    max-width: 34% !important;
+  }
+}
+@media (max-width: 680px) {
+  .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-decor,
+  .vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note.vm-v2713-no-card {
+    display: none !important;
+  }
+  .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero,
+  .vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic .vm-v22-hero {
+    padding: 24px 22px !important;
+    min-height: 165px !important;
+  }
+}

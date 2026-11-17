@@ -1,0 +1,221 @@
+/* VetMap V27.28: proporciones de Inicio de Tienda, siguiendo Veterinaria. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-store-dashboard.vm-v24-store-home {
+  box-sizing: border-box !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 14px 15px 30px !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home :is(h1, h2, h3, p, button) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* El banner respira por fuera y reserva espacio para su icono. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero {
+  min-height: 252px !important;
+  margin: 0 !important;
+  padding: 34px 42px !important;
+  border-radius: 24px !important;
+  isolation: isolate !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero .vm-v24-store-hero-copy {
+  position: relative !important;
+  z-index: 6 !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 190px) !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero .vm-v24-store-eyebrow {
+  display: block !important;
+  margin: 0 0 12px !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .16em !important;
+  line-height: 1.2 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero h1 {
+  margin: 0 0 9px !important;
+  font-size: clamp(32px, 3.4vw, 52px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.12 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero p {
+  max-width: 510px !important;
+  margin: 0 !important;
+  font-size: clamp(13px, 1.15vw, 17px) !important;
+  font-weight: 550 !important;
+  line-height: 1.5 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-meta {
+  gap: 6px 12px !important;
+  margin-top: 17px !important;
+  line-height: 1.5 !important;
+  overflow-wrap: anywhere !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-meta strong {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+  position: absolute !important;
+  right: clamp(26px, 5vw, 82px) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  flex: none !important;
+}
+
+/* Métricas y tarjetas alineadas sobre los mismos bordes. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-kpis {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 13px !important;
+  margin: 0 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-kpi {
+  min-height: 95px !important;
+  padding: 14px 17px !important;
+  border-radius: 21px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-kpi strong {
+  font-size: 27px !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.5px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-kpi small {
+  margin-top: 5px !important;
+  font-size: 10.5px !important;
+  line-height: 1.25 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .99fr) minmax(230px, .81fr) !important;
+  gap: 11px !important;
+  margin: 0 !important;
+  align-items: stretch !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-card {
+  padding: 24px !important;
+  border-radius: 21px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-grid > .vm-v24-store-card {
+  min-height: 305px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-card-heading h2 {
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v24-store-bottom {
+  gap: 11px !important;
+}
+
+@media (max-width: 1200px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-grid > .vm-v24-store-card--quick {
+    grid-column: 1 / -1 !important;
+    min-height: 0 !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-quick-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-bottom {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 950px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+    right: 22px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero .vm-v24-store-hero-copy {
+    max-width: calc(100% - 117px) !important;
+  }
+}
+
+@media (max-width: 780px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home :is(.vm-v24-store-grid, .vm-v24-store-quick-links) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-card {
+    padding: 20px 17px !important;
+  }
+}
+
+@media (max-width: 610px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-store-dashboard.vm-v24-store-home {
+    padding: 12px 10px 24px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero {
+    min-height: 175px !important;
+    padding: 25px 22px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero > .vm-v2725-store-visual.vm-v2719-visual {
+    display: none !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero .vm-v24-store-hero-copy {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 490px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v24-store-kpis {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
