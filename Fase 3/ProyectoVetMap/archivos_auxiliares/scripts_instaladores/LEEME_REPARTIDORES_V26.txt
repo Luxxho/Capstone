@@ -1,0 +1,62 @@
+VETMAP V26 - REPARTIDORES EN EL ROL TIENDA + POSTGRESQL
+=======================================================
+BASE: Copia de código suministrada por el usuario el 31 de octubre de 2026.
+
+QUE HACE
+- Agrega dentro de Tienda una sección "Repartidores" (no es un rol independiente).
+- Tienda registra repartidores con nombre y teléfono opcional; se pueden desactivar/reactivar.
+- En Tienda > Pedidos, marca un pedido como "Listo".
+- En Tienda > Repartidores, asigna ese pedido a un repartidor activo.
+- Muestra el listado real de productos y cantidades del pedido.
+- Permite marcar salida a reparto, registrar incidencias con descripción y confirmar entrega.
+- Guarda conductores y asignaciones en PostgreSQL mediante las tablas nuevas
+  delivery_drivers y delivery_assignments; conserva store_orders y store_order_status_history.
+- Los pedidos asignados dejan de avanzar automáticamente por tiempo para evitar entregas ficticias.
+- Solamente los usuarios del rol Tienda asociados a esa tienda pueden usar las rutas nuevas.
+
+LIMITES DE ESTE ALCANCE
+- El repartidor NO tiene inicio de sesión propio ni GPS/rutas de entrega.
+- No hay carga de fotografía de evidencia de entrega.
+- La actualización del despacho la realiza la tienda mediante su sesión.
+- La aplicación móvil instalada anteriormente no incluye esta nueva pantalla; se agrega a web.
+- No se desplegó ni se ejecutó contra tu PostgreSQL real desde este entorno.
+
+INSTALAR
+1. Extraer ESTE ZIP dentro de C:\Users\papit\Documents\ProyectoVetMap\scripts_instaladores
+   Deben quedar al mismo nivel:
+      scripts_instaladores\aplicar_repartidores_v26.py
+      scripts_instaladores\restaurar_repartidores_v26.py
+      scripts_instaladores\vetmap_v26_payload\delivery.py (y otros archivos)
+2. Cerrar FastAPI y el servidor web antes de instalar.
+3. Abrir PowerShell en la raíz del proyecto y verificar:
+      git status -sb
+4. Probar coincidencia con tus archivos SIN modificar:
+      python .\scripts_instaladores\aplicar_repartidores_v26.py --check
+5. Si dice "todas las anclas verificadas", aplicar:
+      python .\scripts_instaladores\aplicar_repartidores_v26.py
+   Se hace copia de seguridad de los archivos en respaldos_instaladores\antes_repartidores_v26_...
+6. Reiniciar FastAPI (desde backend):
+      .\.venv\Scripts\Activate.ps1
+      uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   Al iniciar, SQLAlchemy Base.metadata.create_all crea las 2 tablas nuevas si no existen.
+   NO borra las tablas originales; no contiene ALTER TABLE para tablas existentes.
+7. Reiniciar la web (desde web):
+      npm run dev
+8. Iniciar sesión como Tienda -> Repartidores, y probar un pedido nuevo.
+
+POSTGRESQL EN PGADMIN 4
+- Abrir vetmap_db > Query Tool.
+- Abrir consultas_postgresql_vetmap_v26.sql y ejecutar las consultas indicadas.
+- Las consultas 5 a 8 requieren que FastAPI haya iniciado y creado las tablas nuevas.
+
+RESTAURAR SOLO EL CODIGO (NUNCA BORRA DATOS DE POSTGRESQL)
+      python .\scripts_instaladores\restaurar_repartidores_v26.py --check
+      python .\scripts_instaladores\restaurar_repartidores_v26.py
+- El restaurador se niega a pisar archivos que hayan cambiado después de la instalación.
+- Reinicia FastAPI y web luego de restaurar.
+- Las tablas nuevas y sus datos NO se eliminan por seguridad; son ignorados por la versión anterior.
+
+ADVERTENCIA
+- Para mantener el APK actual funcionando, no se toca mobile/ ni su configuración.
+- Verifica el código y datos de prueba antes de confirmar entregas reales.
+- No uses git add -A sin revisar archivos adicionales y secretos.

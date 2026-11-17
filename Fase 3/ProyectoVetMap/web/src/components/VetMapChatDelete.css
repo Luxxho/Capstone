@@ -1,0 +1,54 @@
+/* Acción de eliminar limitada a las burbujas del chat. */
+.vmchat .vmchat-bubble .vmchat-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 5px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid #c2dad5;
+  border-radius: 8px;
+  background: transparent;
+  color: #873d3b;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.vmchat .vmchat-delete svg { flex: none; }
+.vmchat .vmchat-delete:hover { background: #ffffffb3; }
+.vmchat .vmchat-delete:focus-visible { outline: 2px solid #078f8a; outline-offset: 2px; }
+.vmchat .vmchat-delete:disabled { opacity: .6; cursor: wait; }
+.vmchat .vmchat-empty { margin: auto 0; color: #617a72; text-align: center; font-size: 13px; }
+
+/* V27.33: fecha y hora pequeñas debajo; borrar con icono únicamente. */
+.vmchat .vmchat-bubble .vmchat-message-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 3px;
+  min-width: 0;
+}
+.vmchat .vmchat-bubble.other .vmchat-message-meta { justify-content: flex-start; }
+.vmchat .vmchat-bubble .vmchat-message-time {
+  color: #526b6d;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.vmchat .vmchat-bubble .vmchat-delete {
+  flex: none;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+  gap: 0;
+  border: 0;
+}
+

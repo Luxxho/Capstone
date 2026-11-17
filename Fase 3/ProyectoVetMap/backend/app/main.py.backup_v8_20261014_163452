@@ -1,0 +1,214 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
+
+from .database import Base, engine
+from .routers import (
+    auth,
+    admin,
+    pets,
+    reservations,
+    clinic,
+    store,
+    payments,
+    notifications,
+    reports,
+)
+
+
+Base.metadata.create_all(bind=engine)
+
+
+# =========================================================
+# MIGRACIONES PEQUEÑAS
+# =========================================================
+# create_all() crea tablas nuevas, pero no agrega columnas
+# a tablas que ya existen.
+# =========================================================
+
+with engine.begin() as connection:
+    connection.execute(
+        text(
+            "ALTER TABLE users "
+            "ADD COLUMN IF NOT EXISTS birth_date DATE"
+        )
+    )
+
+    connection.execute(
+        text(
+            "ALTER TABLE users "
+            "ADD COLUMN IF NOT EXISTS veterinary_id INTEGER "
+            "REFERENCES veterinary_clinics(id) "
+            "ON DELETE SET NULL"
+        )
+    )
+
+    connection.execute(
+        text(
+            "ALTER TABLE users "
+            "ADD COLUMN IF NOT EXISTS store_id INTEGER "
+            "REFERENCES pet_stores(id) "
+            "ON DELETE SET NULL"
+        )
+    )
+
+
+    # Actividad de usuarios para el Inicio del administrador.
+    connection.execute(
+        text(
+            "ALTER TABLE users "
+            "ADD COLUMN IF NOT EXISTS last_login_at TIMESTAMP"
+        )
+    )
+
+    connection.execute(
+        text(
+            "ALTER TABLE users "
+            "ADD COLUMN IF NOT EXISTS last_seen_at TIMESTAMP"
+        )
+    )
+
+    # Coordenadas para mapas demostrativos.
+    connection.execute(
+        text(
+            "ALTER TABLE veterinary_clinics "
+            "ADD COLUMN IF NOT EXISTS latitude DOUBLE PRECISION"
+        )
+    )
+    connection.execute(
+        text(
+            "ALTER TABLE veterinary_clinics "
+            "ADD COLUMN IF NOT EXISTS longitude DOUBLE PRECISION"
+        )
+    )
+    connection.execute(
+        text(
+            "ALTER TABLE pet_stores "
+            "ADD COLUMN IF NOT EXISTS latitude DOUBLE PRECISION"
+        )
+    )
+    connection.execute(
+        text(
+            "ALTER TABLE pet_stores "
+            "ADD COLUMN IF NOT EXISTS longitude DOUBLE PRECISION"
+        )
+    )
+
+    # Horarios de recordatorio de medicamentos.
+    connection.execute(
+        text(
+            "ALTER TABLE medications "
+            "ADD COLUMN IF NOT EXISTS reminder_times TEXT"
+        )
+    )
+
+    # Vinculo entre la reserva y los registros clinicos de esa atencion.
+    for table_name in (
+        "consultations",
+        "vaccines",
+        "medications",
+        "prescriptions",
+    ):
+        connection.execute(
+            text(
+                f"ALTER TABLE {table_name} "
+                "ADD COLUMN IF NOT EXISTS appointment_id INTEGER "
+                "REFERENCES appointments(id) ON DELETE SET NULL"
+            )
+        )
+
+
+
+store.seed_store_data()
+
+
+tags_metadata = [
+    {
+        "name": "auth",
+        "description": "Autenticación, registro, login y perfil del usuario.",
+    },
+    {
+        "name": "admin",
+        "description": "Panel administrador para gestionar usuarios, mascotas y productos.",
+    },
+    {
+        "name": "pets",
+        "description": "Gestión de mascotas y perfil clínico.",
+    },
+    {
+        "name": "reservations",
+        "description": "Veterinarias y reservas de horas.",
+    },
+    {
+        "name": "clinic",
+        "description": "Agenda, pacientes, historial médico y recetas de clínicas.",
+    },
+    {
+        "name": "storefront",
+        "description": "Marketplace, carrito y pedidos de usuarios.",
+    },
+    {
+        "name": "store",
+        "description": "Productos, stock y pedidos de cada tienda.",
+    },
+    {
+        "name": "payments",
+        "description": "Pagos VetMap con Mercado Pago Checkout Pro / Orders API.",
+    },
+    {
+        "name": "notifications",
+        "description": "Centro de notificaciones persistentes de VetMap.",
+    },
+    {
+        "name": "reports",
+        "description": "Informes PDF de reservas y atenciones veterinarias.",
+    },
+]
+
+
+app = FastAPI(
+    title="VetMap API",
+    version="0.9.0",
+    description=(
+        "API de VetMap: usuarios, mascotas, clínicas, reservas, "
+        "tiendas, pedidos y pagos."
+    ),
+    openapi_tags=tags_metadata,
+)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:8081",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+app.include_router(auth.router)
+app.include_router(admin.router)
+app.include_router(pets.router)
+app.include_router(reservations.router)
+app.include_router(clinic.router)
+app.include_router(store.public_router)
+app.include_router(store.manager_router)
+app.include_router(store.admin_product_router)
+app.include_router(payments.router)
+app.include_router(notifications.router)
+app.include_router(reports.router)
+
+
+@app.get("/")
+def root():
+    return {
+        "project": "VetMap",
+        "status": "API funcionando",
+        "version": "0.9.0",
+        "payments": "Mercado Pago Checkout Pro / Orders API",
+        "maps": "Veterinarias y tiendas ficticias con OpenStreetMap / Leaflet",
+        "notifications": "Centro de notificaciones persistentes",
+    }

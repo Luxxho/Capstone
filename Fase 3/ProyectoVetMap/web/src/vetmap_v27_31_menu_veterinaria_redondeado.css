@@ -1,0 +1,13 @@
+/* VetMap V27.31: curvas del contenedor lateral de Veterinaria. */
+html body .vm-member-shell.vmh16-shell
+  > nav.vm-member-nav--vet.vm-v23-vet-sidebar {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+/* En el formato horizontal, redondear las cuatro esquinas. */
+@media (max-width: 1099px) {
+  html body .vm-member-shell.vmh16-shell
+    > nav.vm-member-nav--vet.vm-v23-vet-sidebar {
+    border-radius: 22px !important;
+  }
+}

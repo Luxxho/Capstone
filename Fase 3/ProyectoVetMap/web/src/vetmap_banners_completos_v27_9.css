@@ -1,0 +1,134 @@
+/* ============================================================
+   VetMap V27.9 — BANNERS CORREGIDOS
+   1. Dueño: Inicio y encabezados Mascotas, Reservas,
+      Tiendas, Pedidos, Veterinarias, Mi cuenta y detalles.
+   2. Veterinaria: INICIO REAL .vm-v22-hero (no .vm-vet-premium-hero).
+   Solo estilos. Ningún campo ni comportamiento se modifica.
+   ============================================================ */
+
+/* ----- A. DUEÑO — azul petróleo, igual para sus encabezados ----- */
+.vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero,
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title,
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading,
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading,
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero {
+  background: linear-gradient(112deg,#1c4a55 0%,#193f4a 53%,#123540 100%) !important;
+  background-color: #193f4a !important;
+  border: 1px solid #2b5964 !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 25px rgba(15,48,60,.12) !important;
+  color: #ffffff !important;
+}
+
+/* Títulos y texto de cada encabezado, no de las tarjetas inferiores. */
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero h1,
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title h2,
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading h2,
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading h2,
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero .vm-establishment-hero-copy h2 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-eyebrow,
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-kicker,
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading .vm-kicker,
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading .vm-kicker,
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero .vm-kicker {
+  color: #92efe3 !important;
+}
+
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-copy > p:not(.vm-o15-eyebrow),
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title > div > p:not(.vm-kicker),
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading > div > p:not(.vm-kicker),
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading > div:first-child > p:not(.vm-kicker),
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero .vm-establishment-hero-copy > p:not(.vm-kicker) {
+  color: #e4f2f3 !important;
+}
+
+/* Tiendas: contador de productos sobre el encabezado oscuro. */
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading .vm-market-heading-cart,
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading .vm-market-heading-cart span {
+  color: #ffffff !important;
+}
+
+/* Botones del encabezado: el primario sigue destacando. */
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-primary,
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading .vm-primary,
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-hero .vm-primary {
+  background: #0fb4ad !important;
+  border-color: #32d0c7 !important;
+  color: #ffffff !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-secondary,
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading .vm-secondary {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #173e49 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title :is(button,.vm-primary,.vm-secondary),
+.vm-member-shell.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading :is(button,.vm-primary,.vm-secondary),
+.vm-member-shell.vm-owner-v15-shell .vm-my-profile > .vm-my-profile-heading :is(button,.vm-primary,.vm-secondary) {
+  box-shadow: none !important;
+}
+
+/* Botón de bienvenida del Dueño y nota decorativa a la derecha. */
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-link {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #153f4a !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-link:hover {
+  background: #e8faf7 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-orbit {
+  border-color: rgba(231,255,251,.26) !important;
+  background: rgba(255,255,255,.03) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-big-paw {
+  filter: grayscale(1) brightness(2.5) !important;
+  opacity: .23 !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-o15-hero .vm-o15-hero-note {
+  background: rgba(255,255,255,.95) !important;
+  color: #153d4e !important;
+  border-color: rgba(255,255,255,.75) !important;
+}
+
+/* Detalles de tienda / veterinaria, solamente cuando navega el Dueño. */
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero .vm-establishment-meta-grid > span {
+  background: rgba(255,255,255,.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,.28) !important;
+}
+.vm-member-shell.vm-owner-v15-shell .vm-establishment-detail-page > .vm-establishment-hero .vm-establishment-hero-cart {
+  background: rgba(255,255,255,.94) !important;
+}
+
+/* ----- B. VETERINARIA — el banner real V22 ----- */
+/* OJO: no depender de .vm-role-vet, inexistente en el JSX real. */
+.vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-vet-home-premium.vm-v22-classic > .vm-v22-hero {
+  background: linear-gradient(112deg,#27578a 0%,#1c4775 55%,#14345b 100%) !important;
+  background-color: #1c4775 !important;
+  border: 1px solid #2f6091 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(12,40,81,.13) !important;
+}
+.vm-member-shell.vmh16-shell .vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-copy h1 {
+  color: #ffffff !important;
+}
+.vm-member-shell.vmh16-shell .vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-copy p {
+  color: #e4edfa !important;
+}
+.vm-member-shell.vmh16-shell .vm-vet-home-premium.vm-v22-classic .vm-v22-hero .vm-v22-hero-note {
+  background: rgba(255,255,255,.96) !important;
+  color: #143762 !important;
+  border-color: rgba(255,255,255,.9) !important;
+}
+
+@media (max-width: 700px) {
+  .vm-member-shell.vm-owner-v15-shell :is(.vm-owner-section-title,.vm-member-page-heading,.vm-my-profile-heading),
+  .vm-member-shell.vmh16-shell .vm-clinic-dashboard.vm-v22-classic > .vm-v22-hero {
+    border-radius: 18px !important;
+  }
+}

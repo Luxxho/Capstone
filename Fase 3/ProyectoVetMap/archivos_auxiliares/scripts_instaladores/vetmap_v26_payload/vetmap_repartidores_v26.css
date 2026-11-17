@@ -1,0 +1,30 @@
+/* VetMap V26: exclusivamente panel de repartidores del rol Tienda. */
+.vm-v26-delivery {display:grid;gap:20px;color:#183456;min-width:0}
+.vm-v26-delivery *, .vm-v26-delivery *::before, .vm-v26-delivery *::after {box-sizing:border-box}
+.vm-v26-heading {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.vm-v26-heading h2{margin:4px 0 5px;font-size:27px;line-height:1.2;color:#152f55}
+.vm-v26-heading p{margin:0;color:#5c7089;font-size:13px}
+.vm-v26-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 12px;background:#eaf5ff;color:#15558e;font-size:12px;font-weight:800}
+.vm-v26-grid{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(320px,1.6fr);gap:16px;align-items:start}
+.vm-v26-card{border:1px solid #dbe7f2;background:#fff;border-radius:17px;padding:18px;box-shadow:0 5px 18px rgba(14,40,76,.035);min-width:0}
+.vm-v26-card h3{margin:0 0 12px;font-size:17px;color:#17385f}
+.vm-v26-form{display:grid;gap:9px;margin-bottom:17px}
+.vm-v26-form input, .vm-v26-card textarea, .vm-v26-card select {width:100%;min-width:0;border:1px solid #cddde9;border-radius:9px;padding:10px 12px;background:#fff;color:#17385f;font:inherit;font-size:13px}
+.vm-v26-card button {display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;border:1px solid #26639a;border-radius:9px;background:#23619a;color:white;font-size:12px;font-weight:700;padding:8px 12px;cursor:pointer}
+.vm-v26-card button:disabled {opacity:.5;cursor:not-allowed}
+.vm-v26-card button.vm-v26-quiet {background:#f5f9fd;color:#245985;border:1px solid #cadcea}
+.vm-v26-driver{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #e6eef5;padding:12px 0}
+.vm-v26-driver strong{display:block;font-size:13px}.vm-v26-driver small{display:block;margin-top:3px;color:#70839a}
+.vm-v26-driver button{flex-shrink:0}
+.vm-v26-order{padding:15px 0;border-top:1px solid #e7eff5;display:grid;gap:9px}
+.vm-v26-order-head{display:flex;justify-content:space-between;align-items:start;gap:10px;flex-wrap:wrap}
+.vm-v26-order-head strong{display:block;font-size:14px}.vm-v26-order-head small{display:block;color:#677f96;margin-top:4px}
+.vm-v26-status{display:inline-flex;border-radius:18px;padding:5px 10px;background:#ebf3fa;font-size:11px;font-weight:800;color:#2b5984}
+.vm-v26-products{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.vm-v26-products li{background:#f4f8fc;padding:6px 9px;border-radius:8px;font-size:12px;color:#345678}
+.vm-v26-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.vm-v26-controls select {flex:1;min-width:175px;max-width:360px}
+.vm-v26-note{font-size:12px;line-height:1.5;color:#63778e;margin:0}
+.vm-v26-delivery .vm-v26-empty{padding:18px;text-align:center;background:#f7fafd;border-radius:11px;font-size:13px;color:#70869b}
+.vm-v26-card textarea{min-height:64px;resize:vertical}
+@media(max-width:1000px){.vm-v26-grid{grid-template-columns:1fr}}

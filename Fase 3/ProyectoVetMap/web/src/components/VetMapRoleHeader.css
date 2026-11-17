@@ -1,0 +1,480 @@
+/* VetMap V16: cabecera compartida Dueño, Veterinaria y Tienda.
+   Deliberadamente no afecta al Administrador ni a las pantallas públicas. */
+
+.vm-member-shell.vmh16-shell {
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) !important;
+  grid-template-rows: 78px minmax(0, auto) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  min-height: calc(100vh - 20px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: #f1f7fb !important;
+  box-shadow: none !important;
+  align-items: start !important;
+}
+
+/* El header ocupa todo el ancho, igual que en Admin. */
+.vm-member-shell.vmh16-shell > header.vmh16-topbar {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 250 !important;
+  display: grid !important;
+  grid-template-columns: 220px minmax(180px, 1fr) auto !important;
+  align-items: center !important;
+  gap: 22px !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 10px 24px 10px 18px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #d6e4f0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(110deg, #f9fcff 0%, #eaf4fe 100%) !important;
+  box-shadow: none !important;
+  color: #102a56 !important;
+  overflow: visible !important;
+  isolation: isolate;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif;
+}
+.vm-member-shell.vmh16-shell > header.vmh16-topbar::before,
+.vm-member-shell.vmh16-shell > header.vmh16-topbar::after,
+.vmh16-topbar .vmh16-brand::before,
+.vmh16-topbar .vmh16-brand::after,
+.vmh16-topbar .vmh16-profile-button::before,
+.vmh16-topbar .vmh16-profile-button::after {
+  display: none !important;
+  content: none !important;
+}
+.vmh16-topbar *, .vmh16-topbar *::before, .vmh16-topbar *::after { box-sizing: border-box; }
+.vmh16-topbar button { font: inherit; cursor: pointer; }
+.vmh16-topbar .vmh16-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 11px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  color: #102a56 !important;
+}
+.vmh16-brand-icon {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 47px;
+  width: 47px !important;
+  height: 47px !important;
+  border-radius: 13px !important;
+  background: linear-gradient(135deg, #10c2b5, #0b3457) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(18, 48, 84, .1);
+}
+.vmh16-brand-text { display: block; font-size: 25px; line-height: 1.05; font-weight: 900; letter-spacing: -.9px; }
+.vmh16-brand-text small { display: block; margin-top: 6px; color: #377f79; font-size: 8px; letter-spacing: 1.5px; font-weight: 900; }
+.vmh16-topbar .vmh16-search {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  height: 46px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  padding: 0 16px !important;
+  background: #fff !important;
+  color: #6783a0 !important;
+  border: 1px solid #dfeaf4 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 4px 10px rgba(18, 48, 84, .04) !important;
+}
+.vmh16-topbar .vmh16-search input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #173560 !important;
+  font-size: 13px !important;
+  font-weight: 450 !important;
+}
+.vmh16-topbar .vmh16-search-results {
+  position: absolute;
+  z-index: 310;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  padding: 7px;
+  border: 1px solid #dce9f3;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 14px 35px #17385b2a;
+}
+.vmh16-topbar .vmh16-search-results button { display: block; width: 100%; padding: 9px 11px; border: 0; border-radius: 9px; background: transparent; color: #122d58; text-align: left; font-size: 12px; }
+.vmh16-topbar .vmh16-search-results button:hover { background: #ebf6f9; }
+.vmh16-actions { display: flex; flex-direction: row; align-items: center; justify-content: flex-end; gap: 9px; min-width: 0; }
+.vmh16-popover-anchor { position: relative; }
+.vmh16-topbar .vmh16-icon-button {
+  display: grid !important;
+  place-items: center !important;
+  position: relative !important;
+  flex: 0 0 44px;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 13px !important;
+  box-shadow: none !important;
+  color: #18365e !important;
+}
+.vmh16-topbar .vmh16-icon-button:hover { background: #e0f3f1 !important; }
+.vmh16-counter {
+  position: absolute;
+  top: -1px; right: -1px;
+  display: grid; place-items: center;
+  min-width: 18px; height: 18px;
+  padding: 0 4px; border-radius: 99px;
+  background: #f24c68; color: white;
+  font-size: 10px; font-weight: 800;
+}
+.vmh16-topbar .vmh16-profile-button {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+  min-height: 56px !important;
+  max-width: 285px !important;
+  padding: 4px 7px !important;
+  border: 1px solid transparent !important;
+  border-radius: 15px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #142f59 !important;
+  text-align: left !important;
+}
+.vmh16-topbar .vmh16-profile-button:hover { border-color: #d2e6ed !important; background: #edf8fa !important; }
+.vmh16-avatar {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 46px;
+  width: 46px !important;
+  height: 46px !important;
+  border: 3px solid #fff !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #11b9b0, #184d80) !important;
+  box-shadow: 0 4px 12px #13345e18;
+}
+.vmh16-account-copy { min-width: 0; display: block; }
+.vmh16-account-copy strong { display: block; max-width: 165px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; color: #102a56; font-weight: 850; }
+.vmh16-account-copy small { display: block; margin-top: 3px; color: #6b819c; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.vmh16-dropdown {
+  position: absolute !important;
+  top: calc(100% + 9px) !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 320 !important;
+  width: 310px !important;
+  max-width: calc(100vw - 18px);
+  max-height: min(480px, 75vh) !important;
+  padding: 9px !important;
+  overflow: auto !important;
+  border: 1px solid #d8e6f2 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: 0 15px 40px #19395d36 !important;
+  color: #122e57;
+}
+.vmh16-drop-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px; border-bottom: 1px solid #edf3f8; }
+.vmh16-drop-heading strong { font-size: 13px; }
+.vmh16-topbar .vmh16-drop-heading button { border: none; background: none; color: #0b9691; font-size: 11px; font-weight: 750; }
+.vmh16-topbar .vmh16-notice { width: 100%; padding: 11px 9px; display: block; border: 0; border-bottom: 1px solid #edf3f8; background: #fff; text-align: left; }
+.vmh16-notice strong { display: block; font-size: 12px; color: #132e55; }
+.vmh16-notice small { display: block; margin-top: 4px; font-size: 11px; line-height: 1.4; color: #697e98; }
+.vmh16-empty { margin: 0; padding: 16px 10px; color: #647d94; font-size: 12px; }
+.vmh16-account-dropdown { width: 265px !important; }
+.vmh16-account-summary { display: flex; flex-direction: column; gap: 3px; padding: 12px 10px; border-bottom: 1px solid #edf2f7; }
+.vmh16-account-summary strong { font-size: 13px; }
+.vmh16-account-summary small { font-size: 11px; color: #6f8295; overflow-wrap: anywhere; }
+.vmh16-topbar .vmh16-account-dropdown > button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 10px; border: 0; border-radius: 9px; background: transparent; color: #193861; font-size: 12px; text-align: left; }
+.vmh16-topbar .vmh16-account-dropdown > button:hover { background: #edf7fa; }
+.vmh16-topbar .vmh16-logout { border-top: 1px solid #edf2f7 !important; color: #bb3750 !important; }
+
+/* Barra lateral reutiliza las acciones existentes de cada perfil. */
+.vm-member-shell.vmh16-shell > nav.vm-member-nav {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  position: sticky !important;
+  top: 78px !important;
+  z-index: 40 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: start !important;
+  gap: 0 !important;
+  width: 220px !important;
+  min-width: 0 !important;
+  height: calc(100vh - 78px) !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 18px 12px !important;
+  border: 0 !important;
+  border-radius: 0 0 0 18px !important;
+  background: linear-gradient(170deg, #1b3459, #0e2445) !important;
+  box-shadow: none !important;
+  overflow-y: auto !important;
+}
+.vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-brand { display: none !important; }
+.vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  flex: none !important;
+  gap: 5px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+.vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu > button {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+  background: transparent !important;
+  color: #e9f1fa !important;
+  font-size: 12px !important;
+  font-weight: 730 !important;
+  text-align: left !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu > button:hover { background: #244a78 !important; }
+.vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu > button.active { background: #295687 !important; border-color: #376f9b !important; color: #fff !important; }
+/* La campana, carrito y ficha antiguos del menú no se duplican: los botones
+   funcionales nuevos ahora viven dentro de vmh16-topbar. */
+.vm-member-shell.vmh16-shell > .vm-member-nav .vm-member-user,
+.vm-member-shell.vmh16-shell.vm-owner-v15-shell > .vm-member-nav .vm-member-user {
+  display: none !important;
+  position: static !important;
+}
+/* No duplicar buscador o perfil en la portada V15. */
+.vm-member-shell.vmh16-shell .vm-o15-topbar { display: none !important; }
+.vm-member-shell.vmh16-shell .vm-o15-page { padding-top: 14px !important; }
+/* Cualquier sección de cuenta / tienda se mantiene a la derecha del menú. */
+.vm-member-shell.vmh16-shell > :not(.vmh16-topbar):not(.vm-member-nav) {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1050px) {
+  .vm-member-shell.vmh16-shell {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto !important;
+  }
+  .vm-member-shell.vmh16-shell > header.vmh16-topbar {
+    grid-column: 1 !important; grid-row: 1 !important;
+    position: relative !important;
+    min-height: 76px !important; height: auto !important;
+    grid-template-columns: auto minmax(0,1fr) auto !important;
+    padding: 10px 14px !important; gap: 12px !important;
+  }
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav {
+    grid-column: 1 !important; grid-row: 2 !important;
+    position: relative !important; top: auto !important;
+    width: 100% !important; height: auto !important;
+    min-height: 0 !important; padding: 8px 12px !important;
+    border-radius: 0 !important;
+    background: #17375c !important;
+    overflow-x: auto !important;
+  }
+  .vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+  }
+  .vm-member-shell.vmh16-shell > .vm-member-nav > .vm-member-menu > button {
+    flex: 0 0 auto !important; width: auto !important; white-space: nowrap !important;
+  }
+  .vm-member-shell.vmh16-shell > :not(.vmh16-topbar):not(.vm-member-nav) {
+    grid-column: 1 !important; grid-row: 3 !important;
+  }
+}
+@media (max-width: 680px) {
+  .vm-member-shell.vmh16-shell > header.vmh16-topbar {
+    grid-template-columns: minmax(0,1fr) auto !important;
+    row-gap: 10px !important;
+  }
+  .vmh16-brand-text { font-size: 21px; }
+  .vmh16-brand-icon { flex-basis: 42px; width: 42px !important; height: 42px !important; }
+  .vmh16-topbar .vmh16-search { grid-column: 1 / -1; grid-row: 2; max-width: none !important; }
+  .vmh16-actions { grid-column: 2; grid-row: 1; }
+  .vmh16-account-copy { display: none !important; }
+  .vmh16-topbar .vmh16-profile-button { gap: 4px !important; }
+  .vmh16-topbar .vmh16-profile-button .vmh16-avatar { flex-basis: 37px; width: 37px !important; height: 37px !important; }
+  .vmh16-topbar .vmh16-icon-button { flex-basis: 36px; width: 36px !important; min-width: 36px !important; }
+}
+
+
+/* VETMAP_SIDEBAR_UNIFICADO_V18 */
+/* MISMA BARRA LATERAL PARA DUENO, TIENDA Y VETERINARIA.
+   Se aplica por ROL a TODAS las vistas, no solo al Inicio.
+   El menu de ADMIN NO se modifica. */
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store {
+  background: #182f54 !important;
+  border: 0 !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
+  color: #e9f2fc !important;
+}
+
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 5px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  padding: 10px 13px !important;
+  margin: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #eaf2fc !important;
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  font-weight: 730 !important;
+  text-align: left !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transform: none !important;
+  white-space: normal !important;
+  cursor: pointer !important;
+}
+
+/* Una sola seleccion, como el lateral de Admin. */
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button.active,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button.active,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button.active {
+  background: #2a5687 !important;
+  border-color: #3b6899 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button:not(.active):hover,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button:not(.active):hover,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button:not(.active):hover {
+  background: #254771 !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button:focus-visible,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button:focus-visible,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button:focus-visible {
+  outline: 2px solid #8ac7ff !important;
+  outline-offset: 2px !important;
+}
+
+/* Se usan iconos SVG reales. Se eliminan emojis insertados por CSS antiguo. */
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button::before,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button::before,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button::before,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button::after,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button::after,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button::after {
+  content: none !important;
+  display: none !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button > svg,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button > svg,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button > svg {
+  display: block !important;
+  flex: 0 0 19px !important;
+  width: 19px !important;
+  height: 19px !important;
+  stroke-width: 2 !important;
+  color: #d0e0f4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button.active > svg,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button.active > svg,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button.active > svg {
+  color: #ffffff !important;
+}
+
+@media (max-width: 1050px) {
+  /* En pantallas pequenas, respetar el menu horizontal funcional de V16. */
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu,
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu,
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 6px !important;
+  }
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--owner > .vm-member-menu > button,
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--vet > .vm-member-menu > button,
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav.vm-member-nav--store > .vm-member-menu > button {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}

@@ -1,0 +1,338 @@
+/* Tienda V27.25: mismo lenguaje visual de los roles terminados, con acento cálido. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store) {
+  --store25-ink: #163354;
+  --store25-muted: #61758a;
+  --store25-line: #e4e9ef;
+  --store25-warm: #a95620;
+  background: #f5f8fc !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-v24-store-home, .vm-store-page, .vm-my-profile) {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  color: var(--store25-ink) !important;
+  font-family: inherit !important;
+  background: transparent !important;
+}
+
+/* Un solo icono principal, integrado en el banner y sin tarjeta blanca. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-home .vm-v2725-store-hero {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(18px, 4vw, 52px) !important;
+  min-height: 205px !important;
+  padding: clamp(24px, 3vw, 38px) !important;
+  border: 1px solid #bc783f !important;
+  border-radius: 24px !important;
+  background: radial-gradient(circle at 90% 15%, #e9a75b45, transparent 40%),
+    linear-gradient(112deg, #783b1e 0%, #a85522 63%, #bc6f2d 100%) !important;
+  box-shadow: 0 12px 28px #59371c14 !important;
+  overflow: hidden !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero .vm-v24-store-hero-copy {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  max-width: 720px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero .vm-v24-store-eyebrow {
+  color: #ffe0ad !important;
+  font-size: 11px !important;
+  letter-spacing: .14em !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero h1 {
+  margin: 10px 0 10px !important;
+  color: #fff !important;
+  font-family: inherit !important;
+  font-size: clamp(31px, 3.3vw, 48px) !important;
+  font-weight: 850 !important;
+  line-height: 1.14 !important;
+  letter-spacing: -.035em !important;
+  overflow-wrap: anywhere !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-hero p {
+  max-width: 60ch !important;
+  color: #fff2e4 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 6px 14px !important;
+  margin-top: 18px !important;
+  color: #ffe7cb !important;
+  font-size: 12px !important;
+  overflow-wrap: anywhere !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-meta strong { color: #fff !important; }
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-visual {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 96px !important;
+  width: 96px !important;
+  height: 96px !important;
+  color: #ffe9c7 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v2725-store-symbol { width: 86px !important; height: 86px !important; }
+
+/* Banners de las secciones internas, con espacio para sus botones. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page > .vm-clinic-section-heading, .vm-v26-heading,
+      .vm-my-profile > .vm-my-profile-heading) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px 24px !important;
+  min-height: 156px !important;
+  margin: 0 0 22px !important;
+  padding: clamp(22px, 2.7vw, 32px) !important;
+  border: 1px solid #ba7945 !important;
+  border-radius: 22px !important;
+  background: linear-gradient(115deg, #854520, #b5682c) !important;
+  box-shadow: 0 8px 22px #59371c0d !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-store-page > .vm-clinic-section-heading, .vm-v26-heading,
+      .vm-my-profile > .vm-my-profile-heading) > div:first-child {
+  flex: 1 1 260px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-clinic-section-heading, .vm-v26-heading, .vm-my-profile-heading) :is(h2, p, .vm-kicker) {
+  color: #fff4e7 !important;
+  text-shadow: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-clinic-section-heading, .vm-v26-heading, .vm-my-profile-heading) h2 {
+  margin: 5px 0 8px !important;
+  color: #fff !important;
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  line-height: 1.2 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-clinic-section-heading, .vm-v26-heading, .vm-my-profile-heading) p {
+  max-width: 65ch !important;
+  margin: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+/* Tarjetas de operación, métricas y formularios con el mismo acabado. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-v24-store-kpi, .vm-v24-store-card, .vm-product-editor-card,
+      .vm-product-admin-summary > div, .vm-manage-product-card, .vm-store-order-card,
+      .vm-store-history-row, .vm-v26-card, .vm-profile-summary-card) {
+  min-width: 0 !important;
+  border: 1px solid var(--store25-line) !important;
+  border-radius: 19px !important;
+  background: #fff !important;
+  box-shadow: 0 5px 18px #17365308 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-v24-store-kpi, .vm-product-admin-summary > div) {
+  min-height: 94px !important;
+  padding: 18px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-stock-alert-card.active {
+  border-color: #edc78f !important;
+  background: #fff8ed !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-v24-store-card-heading h2, .vm-product-editor-title h3,
+      .vm-product-list-heading h3, .vm-v26-card h3) {
+  color: var(--store25-ink) !important;
+  font-size: 17px !important;
+  font-weight: 750 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-product-editor-card { padding: clamp(18px, 2.3vw, 28px) !important; }
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-field input, .vm-field select, .vm-field textarea, .vm-products-search,
+      .vm-store-order-head select, .vm-v26-card input, .vm-v26-card select,
+      .vm-v26-card textarea) {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  border: 1px solid #ced9e4 !important;
+  border-radius: 11px !important;
+  background: #fff !important;
+  color: var(--store25-ink) !important;
+  font: inherit !important;
+  font-size: 13px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-field input, .vm-field select, .vm-store-order-head select,
+      .vm-v26-card input, .vm-v26-card select) { min-height: 43px !important; }
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(input, select, textarea, button):focus-visible {
+  outline: 2px solid #2563a8 !important;
+  outline-offset: 3px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-primary, .vm-secondary, .vm-clean-history-button, .vm-manage-product-actions button,
+      .vm-v26-card button, .vm-clean-reservation) {
+  min-height: 39px !important;
+  border-radius: 10px !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-clinic-section-heading, .vm-v26-heading, .vm-my-profile-heading)
+  :is(.vm-secondary, .vm-clean-history-button) {
+  flex: 0 0 auto !important;
+  border: 1px solid #ffffff66 !important;
+  background: #ffffff14 !important;
+  color: #fff !important;
+}
+
+/* Conservar miniaturas de producto y sus símbolos de categoría. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-manage-product-icon, .vm-v24-store-featured button > span,
+      .vm-v24-store-row-icon) {
+  background: #fff3e5 !important;
+  border: 1px solid #f4e4d1 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-manage-product-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-products-search { width: min(100%, 350px) !important; min-width: 0 !important; }
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-products-search input { min-width: 0 !important; font-size: 13px !important; }
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-store-history-row {
+  grid-template-columns: 50px minmax(110px, 1fr) 100px 110px 110px auto !important;
+  gap: 12px !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-store-final-label {
+  width: fit-content !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: #edf3f9 !important;
+  color: #315274 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-clinic-empty, .vm-v26-empty, .vm-v24-store-empty) {
+  border: 1px dashed #d9e2eb !important;
+  border-radius: 16px !important;
+  background: #f9fbfd !important;
+  color: var(--store25-muted) !important;
+  box-shadow: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-highlight {
+  background: #fff2df !important;
+  border: 1px solid #edddc4 !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-v24-store-highlight-copy { max-width: 100% !important; }
+
+/* Perfil compartido: ocultar solo los adornos del rol Tienda. */
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  :is(.vm-profile-summary-card > span, .vm-role-lock-box > div > span) {
+  display: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+  .vm-profile-summary-card { min-height: 112px !important; padding: 19px !important; }
+
+@media (max-width: 1100px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-manage-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-product-editor-grid--store {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-areas: "category preset" "name brand" "animal format" "price stock"
+      "description description" "save save" !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-store-history-row { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 760px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v24-store-home .vm-v2725-store-hero {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 24px 20px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-visual { flex-basis: 64px !important; width: 64px !important; height: 64px !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v2725-store-symbol { width: 62px !important; height: 62px !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-store-order-head { grid-template-columns: minmax(0, 1fr) !important; gap: 12px !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-v26-driver { flex-wrap: wrap !important; }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-profile-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 560px) {
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    :is(.vm-manage-product-grid, .vm-store-history-row, .vm-profile-summary-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    .vm-product-editor-grid--store {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas: "category" "preset" "name" "brand" "animal" "format"
+      "price" "stock" "description" "save" !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(> nav.vm-member-nav--store)
+    :is(.vm-product-list-heading, .vm-product-editor-title) { flex-wrap: wrap !important; }
+}

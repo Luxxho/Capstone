@@ -1,0 +1,232 @@
+/* =========================================================
+   VETMAP - FEEDBACK TOASTS
+   Extiende el toast existente sin modificar index.css.
+   ========================================================= */
+
+.vm-success-toast--error {
+  border-color: #f1b7b7;
+  border-left-color: #d84f4f;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff5f5
+    );
+  box-shadow:
+    0 18px 45px rgba(96, 31, 31, 0.18),
+    0 3px 12px rgba(96, 31, 31, 0.08);
+}
+
+.vm-success-toast--error
+  .vm-success-toast-check {
+  background: #fde4e4;
+  color: #b93636;
+}
+
+.vm-success-toast--error
+  .vm-success-toast-copy > span {
+  background: #fde4e4;
+  color: #9f3030;
+}
+
+.vm-success-toast--error
+  .vm-success-toast-progress {
+  background: #d84f4f;
+}
+
+.vm-success-toast--warning {
+  border-color: #efd99e;
+  border-left-color: #d59a29;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fffaf0
+    );
+  box-shadow:
+    0 18px 45px rgba(112, 79, 20, 0.16),
+    0 3px 12px rgba(112, 79, 20, 0.07);
+}
+
+.vm-success-toast--warning
+  .vm-success-toast-check {
+  background: #fff0c8;
+  color: #a86f12;
+}
+
+.vm-success-toast--warning
+  .vm-success-toast-copy > span {
+  background: #fff0c8;
+  color: #8d5e11;
+}
+
+.vm-success-toast--warning
+  .vm-success-toast-progress {
+  background: #d59a29;
+}
+
+.vm-success-toast--info {
+  border-color: #bad8ee;
+  border-left-color: #4d93c5;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f4faff
+    );
+  box-shadow:
+    0 18px 45px rgba(35, 88, 126, 0.16),
+    0 3px 12px rgba(35, 88, 126, 0.07);
+}
+
+.vm-success-toast--info
+  .vm-success-toast-check {
+  background: #e0f1fd;
+  color: #317eaf;
+}
+
+.vm-success-toast--info
+  .vm-success-toast-copy > span {
+  background: #e0f1fd;
+  color: #2c719d;
+}
+
+.vm-success-toast--info
+  .vm-success-toast-progress {
+  background: #4d93c5;
+}
+
+.vm-success-toast--error
+  .vm-success-toast-copy > strong,
+.vm-success-toast--warning
+  .vm-success-toast-copy > strong,
+.vm-success-toast--info
+  .vm-success-toast-copy > strong {
+  color: var(--vm-navy);
+}
+
+.vm-success-toast button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   HISTORIAL DE MASCOTA - ESTADO DE CARGA
+   ========================================================= */
+
+.vm-owner-reservation-history-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.vm-owner-reservation-history-button[aria-busy="true"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-owner-reservation-history-button[aria-busy="true"]::after {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  left: 10px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  opacity: 0.35;
+  transform-origin: left center;
+  animation: vm-pet-history-loading 1.1s ease-in-out infinite;
+}
+
+@keyframes vm-pet-history-loading {
+  0% {
+    transform: scaleX(0.15);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-owner-reservation-history-button[aria-busy="true"]::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================================================
+   PERFIL DE MASCOTA - CARGA NO BLOQUEANTE
+   ========================================================= */
+
+.vm-pet-profile-loading-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 18px 0;
+  padding: 12px 14px;
+  border: 1px solid #cfe4dc;
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      145deg,
+      #f9fffc,
+      #eef8f4
+    );
+  color: #355f54;
+}
+
+.vm-pet-profile-loading-inline > div {
+  display: grid;
+  gap: 2px;
+}
+
+.vm-pet-profile-loading-inline strong {
+  color: var(--vm-navy);
+  font-size: 0.9rem;
+}
+
+.vm-pet-profile-loading-inline small {
+  color: #607a72;
+  line-height: 1.4;
+}
+
+.vm-pet-profile-loading-spinner {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 50%;
+  background: #dff2eb;
+  font-size: 18px;
+  animation:
+    vm-pet-profile-loading-paw
+    1.1s
+    ease-in-out
+    infinite;
+}
+
+@keyframes vm-pet-profile-loading-paw {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-pet-profile-loading-spinner {
+    animation: none;
+  }
+}

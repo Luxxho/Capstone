@@ -1,0 +1,128 @@
+/* VETMAP V23 - SOLO EL MENU LATERAL DEL ROL VETERINARIA. */
+/* Los otros roles, la cabecera y los paneles V22 quedan intactos. */
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar {
+  background: #182f52 !important;
+  background-image: linear-gradient(180deg,#182e50 0%,#142845 100%) !important;
+  border: none !important;
+  border-right: 1px solid #223d64 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 18px 12px !important;
+  color: #f7faff !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar > .vm-member-brand,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar > .vm-member-user {
+  display: none !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar > .vm-member-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 3px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background: transparent !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-height: 43px !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  color: #e8f1ff !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+  transition: background-color .17s ease, border-color .17s ease !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button::before,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button::after {
+  content: none !important;
+  display: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button .vm-v23-vet-icon {
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
+  flex: 0 0 19px !important;
+  color: #c6d6ee !important;
+  stroke: currentColor;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button > span {
+  display: inline !important;
+  color: inherit !important;
+  white-space: normal !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button:hover {
+  color: #fff !important;
+  background: #24466e !important;
+  border-color: #3a5b83 !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button.active {
+  color: #fff !important;
+  background: #2c5685 !important;
+  border: 1px solid #4177ae !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button.active .vm-v23-vet-icon,
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button:hover .vm-v23-vet-icon {
+  color: #fff !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button:focus-visible {
+  outline: 2px solid #8bd3ff !important;
+  outline-offset: 2px !important;
+}
+.vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > .vm-v23-vet-separator {
+  width: calc(100% - 18px) !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  margin: 14px 9px !important;
+  border: 0 !important;
+  background: #3d5779 !important;
+}
+@media (min-width: 1100px) {
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar {
+    height: calc(100vh - 88px) !important;
+    min-height: 620px !important;
+    top: 73px !important;
+    position: sticky !important;
+  }
+}
+@media (max-width: 1099px) {
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 11px !important;
+  }
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar > .vm-member-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > button {
+    width: auto !important;
+    min-width: 115px !important;
+  }
+  .vm-member-shell.vmh16-shell > nav.vm-member-nav--vet.vm-v23-vet-sidebar .vm-member-menu > .vm-v23-vet-separator {
+    display: none !important;
+  }
+}

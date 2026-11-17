@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "VetMap",
+    "slug": "vetmap-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "vetmap",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Permitir que VetMap use tu ubicación para mostrar veterinarias y tiendas cercanas."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "defaultChannel": "medication-reminders"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permitir que VetMap acceda a tus fotos para agregar imágenes de mascotas y productos.",
+          "cameraPermission": "Permitir que VetMap use la cámara para agregar imágenes de mascotas y productos.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "web": {
+      "bundler": "metro"
+    },
+    "android": {
+      "permissions": [
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.luxxho.vetmap"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "519d1d40-237c-40d2-935c-e3bafe493d7e"
+      }
+    }
+  }
+}

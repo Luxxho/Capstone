@@ -1,0 +1,32 @@
+/* Avatares de pacientes sin foto: recuperar el emoji de su especie. */
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  :is(.vm-v22-patient-photo, .vm-clinic-patient-photo,
+      .vm-clinic-inline-patient-photo, .vm-clinic-action-patient-icon):not(:has(img)) {
+  background: #e9f4ff !important;
+  color: #123b76 !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform .vm-vet-pet-emoji {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif !important;
+  font-size: 52px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  .vm-v22-patient-photo > .vm-vet-pet-emoji {
+  font-size: 25px !important;
+}
+
+body .vm-member-shell.vmh16-shell.vm-v27-5-vet-uniform
+  :is(.vm-clinic-inline-patient-photo, .vm-clinic-action-patient-icon) > .vm-vet-pet-emoji {
+  font-size: 30px !important;
+}

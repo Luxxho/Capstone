@@ -1,0 +1,149 @@
+/* VetMap V27.18 — iconos de ALTO CONTRASTE, estilo Admin.
+   SOLO Dueño (Inicio) y Veterinaria. No importa fotos ni assets.
+   Los SVG son trazos de iconos incluidos en CSS; no solicita archivos de imagen. */
+
+/* DUEÑO — huella dentro de una ficha clara, como el icono de Administrador. */
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-decor {
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  position:relative !important; flex:0 0 122px !important; min-width:122px !important;
+  width:122px !important; height:122px !important; min-height:122px !important;
+  margin:0 20px 0 10px !important; transform:none !important; z-index:5 !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero :is(.vm-o15-orbit,.vm-o15-big-paw) {
+  display:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note {
+  position:relative !important; display:flex !important;
+  align-items:center !important; justify-content:center !important;
+  flex:0 0 106px !important; width:106px !important; min-width:106px !important;
+  max-width:106px !important; height:106px !important; min-height:106px !important;
+  inset:auto !important; margin:0 !important; padding:0 !important;
+  border:1px solid rgba(255,255,255,.85) !important; border-radius:27px !important;
+  background:linear-gradient(145deg,#ecfffc,#d5f9f1) !important;
+  background-image:linear-gradient(145deg,#ecfffc,#d5f9f1) !important;
+  box-shadow:0 16px 28px rgba(0,26,39,.22), inset 0 1px 0 #fff !important;
+  transform:none !important; opacity:1 !important; filter:none !important;
+  color:#007a80 !important; isolation:isolate !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note > :is(svg,span,strong) {
+  display:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note::before {
+  content:"" !important; display:block !important;
+  position:static !important; inset:auto !important; transform:none !important;
+  width:64px !important; height:64px !important; opacity:1 !important;
+  background:transparent url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23007a80%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%228%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%225%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%227%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2212%22%20r%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M12%2012c-2.4%200-3.5%202.3-5.4%204.1C4.8%2018%206.1%2021%208.7%2020.6c1.1-.2%201.9-.9%203.3-.9s2.2.7%203.3.9c2.6.4%203.9-2.6%202.1-4.5C15.5%2014.3%2014.4%2012%2012%2012Z%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat !important;
+  border:0 !important; border-radius:0 !important; box-shadow:none !important;
+  pointer-events:none !important;
+}
+body .vm-member-shell.vm-owner-v15-shell .vm-o15-page .vm-o15-hero .vm-o15-hero-note::after {
+  content:none !important; display:none !important;
+}
+
+/* VETERINARIA — Inicio: placa celeste y estetoscopio azul fuerte. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero .vm-v22-hero-note {
+  display:flex !important; flex-direction:row !important;
+  align-items:center !important; justify-content:center !important;
+  position:relative !important; flex:0 0 106px !important; width:106px !important;
+  max-width:106px !important; min-width:106px !important;
+  height:106px !important; min-height:106px !important;
+  margin:0 25px 0 10px !important; padding:0 !important;
+  border-radius:27px !important; border:1px solid rgba(255,255,255,.90) !important;
+  background:linear-gradient(145deg,#f0faff,#d8f1ff) !important;
+  background-image:linear-gradient(145deg,#f0faff,#d8f1ff) !important;
+  box-shadow:0 16px 28px rgba(0,26,45,.22), inset 0 1px 0 #fff !important;
+  z-index:5 !important; opacity:1 !important; transform:none !important;
+  filter:none !important; isolation:isolate !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note > :is(svg,span,strong) {
+  display:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note::before {
+  content:"" !important; display:block !important;
+  position:static !important; inset:auto !important; transform:none !important;
+  width:63px !important; height:63px !important; opacity:1 !important;
+  background:transparent url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%203v6a6%206%200%200%200%2012%200V3M6%203H4v4M18%203h2v4M12%2015v2a4%204%200%200%200%208%200v-1%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2214%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat !important;
+  border:0 !important; box-shadow:none !important; pointer-events:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-v22-classic .vm-v22-hero-note::after {
+  content:none !important; display:none !important;
+}
+
+/* VETERINARIA — Agenda, Pacientes, Fichas, Recetas y Perfil.
+   Cada icono es una placa CLARA con SVG nítido, no una marca de agua. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading {
+  position:relative !important; isolation:isolate !important; overflow:hidden !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::before {
+  content:none !important; display:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+  content:"" !important; display:block !important;
+  position:absolute !important; left:auto !important; bottom:auto !important;
+  top:50% !important; right:38px !important; transform:translateY(-50%) !important;
+  width:106px !important; height:106px !important;
+  border:1px solid rgba(255,255,255,.86) !important;
+  border-radius:27px !important;
+  background:linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%2217%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M9%204.5V3h6v1.5M9%2012h6m-3-3v6M9%2018h6%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+  background-size:60px 60px,cover !important;
+  background-repeat:no-repeat,no-repeat !important;
+  background-position:center,center !important;
+  box-shadow:0 15px 26px rgba(0,28,46,.18), inset 0 1px 0 #fff !important;
+  opacity:1 !important; filter:none !important;
+  z-index:1 !important; pointer-events:none !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading::after {
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2218%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M7%203v4M17%203v4M3%2010h18M7.5%2014h3M7.5%2018h5%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+  right:215px !important; width:88px !important; height:88px !important;
+  background-size:50px 50px,cover !important; border-radius:23px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-patient-filters) > .vm-clinic-section-heading::after {
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%228%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22M3%2020v-2a6%206%200%200%201%2012%200v2M17%2011a3%203%200%200%200%200-6M18%2014a5%205%200%200%201%203%205v1%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-clinic-prescription-search) > .vm-clinic-section-heading::after {
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%203h9l4%204v13a1%201%200%200%201-1%201H6a1%201%200%200%201-1-1V4a1%201%200%200%201%201-1zM15%203v5h4M8%2013h8M8%2017h6%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230879b2%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%228%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M4%2021v-2a8%208%200%200%201%2016%200v2%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(145deg,#f0faff,#d9f1ff) !important;
+  right:215px !important; width:88px !important; height:88px !important;
+  background-size:50px 50px,cover !important; border-radius:23px !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  position:relative !important; z-index:2 !important; min-width:0 !important;
+  max-width:calc(100% - 175px) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  max-width:calc(100% - 350px) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading .vm-history-clean-actions,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading .vm-my-profile-heading-actions {
+  position:relative !important; z-index:4 !important;
+  margin-left:auto !important; flex:0 0 auto !important;
+}
+/* No poner un icono decorativo sobre botones en ventanas medianas. */
+@media (max-width:1180px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading::after,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+    content:none !important; display:none !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+    max-width:calc(100% - 210px) !important;
+  }
+}
+@media (max-width:800px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+    content:none !important; display:none !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+    max-width:100% !important;
+  }
+}

@@ -1,0 +1,101 @@
+              {/* VETMAP V26 REPARTIDORES - INICIO */}
+              {currentUser.role === "store" && memberSection === "storeDelivery" && (
+                <section className="vm-store-page vm-v26-delivery">
+                  <div className="vm-v26-heading">
+                    <div>
+                      <span className="vm-kicker">LOGÍSTICA DE TIENDA</span>
+                      <h2>Repartidores y despachos</h2>
+                      <p>Registra repartidores, asigna pedidos listos y consulta los productos por entregar.</p>
+                    </div>
+                    <button type="button" className="vm-clean-history-button" onClick={() => { loadStoreData(); loadDeliveryData(); }}>
+                      ↻ Actualizar
+                    </button>
+                  </div>
+                  <div className="vm-v26-grid">
+                    <div className="vm-v26-card">
+                      <h3>Equipo de reparto</h3>
+                      <form className="vm-v26-form" onSubmit={createDeliveryDriver}>
+                        <input aria-label="Nombre del repartidor" placeholder="Nombre del repartidor" maxLength={120} required minLength={2}
+                          value={deliveryDriverForm.name} onChange={(e) => setDeliveryDriverForm((p) => ({ ...p, name: e.target.value }))} />
+                        <input aria-label="Teléfono del repartidor" placeholder="Teléfono (opcional)" maxLength={40}
+                          value={deliveryDriverForm.phone} onChange={(e) => setDeliveryDriverForm((p) => ({ ...p, phone: e.target.value }))} />
+                        <button type="submit" disabled={deliveryBusy || !deliveryDriverForm.name.trim()}>+ Agregar repartidor</button>
+                      </form>
+                      {deliveryDrivers.length === 0 && <div className="vm-v26-empty">Aún no hay repartidores. Registra el primero.</div>}
+                      {deliveryDrivers.map((driver) => (
+                        <div className="vm-v26-driver" key={driver.id}>
+                          <div>
+                            <strong>{driver.name}</strong>
+                            <small>{driver.phone || "Sin teléfono"} · {driver.active ? "Activo" : "Inactivo"}</small>
+                          </div>
+                          <button className="vm-v26-quiet" type="button" disabled={deliveryBusy} onClick={() => toggleDeliveryDriver(driver)}>
+                            {driver.active ? "Desactivar" : "Activar"}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="vm-v26-card">
+                      <h3>Pedidos listos para asignar</h3>
+                      <p className="vm-v26-note">Para asignar un repartidor, cambia primero el pedido a “Listo” desde la sección Pedidos.</p>
+                      {storeOrders.filter((order) => ["ready", "dispatched"].includes(order.status) && !deliveryAssignments.some((item) => item.order_id === order.id)).length === 0 && (
+                        <div className="vm-v26-empty">No hay pedidos listos pendientes de asignación.</div>
+                      )}
+                      {storeOrders.filter((order) => ["ready", "dispatched"].includes(order.status) && !deliveryAssignments.some((item) => item.order_id === order.id)).map((order) => (
+                        <div className="vm-v26-order" key={order.id}>
+                          <div className="vm-v26-order-head">
+                            <div><strong>Pedido #{order.id} · {order.user_name}</strong><small>{orderStatusLabel(order.status)} · {formatCLP(order.total)}</small></div>
+                            <span className="vm-v26-status">Por asignar</span>
+                          </div>
+                          <ul className="vm-v26-products">
+                            {(order.items || []).map((product) => <li key={product.id}>{product.quantity} × {product.product_name}</li>)}
+                          </ul>
+                          <div className="vm-v26-controls">
+                            <select aria-label={`Seleccionar repartidor para el pedido ${order.id}`} value={deliverySelectedDriver[order.id] || ""} onChange={(e) => setDeliverySelectedDriver((p) => ({ ...p, [order.id]: e.target.value }))}>
+                              <option value="">Seleccionar repartidor</option>
+                              {deliveryDrivers.filter((d) => d.active).map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
+                            </select>
+                            <button type="button" disabled={deliveryBusy || !deliverySelectedDriver[order.id]} onClick={() => assignDeliveryOrder(order.id)}>Asignar pedido</button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="vm-v26-card">
+                    <h3>Despachos asignados ({deliveryAssignments.length})</h3>
+                    {deliveryAssignments.length === 0 && <div className="vm-v26-empty">Todavía no hay despachos asignados.</div>}
+                    {deliveryAssignments.map((assignment) => (
+                      <div className="vm-v26-order" key={assignment.id}>
+                        <div className="vm-v26-order-head">
+                          <div>
+                            <strong>Pedido #{assignment.order_id} · {assignment.driver?.name || "Repartidor"}</strong>
+                            <small>{assignment.order?.user_name || "Comprador"} · {formatCLP(assignment.order?.total || 0)}</small>
+                          </div>
+                          <span className="vm-v26-status">{{ assigned: "Asignado", dispatched: "En reparto", incident: "Incidencia", delivered: "Entregado" }[assignment.state] || assignment.state}</span>
+                        </div>
+                        <ul className="vm-v26-products">
+                          {(assignment.order?.items || []).map((product) => <li key={product.id}>{product.quantity} × {product.product_name}</li>)}
+                        </ul>
+                        {assignment.notes && <p className="vm-v26-note"><strong>Observación:</strong> {assignment.notes}</p>}
+                        {assignment.state !== "delivered" && assignment.order?.status !== "cancelled" && (
+                          <div className="vm-v26-controls">
+                            {assignment.state !== "dispatched" && <button type="button" disabled={deliveryBusy} onClick={() => updateDeliveryState(assignment.order_id, "dispatched")}>🚚 Salir a reparto</button>}
+                            {assignment.state === "dispatched" && <button type="button" disabled={deliveryBusy} onClick={() => updateDeliveryState(assignment.order_id, "delivered")}>✓ Confirmar entrega</button>}
+                            {assignment.state !== "incident" && (
+                              <button type="button" className="vm-v26-quiet" disabled={deliveryBusy} onClick={() => setDeliveryIncidentOpen((p) => ({ ...p, [assignment.order_id]: !p[assignment.order_id] }))}>Registrar incidencia</button>
+                            )}
+                          </div>
+                        )}
+                        {deliveryIncidentOpen[assignment.order_id] && assignment.state !== "delivered" && (
+                          <div className="vm-v26-form">
+                            <textarea aria-label={`Incidencia del pedido ${assignment.order_id}`} placeholder="Describe el problema con la entrega" maxLength={600}
+                              value={deliveryIncidentNotes[assignment.order_id] || ""} onChange={(e) => setDeliveryIncidentNotes((p) => ({ ...p, [assignment.order_id]: e.target.value }))}/>
+                            <button type="button" disabled={deliveryBusy || !(deliveryIncidentNotes[assignment.order_id] || "").trim()} onClick={() => updateDeliveryState(assignment.order_id, "incident")}>Guardar incidencia</button>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+              {/* VETMAP V26 REPARTIDORES - FIN */}
+

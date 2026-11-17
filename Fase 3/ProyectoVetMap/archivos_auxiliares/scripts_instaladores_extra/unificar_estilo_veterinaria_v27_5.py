@@ -1,0 +1,314 @@
+# -*- coding: utf-8 -*-
+r"""VetMap V27.5 - Diseño uniforme del rol Veterinaria.
+Ejecutar desde la raiz del proyecto: python .\unificar_estilo_veterinaria_v27_5.py
+No modifica rutas, funcionalidades, base de datos ni los otros roles.
+"""
+from pathlib import Path
+from datetime import datetime
+import re
+import shutil
+import sys
+
+ROOT = Path(__file__).resolve().parent
+MAIN = ROOT / "web" / "src" / "main.jsx"
+STYLE = ROOT / "web" / "src" / "vetmap_estilo_veterinaria_v27_5.css"
+IMPORT = 'import "./vetmap_estilo_veterinaria_v27_5.css";'
+VET_ROLE_CLASS = 'vm-v27-5-vet-uniform'
+ROLE_MARK = '${currentUser.role !== "admin" ? "vmh16-shell" : ""}'
+CSS = r'''/* ============================================================
+   VetMap V27.5 | Identidad visual unificada para VETERINARIA
+   Referencia visual: Inicio de Veterinaria (V22/V23)
+   Alcance: solamente vm-v27-5-vet-uniform (rol vet).
+   No modifica comportamiento, otros roles ni ventanas del chat.
+   ============================================================ */
+.vm-member-shell.vm-v27-5-vet-uniform {
+  --vm-v275-navy: #102f61;
+  --vm-v275-blue: #147ceb;
+  --vm-v275-blue-dark: #0a61c8;
+  --vm-v275-mute: #536f8e;
+  --vm-v275-edge: #d6e5f2;
+  --vm-v275-canvas: #f0f7fe;
+  --vm-v275-shadow: 0 8px 24px rgba(20, 53, 99, .045);
+}
+
+/* Tipografia moderna: sin Comic Sans ni titulos manuscritos heredados. */
+.vm-v27-5-vet-uniform .vm-clinic-page,
+.vm-v27-5-vet-uniform .vm-my-profile {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  color: var(--vm-v275-navy);
+}
+.vm-v27-5-vet-uniform :is(.vm-clinic-page,.vm-my-profile) :is(h1,h2,h3,h4,p,button,label,input,select,textarea) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+.vm-v27-5-vet-uniform :is(.vm-clinic-page,.vm-my-profile) :is(h2,h3,h4) {
+  letter-spacing: -.028em !important;
+}
+.vm-v27-5-vet-uniform > .vm-clinic-page,
+.vm-v27-5-vet-uniform .vm-clinic-page {
+  background: var(--vm-v275-canvas) !important;
+  min-width: 0 !important;
+}
+
+/* CABECERAS: mismos tonos celestes y tipografia del Inicio veterinario. */
+.vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading,
+.vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading {
+  position: relative !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 18px !important;
+  min-height: 158px;
+  padding: clamp(23px, 2.5vw, 34px) !important;
+  margin: 0 0 17px !important;
+  border: 1px solid #c9dff7 !important;
+  border-radius: 21px !important;
+  background: linear-gradient(112deg, #e8f4ff 0%, #dceeff 56%, #cbe3ff 100%) !important;
+  box-shadow: 0 8px 22px rgba(24, 88, 162, .045) !important;
+  color: var(--vm-v275-navy) !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+.vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  min-width: 0;
+  flex: 1 1 350px;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading .vm-kicker,
+.vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading .vm-kicker {
+  color: #1a6bb6 !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 10px !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading h2,
+.vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading h2 {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  color: #0d3271 !important;
+  font-weight: 900 !important;
+  font-size: clamp(27px, 2.5vw, 37px) !important;
+  line-height: 1.17 !important;
+  letter-spacing: -.055em !important;
+  margin: 0 0 9px !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading > div:first-child > p:last-child,
+.vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading > div:first-child > p:last-child {
+  max-width: 790px !important;
+  color: #34587c !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+/* Filtros, formularios y buscadores: cajas coherentes y legibles. */
+.vm-v27-5-vet-uniform .vm-clinic-page :is(.vm-clinic-filter-panel,.vm-clinic-prescription-search) {
+  border: 1px solid var(--vm-v275-edge) !important;
+  border-radius: 17px !important;
+  background: #fff !important;
+  box-shadow: var(--vm-v275-shadow) !important;
+  padding: 18px 20px !important;
+  margin-bottom: 17px !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(.vm-clinic-filter-panel,.vm-clinic-prescription-search) label > span,
+.vm-v27-5-vet-uniform .vm-clinic-page .vm-field > span,
+.vm-v27-5-vet-uniform .vm-my-profile .vm-field > span {
+  color: #345b81 !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: .045em !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(input:not([type="checkbox"]), select, textarea),
+.vm-v27-5-vet-uniform .vm-my-profile :is(input:not([type="checkbox"]), select, textarea) {
+  color: #17385c !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  border: 1px solid #cbddec !important;
+  border-radius: 11px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  max-width: 100%;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(input:not([type="checkbox"]), select, textarea):focus,
+.vm-v27-5-vet-uniform .vm-my-profile :is(input:not([type="checkbox"]), select, textarea):focus {
+  outline: 2px solid rgba(20, 124, 235, .25) !important;
+  border-color: #4196e9 !important;
+  outline-offset: 1px;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(input, textarea)::placeholder,
+.vm-v27-5-vet-uniform .vm-my-profile :is(input, textarea)::placeholder {
+  color: #899db3 !important;
+  opacity: 1 !important;
+}
+
+/* Tarjetas: blancas, radio suave, un mismo borde y sombra leve. */
+.vm-v27-5-vet-uniform .vm-clinic-page :is(
+  .vm-clinic-appointment,.vm-clinic-patient-card,.vm-clinic-file-card,
+  .vm-clinic-history-card,.vm-clinic-prescription-card,
+  .vm-clinic-prescription-form,.vm-clinic-inline-history,
+  .vm-clinic-record,.vm-clinic-consultation-record
+) {
+  background: #fff !important;
+  border-color: var(--vm-v275-edge) !important;
+  border-radius: 17px !important;
+  box-shadow: var(--vm-v275-shadow) !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(
+  .vm-clinic-patient-card,.vm-clinic-appointment,.vm-clinic-prescription-card
+):hover {
+  border-color: #abcde8 !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(
+  .vm-clinic-appointment,.vm-clinic-patient-card,.vm-clinic-file-card,
+  .vm-clinic-prescription-form,.vm-clinic-prescription-card
+) :is(h3,h4,strong) {
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(.vm-clinic-filter-result,.vm-clinic-empty) {
+  color: var(--vm-v275-mute) !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(
+  .vm-prescription-template-box,.vm-clinic-inline-history-head,.vm-clinic-file-chips
+) {
+  border-color: var(--vm-v275-edge) !important;
+}
+
+/* Botones: azul para las acciones principales, secundarios blancos. */
+.vm-v27-5-vet-uniform .vm-clinic-page button.vm-primary,
+.vm-v27-5-vet-uniform .vm-my-profile button.vm-primary {
+  color: #fff !important;
+  background: linear-gradient(110deg, #167deb, #106bcc) !important;
+  border: 1px solid #126fce !important;
+  border-radius: 11px !important;
+  box-shadow: 0 5px 15px rgba(31, 111, 196, .13) !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 800 !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page button.vm-secondary,
+.vm-v27-5-vet-uniform .vm-my-profile button.vm-secondary {
+  background: #fff !important;
+  color: #174c85 !important;
+  border: 1px solid #c2d9ef !important;
+  border-radius: 11px !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page button.vm-secondary:hover,
+.vm-v27-5-vet-uniform .vm-my-profile button.vm-secondary:hover {
+  background: #f3f9ff !important;
+}
+.vm-v27-5-vet-uniform .vm-clinic-page :is(.vm-filter-clear,.vm-clean-history-button) {
+  border-radius: 11px !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 750 !important;
+}
+
+/* Perfil: cabecera y tarjetas con la misma identidad de Veterinaria. */
+.vm-v27-5-vet-uniform .vm-my-profile {
+  border: none !important;
+  background: var(--vm-v275-canvas) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  padding: 22px 24px 30px !important;
+}
+.vm-v27-5-vet-uniform .vm-my-profile .vm-profile-summary-card,
+.vm-v27-5-vet-uniform .vm-my-profile .vm-profile-edit-form,
+.vm-v27-5-vet-uniform .vm-my-profile .vm-profile-password-box {
+  background: #fff !important;
+  border-color: var(--vm-v275-edge) !important;
+  border-radius: 17px !important;
+  box-shadow: var(--vm-v275-shadow) !important;
+}
+.vm-v27-5-vet-uniform .vm-my-profile .vm-profile-summary-card > small {
+  font-size: 10px !important;
+  color: #5b7997 !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+}
+.vm-v27-5-vet-uniform .vm-my-profile .vm-profile-summary-card > strong {
+  color: #163963 !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+/* No altera las columnas originales de Agenda, Pacientes o Recetas. */
+@media (max-width: 750px) {
+  .vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading,
+  .vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading {
+    min-height: 0 !important;
+    padding: 20px 17px !important;
+    border-radius: 17px !important;
+  }
+  .vm-v27-5-vet-uniform .vm-clinic-page > .vm-clinic-section-heading h2,
+  .vm-v27-5-vet-uniform .vm-my-profile > .vm-my-profile-heading h2 {
+    font-size: clamp(25px, 6vw, 30px) !important;
+  }
+  .vm-v27-5-vet-uniform .vm-clinic-page :is(.vm-clinic-filter-panel,.vm-clinic-prescription-search) {
+    padding: 14px !important;
+  }
+  .vm-v27-5-vet-uniform .vm-my-profile {
+    padding: 14px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vm-v27-5-vet-uniform button { transition: none !important; }
+}
+'''
+
+def run():
+    if not MAIN.is_file():
+        raise RuntimeError("No se encuentra web/src/main.jsx. Copia este instalador en la carpeta principal ProyectoVetMap.")
+    source = MAIN.read_text(encoding="utf-8")
+    if IMPORT in source and VET_ROLE_CLASS in source and STYLE.is_file():
+        print("V27.5 ya estaba instalada. No se modifico nada.")
+        return
+    if source.count(ROLE_MARK) != 1:
+        raise RuntimeError("La estructura del rol no coincide con VetMap V26/V27. No se modifico nada.")
+    if source.count(VET_ROLE_CLASS) != 0:
+        raise RuntimeError("Ya hay cambios V27.5 incompletos. No se modifico nada; revisa main.jsx.")
+    if IMPORT in source or STYLE.exists():
+        raise RuntimeError("Ya existe un archivo/import de V27.5. No se modifico nada para evitar reemplazos.")
+    if not all(tag in source for tag in ('vm-clinic-section-heading', 'vm-my-profile-heading', 'vm-owner-v15-shell')):
+        raise RuntimeError("No encontre todas las secciones del proyecto. No se modifico nada.")
+
+    # Clase opt-in solo para Veterinaria. Deja a los otros roles intactos.
+    extended = ROLE_MARK + ' ${currentUser.role === "vet" ? "vm-v27-5-vet-uniform" : ""}'
+    amended = source.replace(ROLE_MARK, extended, 1)
+    lines = amended.splitlines(keepends=True)
+    # CSS import al final del grupo de imports para que sea el ultimo ajuste visual.
+    indices = [i for i, line in enumerate(lines[:110]) if re.match(r'^\s*import\s+[\"\'].*\.css[\"\'];', line)]
+    if not indices:
+        raise RuntimeError("No se reconocieron los imports CSS. No se modifico nada.")
+    lines.insert(max(indices) + 1, IMPORT + '\n')
+    amended = ''.join(lines)
+    if amended.count(IMPORT) != 1 or amended.count(VET_ROLE_CLASS) != 1:
+        raise RuntimeError("Verificacion de contenido fallida. No se modifico nada.")
+
+    backup = ROOT / f"respaldo_estilo_veterinaria_antes_v27_5_{datetime.now():%Y%m%d_%H%M%S}"
+    backup.mkdir(parents=True, exist_ok=False)
+    shutil.copy2(MAIN, backup / "main.jsx")
+    # El CSS es nuevo; si se necesita deshacer, restaurar main.jsx desde el respaldo.
+    try:
+        STYLE.write_text(CSS, encoding="utf-8")
+        MAIN.write_text(amended, encoding="utf-8")
+    except Exception:
+        shutil.copy2(backup / "main.jsx", MAIN)
+        STYLE.unlink(missing_ok=True)
+        raise
+
+    print("\nVETMAP V27.5 - DISENO UNIFICADO VETERINARIA INSTALADO")
+    print(" + web/src/main.jsx: clase visual exclusiva para rol Veterinaria e import CSS")
+    print(" + web/src/vetmap_estilo_veterinaria_v27_5.css")
+    print(" + Agenda, Pacientes, Fichas, Recetas y Servicios y perfil")
+    print("Respaldo: " + str(backup))
+    print("No se modificaron Inicio, otros roles, chat, backend, mobile, PostgreSQL ni .env.")
+    print("Abre Veterinaria y actualiza el navegador con Ctrl + F5.")
+
+if __name__ == "__main__":
+    try:
+        run()
+    except Exception as exc:
+        print("\nNO SE APLICO LA ACTUALIZACION:", exc)
+        sys.exit(1)

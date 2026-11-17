@@ -1,0 +1,311 @@
+/* VetMap Admin V10: un único marco de navegación en TODAS las secciones.
+   Se activa exclusivamente para currentUser.role === "admin". */
+.vm-member-shell.vm-dashboard-admin-mode.vm-admin-v10-mode {
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) !important;
+  grid-template-rows: 78px minmax(0, 1fr) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: calc(100vh - 12px);
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  overflow: visible !important;
+  background: #eef5fd !important;
+  box-shadow: none !important;
+  align-items: stretch;
+}
+.vm-admin-v10-mode > nav.vm-member-nav,
+.vm-admin-v10-mode > .vm-member-nav {display: none !important;}
+
+.vm-admin-v10-mode > .vmv10-topbar {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  position: sticky;
+  top: 0;
+  z-index: 150;
+}
+.vm-admin-v10-mode > .vmv10-sidebar {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  position: sticky;
+  top: 78px;
+  height: calc(100vh - 78px);
+  z-index: 60;
+}
+.vm-admin-v10-mode > .vmv10-route-body {
+  display: block !important;
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0;
+  min-height: 600px;
+  width: 100%;
+  background: #eff6fe;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.vm-member-shell:not(.vm-admin-v10-mode) > .vmv10-route-body { display: contents !important; }
+
+/* ===== Cabecera fija ===== */
+.vmv10-topbar, .vmv10-sidebar, .vmv10-topbar *,.vmv10-sidebar * {box-sizing:border-box;}
+.vmv10-topbar {
+  display: grid;
+  grid-template-columns: 220px minmax(220px,1fr) auto;
+  gap: 22px;
+  align-items: center;
+  height: 78px;
+  padding: 10px 25px 10px 18px;
+  background: linear-gradient(115deg,#f9fcff,#e8f3fd);
+  box-shadow: 0 1px 0 #d7e4f1;
+  font-family: Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color: #112954;
+}
+.vmv10-topbar button,.vmv10-sidebar button {cursor:pointer;font:inherit;}
+.vmv10-brand {display:flex;align-items:center;gap:11px;text-align:left;border:0;background:transparent;padding:0!important;color:#092b53!important;min-width:0;}
+.vmv10-brand-mark {display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:13px;color:#fff;background:linear-gradient(135deg,#16bdac,#083157);box-shadow:0 5px 15px #163a581c;}
+.vmv10-brand-text {font-size:25px;line-height:1;font-weight:900;letter-spacing:-.9px;}
+.vmv10-brand-text small {display:block;margin-top:7px;color:#33827c;font-size:8px;letter-spacing:1.5px;font-weight:900;}
+.vmv10-search {height:46px;display:flex;align-items:center;gap:12px;position:relative;padding:0 16px;color:#6581a1;border:1px solid #dfebf6;border-radius:28px;background:#fff;box-shadow:0 3px 10px #17335c0a;min-width:0;}
+.vmv10-search input {width:100%;min-width:0;border:0!important;outline:none!important;background:transparent!important;box-shadow:none!important;color:#1a3763;font-size:13px!important;font-weight:400!important;padding:0!important;}
+.vmv10-search input::placeholder {color:#7286a0;}
+.vmv10-search-results {position:absolute;left:0;right:0;top:calc(100% + 7px);z-index:210;border-radius:15px;box-shadow:0 15px 40px #152d5340;background:#fff;border:1px solid #dae7f4;padding:8px;max-height:280px;overflow:auto;}
+.vmv10-search-results button {display:flex;justify-content:space-between;gap:10px;width:100%;padding:10px;border:0;background:transparent;text-align:left;font-size:12px!important;color:#112d5a;}
+.vmv10-search-results button:hover {background:#f0f6ff;}
+.vmv10-search-results small {color:#7190a9;}
+.vmv10-search-results p {padding:10px;color:#7991a8;font-size:12px;}
+.vmv10-actions {display:flex;justify-content:flex-end;align-items:center;gap:16px;}
+.vmv10-popover-anchor {position:relative;}
+.vmv10-bell {position:relative;display:grid;place-items:center;width:45px;height:45px;background:transparent;border:0;color:#152f55;}
+.vmv10-unread {position:absolute;top:0;right:0;display:grid;place-items:center;min-width:19px;height:19px;padding:0 4px;background:#f73560;border-radius:999px;font-size:10px;color:white;font-weight:800;}
+.vmv10-profile {display:flex;gap:9px;align-items:center;max-width:260px;border:0;background:transparent;color:#152d56;padding:4px!important;}
+.vmv10-avatar {display:grid;place-items:center;width:45px;height:45px;flex:none;border:3px solid #fff;border-radius:50%;background:linear-gradient(135deg,#0cc3b4,#174b8a);color:white;font-weight:900;font-size:19px;}
+.vmv10-user-name {min-width:0;display:block;text-align:left;}
+.vmv10-user-name strong {display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:155px;font-weight:850;}
+.vmv10-user-name small {display:block;color:#7088a3;font-size:11px;margin-top:3px;}
+.vmv10-dropdown {position:absolute;top:calc(100% + 10px);right:0;width:320px;max-width:85vw;background:#fff;border:1px solid #d9e7f3;box-shadow:0 15px 45px #1833543d;border-radius:15px;overflow:auto;max-height:410px;padding:10px;z-index:220;}
+.vmv10-dropdown-head {display:flex;justify-content:space-between;gap:10px;align-items:center;padding:7px 9px 12px;color:#14315b;}
+.vmv10-dropdown-head button {background:transparent;border:0;color:#0e83ad;font-size:11px;}
+.vmv10-notice {border:0;border-top:1px solid #ecf1f7;background:transparent;width:100%;padding:12px 9px;text-align:left;}
+.vmv10-notice strong,.vmv10-notice small {display:block;}
+.vmv10-notice strong {color:#153060;font-size:12px;}.vmv10-notice small {color:#71839d;font-size:11px;margin-top:4px;}
+.vmv10-empty {font-size:12px;padding:10px;color:#7c8ca1;}
+.vmv10-profile-menu {width:200px;}
+.vmv10-profile-menu button {display:flex;align-items:center;gap:10px;width:100%;padding:12px;border:0;background:transparent;color:#17385f;font-size:12px;text-align:left;}
+.vmv10-profile-menu button:hover,.vmv10-notice:hover {background:#f0f7ff;}
+
+/* ===== Sidebar ===== */
+.vmv10-sidebar {display:flex;flex-direction:column;padding:17px 12px;min-width:0;background:linear-gradient(160deg,#192f54,#0e2344);border-radius:0 0 0 20px;color:#fff;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#385a7e transparent;font-family:Inter,system-ui,sans-serif;}
+.vmv10-sidebar nav {display:flex;flex-direction:column;gap:3px;}
+.vmv10-sidebar nav button {width:100%;min-height:43px;display:flex;align-items:center;justify-content:flex-start;gap:12px;padding:10px 13px!important;border:1px solid transparent!important;border-radius:11px!important;background:transparent!important;box-shadow:none!important;text-align:left;color:#e6eef9!important;font-size:12px!important;font-weight:700;white-space:nowrap;}
+.vmv10-sidebar nav button svg {flex:none;color:#c8d9f4;}
+.vmv10-sidebar nav button:hover {background:#274774!important;}
+.vmv10-sidebar nav button.active {background:linear-gradient(115deg,#315a8c,#224a7b)!important;border:1px solid #386a9e!important;color:white!important;}
+.vmv10-sidebar nav button.active svg {color:#fff;}
+.vmv10-sidebar-divider {margin:9px 4px;border-top:1px solid #345173;}
+.vmv10-sidebar-foot {display:flex;align-items:center;gap:8px;margin-top:auto;padding:20px 8px 6px;color:#90adc9;font-size:10px;}
+
+/* ===== Inicio (dashboard V9) incorporado SIN segunda barra ===== */
+.vm-admin-v10-mode .vmv8-shell {display:block!important;width:100%!important;min-height:0!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#eef5fd!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-topbar,
+.vm-admin-v10-mode .vmv8-shell .vmv8-sidebar {display:none!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-workspace {display:block!important;width:100%!important;margin:0!important;border-radius:0!important;box-shadow:none!important;background:#eef5fd!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-main {display:block!important;width:100%!important;min-width:0!important;background:#eff6fe!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-hero {border-radius:0!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-content {padding:0 14px 18px!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-metrics {margin-top:-22px!important;position:relative;z-index:2;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-metric-card {border:1px solid #e0eaf5!important;background:#fff!important;border-radius:16px!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-panel {border:1px solid #e0eaf5!important;background:#fff!important;border-radius:16px!important;}
+.vm-admin-v10-mode .vmv8-shell .vmv8-metric-card::before,
+.vm-admin-v10-mode .vmv8-shell .vmv8-metric-card::after,
+.vm-admin-v10-mode .vmv8-shell .vmv8-panel-head > button::before,
+.vm-admin-v10-mode .vmv8-shell .vmv8-panel-head > button::after,
+.vm-admin-v10-mode .vmv8-shell .vmv8-panel-head select::after,
+.vm-admin-v10-mode .vmv8-shell .vmv8-panel-head select::before {content:none!important;display:none!important;}
+
+/* ===== Gestión antigua conservada como CONTENIDO, sin marco duplicado ===== */
+.vm-admin-v10-mode .vmv10-route-body > :not(.vmv8-shell) {width:100%;min-width:0;max-width:none!important;margin:0!important;}
+.vm-admin-v10-mode .vmv10-route-body > section:not(.vmv8-shell),
+.vm-admin-v10-mode .vmv10-route-body > div:not(.vmv8-shell) {padding:24px!important;background:#eff6fe!important;}
+.vm-admin-v10-mode .vmv10-route-body section.rounded-2xl,
+.vm-admin-v10-mode .vmv10-route-body article.rounded-2xl {border-radius:19px!important;border:1px solid #dce8f3!important;box-shadow:0 7px 26px #1b365616!important;}
+.vm-admin-v10-mode .vmv10-route-body h1,
+.vm-admin-v10-mode .vmv10-route-body h2 {color:#122d5e;}
+.vm-admin-v10-mode .vmv10-route-body button:not(.vmv8-shell button) {border-radius:10px;}
+/* Evita el decorado de huellitas global sobre botones y estadísticas. */
+.vm-admin-v10-mode .vmv10-topbar button::before,
+.vm-admin-v10-mode .vmv10-topbar button::after,
+.vm-admin-v10-mode .vmv10-sidebar button::before,
+.vm-admin-v10-mode .vmv10-sidebar button::after,
+.vm-admin-v10-mode .vmv8-shell button::after,
+.vm-admin-v10-mode .vmv8-shell button::before {content:none!important;display:none!important;}
+
+@media(max-width:1150px) {
+  .vm-member-shell.vm-dashboard-admin-mode.vm-admin-v10-mode {grid-template-columns:192px minmax(0,1fr)!important;}
+  .vmv10-topbar {grid-template-columns:185px minmax(160px,1fr) auto;padding-inline:12px;gap:13px;}
+  .vmv10-sidebar {padding:13px 8px;}
+  .vmv10-sidebar nav button {font-size:11px!important;gap:8px;}
+  .vmv10-user-name strong {max-width:110px;}
+}
+@media(max-width:820px) {
+  .vm-member-shell.vm-dashboard-admin-mode.vm-admin-v10-mode {display:flex!important;flex-direction:column;min-height:0;}
+  .vm-admin-v10-mode > .vmv10-topbar {position:sticky;top:0;flex:none;width:100%;height:auto;min-height:65px;grid-template-columns:1fr auto;gap:8px;padding:10px 12px;}
+  .vmv10-topbar .vmv10-search {grid-column:1/-1;grid-row:2;}
+  .vm-admin-v10-mode > .vmv10-sidebar {position:static;height:auto!important;width:100%;min-height:0!important;flex:none;padding:5px 8px;border-radius:0;overflow-x:auto;overflow-y:hidden;}
+  .vmv10-sidebar nav {display:flex;flex-direction:row;white-space:nowrap;width:max-content;}
+  .vmv10-sidebar nav button {width:auto;padding:9px 11px!important;}
+  .vmv10-sidebar-divider,.vmv10-sidebar-foot {display:none;}
+  .vm-admin-v10-mode > .vmv10-route-body {display:block!important;flex:1;width:100%;min-height:0;}
+  .vmv10-brand-text {font-size:21px;}
+  .vmv10-user-name {display:none;}
+  .vm-admin-v10-mode .vmv8-shell .vmv8-metrics {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .vm-admin-v10-mode .vmv8-shell .vmv8-primary-grid {grid-template-columns:1fr!important;}
+}
+@media(max-width:480px) {
+  .vm-admin-v10-mode .vmv8-shell .vmv8-metrics {grid-template-columns:1fr!important;}
+  .vmv10-topbar .vmv10-profile {gap:3px;}.vmv10-actions {gap:4px;}
+}
+/* Cabecera de gestión integrada: desaparece el segundo "Panel administrador". */
+.vm-admin-v10-mode .vmv10-route-body .vm-admin-v10-legacy-summary {display:none!important;}
+.vm-admin-v10-mode .vmv10-management-heading {display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin:0 0 15px!important;padding:22px 25px!important;background:#fff!important;border-bottom:1px solid #e0eaf5;}
+.vm-admin-v10-mode .vmv10-management-heading span {color:#1bb1a7;font-size:10px;letter-spacing:1.6px;font-weight:850;}
+.vm-admin-v10-mode .vmv10-management-heading h1 {font-size:28px!important;font-weight:850!important;letter-spacing:-.8px;margin:6px 0;color:#13305e!important;}
+.vm-admin-v10-mode .vmv10-management-heading p {font-size:13px;color:#74869e;margin:0;}
+.vm-admin-v10-mode .vmv10-management-heading button {background:#153b69!important;border:1px solid #153b69!important;color:white!important;padding:11px 17px!important;border-radius:10px!important;font-weight:750;}
+.vm-admin-v10-mode .vmv10-management-heading button:hover {background:#1f5887!important;}
+
+
+/* ==========================================================
+   V10.2 - Cabecera limpia, perfil superior
+   Sobrescribe decoraciones heredadas de las versiones previas.
+   ========================================================== */
+.vm-member-shell.vm-dashboard-admin-mode.vm-admin-v10-mode > header.vmv10-topbar {
+  display: grid !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  padding: 10px 24px 10px 18px !important;
+  background: linear-gradient(110deg, #f7fbff 0%, #eaf4fe 100%) !important;
+  border: 0 !important;
+  border-bottom: 1px solid #dbe8f4 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  color: #112954 !important;
+  isolation: isolate;
+}
+.vm-admin-v10-mode > header.vmv10-topbar::before,
+.vm-admin-v10-mode > header.vmv10-topbar::after,
+.vm-admin-v10-mode .vmv10-brand::before,
+.vm-admin-v10-mode .vmv10-brand::after,
+.vm-admin-v10-mode .vmv10-brand-mark::before,
+.vm-admin-v10-mode .vmv10-brand-mark::after,
+.vm-admin-v10-mode .vmv10-profile::before,
+.vm-admin-v10-mode .vmv10-profile::after,
+.vm-admin-v10-mode .vmv10-avatar::before,
+.vm-admin-v10-mode .vmv10-avatar::after {
+  display: none !important;
+  content: none !important;
+}
+.vm-admin-v10-mode .vmv10-brand {
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  min-width: 0;
+}
+.vm-admin-v10-mode .vmv10-brand-mark {
+  display: grid !important;
+  place-items: center !important;
+  background: linear-gradient(135deg,#0fc3b4,#073051) !important;
+  color: white !important;
+  border-radius: 13px !important;
+  flex: 0 0 47px;
+  width: 47px !important;
+  height: 47px !important;
+}
+.vm-admin-v10-mode .vmv10-brand-text {
+  color: #102c55 !important;
+  font-weight: 900 !important;
+  letter-spacing: -1px !important;
+}
+.vm-admin-v10-mode .vmv10-actions {
+  justify-self: end;
+  align-items: center;
+  overflow: visible;
+}
+.vm-admin-v10-mode .vmv10-profile {
+  min-height: 55px;
+  padding: 5px 9px 5px 6px !important;
+  gap: 10px;
+  border: 1px solid transparent !important;
+  border-radius: 16px !important;
+  color: #143059 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background .15s ease, border-color .15s ease;
+}
+.vm-admin-v10-mode .vmv10-profile:hover,
+.vm-admin-v10-mode .vmv10-profile[aria-expanded="true"] {
+  background: #fff !important;
+  border-color: #dbe7f4 !important;
+}
+.vm-admin-v10-mode .vmv10-user-name strong {font-weight:850;color:#14305a !important;}
+.vm-admin-v10-mode .vmv10-user-name small {color:#6984a0 !important;}
+.vm-admin-v10-mode .vmv10-chevron-open {transform:rotate(180deg);}
+.vm-admin-v10-mode .vmv10-profile-menu {
+  top: calc(100% + 10px) !important;
+  right: 0 !important;
+  width: 270px !important;
+  max-width: calc(100vw - 24px);
+  padding: 8px !important;
+  border-radius: 16px !important;
+  border: 1px solid #d9e5f3 !important;
+  background: #fff !important;
+  box-shadow: 0 16px 42px rgba(10,37,75,.17) !important;
+  z-index: 9999 !important;
+  overflow: visible !important;
+}
+.vm-admin-v10-mode .vmv10-account-summary {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 10px 13px;
+  border-bottom:1px solid #e7edf5;
+  margin-bottom:6px;
+  min-width:0;
+}
+.vm-admin-v10-mode .vmv10-account-summary .vmv10-avatar {width:39px;height:39px;font-size:17px;flex:0 0 39px;}
+.vm-admin-v10-mode .vmv10-account-summary div {min-width:0;}
+.vm-admin-v10-mode .vmv10-account-summary strong {display:block;color:#133057;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vm-admin-v10-mode .vmv10-account-summary small {display:block;margin-top:4px;color:#71869f;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vm-admin-v10-mode .vmv10-profile-menu button {
+  display:flex !important;
+  width:100%;
+  gap:10px;
+  align-items:center;
+  padding:12px 13px !important;
+  border-radius:10px !important;
+  border:0 !important;
+  background:#fff !important;
+  color:#18345c !important;
+  font-size:12px !important;
+  font-weight:700 !important;
+  text-align:left;
+}
+.vm-admin-v10-mode .vmv10-profile-menu button:hover {background:#eff6fd !important;}
+.vm-admin-v10-mode .vmv10-menu-separator {height:1px;background:#e4ebf3;margin:7px 4px;}
+.vm-admin-v10-mode .vmv10-profile-menu button.vmv10-logout-action {color:#c33b4b !important;}
+.vm-admin-v10-mode .vmv10-profile-menu button.vmv10-logout-action:hover {background:#fff0f1 !important;}
+
+@media(max-width:820px) {
+  .vm-member-shell.vm-dashboard-admin-mode.vm-admin-v10-mode > header.vmv10-topbar {
+    height:auto !important;
+    min-height:65px !important;
+    padding:10px 12px !important;
+    grid-template-columns:1fr auto !important;
+  }
+  .vm-admin-v10-mode .vmv10-profile-menu {right:0 !important;}
+}

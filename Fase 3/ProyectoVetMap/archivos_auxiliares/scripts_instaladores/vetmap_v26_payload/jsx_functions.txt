@@ -1,0 +1,88 @@
+  // VETMAP V26: acciones restringidas al rol Tienda.
+  async function loadDeliveryData(sessionToken = token) {
+    try {
+      const [drivers, assignments] = await Promise.all([
+        getStoreDeliveryDrivers(sessionToken),
+        getStoreDeliveryAssignments(sessionToken),
+      ]);
+      setDeliveryDrivers(drivers);
+      setDeliveryAssignments(assignments);
+    } catch (err) {
+      setMessage(err.message);
+    }
+  }
+
+  async function createDeliveryDriver(event) {
+    event.preventDefault();
+    if (deliveryBusy) return;
+    setDeliveryBusy(true);
+    try {
+      await createStoreDeliveryDriver(token, deliveryDriverForm);
+      setDeliveryDriverForm({ name: "", phone: "" });
+      await loadDeliveryData();
+      setMessage("Repartidor registrado correctamente.");
+    } catch (err) {
+      setMessage(err.message);
+    } finally {
+      setDeliveryBusy(false);
+    }
+  }
+
+  async function toggleDeliveryDriver(driver) {
+    if (deliveryBusy) return;
+    setDeliveryBusy(true);
+    try {
+      await setStoreDeliveryDriverActive(token, driver.id, !driver.active);
+      await loadDeliveryData();
+      setMessage("Estado del repartidor actualizado.");
+    } catch (err) {
+      setMessage(err.message);
+    } finally {
+      setDeliveryBusy(false);
+    }
+  }
+
+  async function assignDeliveryOrder(orderId) {
+    if (deliveryBusy) return;
+    const driverId = Number(deliverySelectedDriver[orderId]);
+    if (!driverId) return;
+    setDeliveryBusy(true);
+    try {
+      await assignStoreDeliveryOrder(token, orderId, driverId);
+      await loadDeliveryData();
+      await loadStoreData();
+      setMessage(`Pedido #${orderId} asignado correctamente.`);
+    } catch (err) {
+      setMessage(err.message);
+    } finally {
+      setDeliveryBusy(false);
+    }
+  }
+
+  async function updateDeliveryState(orderId, state) {
+    if (deliveryBusy) return;
+    if (state === "delivered") {
+      const confirmed = await openConfirmDialog({
+        title: "Confirmar entrega",
+        message: `El pedido #${orderId} quedará entregado definitivamente. ¿Continuar?`,
+        confirmText: "Sí, entregar",
+        cancelText: "Volver",
+        tone: "success",
+      });
+      if (!confirmed) return;
+    }
+    setDeliveryBusy(true);
+    try {
+      await updateStoreDeliveryAssignment(token, orderId, state, deliveryIncidentNotes[orderId] || "");
+      setDeliveryIncidentOpen((p) => ({ ...p, [orderId]: false }));
+      await loadDeliveryData();
+      await loadStoreData();
+      await loadNotifications(token, true);
+      setMessage(state === "delivered" ? "Entrega confirmada." : state === "incident" ? "Incidencia registrada." : "Pedido en reparto.");
+    } catch (err) {
+      setMessage(err.message);
+    } finally {
+      setDeliveryBusy(false);
+    }
+  }
+

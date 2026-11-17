@@ -1,0 +1,36 @@
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Variables privadas
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+web/node_modules/
+web/dist/
+dist/
+
+# Expo / Mobile
+.expo/
+mobile/.expo/
+mobile/backup_mobile_*/
+
+# Visual Studio Code
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Respaldos locales de VetMap
+respaldos_vetmap/
+respaldos_instaladores/
+
+# Respaldos locales
+respaldo*/

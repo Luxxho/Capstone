@@ -1,0 +1,407 @@
+# -*- coding: utf-8 -*-
+r"""
+VetMap V27.4 - Unificar secciones del Dueño con el estilo del Inicio.
+Instalación: copiar este archivo a la raíz de ProyectoVetMap y ejecutar:
+    python .\unificar_estilo_dueno_v27_4.py
+No modifica la lógica, formularios, cuentas, BD ni otras vistas/roles.
+"""
+from pathlib import Path
+from datetime import datetime
+import re
+import shutil
+import sys
+
+ROOT = Path(__file__).resolve().parent
+MAIN = ROOT / 'web' / 'src' / 'main.jsx'
+STYLE = ROOT / 'web' / 'src' / 'vetmap_owner_estilo_unificado_v27_4.css'
+CSS_IMPORT = 'import "./vetmap_owner_estilo_unificado_v27_4.css";'
+
+STYLE_TEXT = r'''/* ===========================================================
+   VETMAP V27.4 - UNIFICAR LAS PANTALLAS DEL DUEÑO CON SU INICIO
+   Cobertura: Mis mascotas, Reservas, Tiendas, Pedidos,
+   Veterinarias y sus detalles. No modifica otros roles, chat
+   ni la vista Inicio (.vm-o15-page).
+   =========================================================== */
+
+.vm-owner-v15-shell {
+  --vm-owner27-ink: #102a56;
+  --vm-owner27-body: #32576a;
+  --vm-owner27-muted: #607d89;
+  --vm-owner27-accent: #0eaaa3;
+  --vm-owner27-border: #d9eae8;
+  --vm-owner27-card: #fff;
+  --vm-owner27-shadow: 0 9px 25px rgba(22, 78, 80, .05);
+}
+
+/* Misma tipografía sans del Inicio. Respetamos campos, textos y estados. */
+.vm-owner-v15-shell :is(.vm-owner-pets-page, .vm-member-page)
+  :is(h1,h2,h3,h4,h5,p,small,strong,label,button,input,select,textarea,span,summary) {
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif !important;
+}
+.vm-owner-v15-shell :is(.vm-owner-pets-page, .vm-member-page) :is(h1,h2,h3,h4) {
+  letter-spacing: -.025em !important;
+}
+.vm-owner-v15-shell :is(.vm-owner-pets-page, .vm-member-page) {
+  min-width: 0;
+  color: var(--vm-owner27-ink);
+}
+
+/* ----- Cabeceras: misma identidad menta del banner de bienvenida ----- */
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  width: 100% !important;
+  min-height: 165px !important;
+  margin: 0 0 20px !important;
+  padding: clamp(22px, 2.8vw, 34px) !important;
+  border: 1px solid #c6eee5 !important;
+  border-radius: 22px !important;
+  background: linear-gradient(112deg, #d1f7f1 0%, #c7f3ed 52%, #a9e9de 100%) !important;
+  box-shadow: 0 12px 27px rgba(12, 89, 82, .055) !important;
+  color: var(--vm-owner27-ink) !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title > div,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading > div {
+  min-width: 0;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-kicker,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading .vm-kicker {
+  margin: 0 0 10px !important;
+  color: #138e87 !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title h2,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading h2 {
+  margin: 0 0 10px !important;
+  color: #102a56 !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-size: clamp(30px, 3vw, 42px) !important;
+  line-height: 1.13 !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.2px !important;
+  text-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title > div > p:not(.vm-kicker),
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading > div > p:not(.vm-kicker) {
+  margin: 0 !important;
+  max-width: 650px;
+  color: #32576a !important;
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title button,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading button {
+  min-height: 43px !important;
+  padding: 10px 17px !important;
+  border-radius: 12px !important;
+  border: 1px solid #b9e4de !important;
+  background: #fff !important;
+  color: #102a56 !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  white-space: normal !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title button:hover,
+.vm-owner-v15-shell .vm-member-page > .vm-member-page-heading button:hover {
+  background: #f3fffc !important;
+  border-color: #6ac9be !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-primary {
+  border-color: #0eaaa3 !important;
+  background: #0eaaa3 !important;
+  color: #fff !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-primary:hover {
+  background: #078f89 !important;
+  border-color: #078f89 !important;
+}
+.vm-owner-v15-shell .vm-owner-page-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* ----- Tarjetas y superficies: mismo blanco, borde y redondeo del Inicio ----- */
+.vm-owner-v15-shell :is(.vm-owner-pets-page,.vm-member-page)
+  :is(.vm-vet-card,.vm-store-card,.vm-user-order-card,.vm-establishment-panel,
+      .vm-reservation-form-modern,.vm-booking-step,.vm-booking-preview,
+      .vm-booking-summary,.vm-booking-panel,.vm-owner-pet-card,
+      .vm-owner-pet-editor-page) {
+  border-color: var(--vm-owner27-border) !important;
+  border-radius: 19px !important;
+  box-shadow: var(--vm-owner27-shadow) !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-card,.vm-store-card,.vm-user-order-card,
+    .vm-establishment-panel,.vm-reservation-form-modern,.vm-booking-step) {
+  background-color: var(--vm-owner27-card) !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-grid,.vm-establishment-grid,.vm-orders-list) {
+  gap: 16px !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-vet-card,
+.vm-owner-v15-shell .vm-member-page .vm-store-card {
+  padding: 21px !important;
+  min-width: 0;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-card,.vm-store-card) > h3 {
+  margin: 14px 0 9px !important;
+  font-size: clamp(18px, 1.7vw, 22px) !important;
+  line-height: 1.3 !important;
+  font-weight: 850 !important;
+  color: var(--vm-owner27-ink) !important;
+  text-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-card,.vm-store-card) > p {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: var(--vm-owner27-body) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-card-meta {
+  gap: 8px !important;
+  color: #526f79 !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-card-meta > span {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-card,.vm-store-card) > button {
+  min-height: 43px !important;
+  border: 1px solid #0eaaa3 !important;
+  border-radius: 12px !important;
+  background: #0eaaa3 !important;
+  color: #fff !important;
+  font-weight: 850 !important;
+  font-size: 12px !important;
+  box-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-vet-card,.vm-store-card) > button:hover {
+  background: #078f89 !important;
+  border-color: #078f89 !important;
+}
+
+/* ----- Reservas: la cabecera secundaria y el formulario se integran ----- */
+.vm-owner-v15-shell .vm-member-page .vm-reservation-form-title {
+  padding: 16px !important;
+  border: 1px solid #d9eae8 !important;
+  border-radius: 17px !important;
+  background: #f0faf7 !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-reservation-form-title h3 {
+  font-size: 20px !important;
+  font-weight: 850 !important;
+  color: var(--vm-owner27-ink) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-reservation-form-title p,
+.vm-owner-v15-shell .vm-member-page .vm-booking-step-heading > span {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  color: var(--vm-owner27-muted) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-booking-step-heading > strong {
+  color: var(--vm-owner27-ink) !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-booking-step-number {
+  background: #0eb7ad !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-field > span {
+  color: var(--vm-owner27-ink) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-reservation-form-modern,.vm-store-detail-page)
+  :is(input,select,textarea) {
+  border-color: #d3e7e3 !important;
+  border-radius: 12px !important;
+  background: #fbfefd !important;
+  color: var(--vm-owner27-ink) !important;
+  font-size: 13px !important;
+}
+.vm-owner-v15-shell .vm-member-page :is(.vm-reservation-form-modern,.vm-store-detail-page)
+  :is(input,select,textarea):focus-visible {
+  outline: 2px solid #56c9be !important;
+  outline-offset: 1px;
+}
+
+/* ----- Mis pedidos: filtros, títulos y paneles legibles ----- */
+.vm-owner-v15-shell .vm-orders-page .vm-order-history-filters {
+  gap: 8px !important;
+  padding: 8px !important;
+  margin: 0 0 18px !important;
+  border: 1px solid var(--vm-owner27-border) !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  box-shadow: var(--vm-owner27-shadow) !important;
+}
+.vm-owner-v15-shell .vm-orders-page .vm-order-history-filters > button {
+  border-radius: 11px !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  color: #54716f !important;
+}
+.vm-owner-v15-shell .vm-orders-page .vm-order-history-filters > button.active {
+  background: #dff5ee !important;
+  color: #076d64 !important;
+}
+.vm-owner-v15-shell .vm-orders-page .vm-user-order-head h3,
+.vm-owner-v15-shell .vm-orders-page .vm-user-order-card h3 {
+  color: var(--vm-owner27-ink) !important;
+  font-size: clamp(17px, 1.7vw, 20px) !important;
+  font-weight: 850 !important;
+}
+.vm-owner-v15-shell .vm-orders-page .vm-user-order-card {
+  overflow: hidden;
+  background: white !important;
+}
+
+/* ----- Detalles de establecimientos: títulos sans, no manuscritos ----- */
+.vm-owner-v15-shell .vm-member-page .vm-establishment-detail-page > .vm-establishment-hero {
+  border: 1px solid #c6eee5 !important;
+  border-radius: 21px !important;
+  background: linear-gradient(115deg, #e2faf5, #f4fffc) !important;
+  box-shadow: var(--vm-owner27-shadow) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-establishment-hero-copy h2 {
+  font-size: clamp(25px, 2.5vw, 34px) !important;
+  font-weight: 900 !important;
+  color: var(--vm-owner27-ink) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-establishment-hero-copy > p:not(.vm-kicker) {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: var(--vm-owner27-body) !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-establishment-hero-copy .vm-kicker {
+  color: #138e87 !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.7px !important;
+  text-transform: uppercase !important;
+}
+.vm-owner-v15-shell .vm-member-page .vm-establishment-panel :is(h2,h3) {
+  color: var(--vm-owner27-ink) !important;
+  font-weight: 850 !important;
+}
+
+/* ----- Mascotas: conserva fotos, formularios y acciones originales ----- */
+.vm-owner-v15-shell .vm-owner-pets-page :is(.vm-owner-pet-card,.vm-owner-pet-editor-page) {
+  background: #fff !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page :is(.vm-owner-pet-card,.vm-owner-pet-editor-title) :is(h2,h3) {
+  color: var(--vm-owner27-ink) !important;
+  font-weight: 850 !important;
+}
+.vm-owner-v15-shell .vm-owner-pets-page .vm-owner-pet-editor-title .vm-kicker {
+  color: #138e87 !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+}
+
+/* ----- Responsive. La identidad es la misma en pantallas estrechas ----- */
+@media (max-width: 800px) {
+  .vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title,
+  .vm-owner-v15-shell .vm-member-page > .vm-member-page-heading {
+    padding: 22px !important;
+    min-height: 0 !important;
+    gap: 15px !important;
+  }
+  .vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title h2,
+  .vm-owner-v15-shell .vm-member-page > .vm-member-page-heading h2 {
+    font-size: clamp(27px, 6vw, 34px) !important;
+  }
+}
+@media (max-width: 580px) {
+  .vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title,
+  .vm-owner-v15-shell .vm-member-page > .vm-member-page-heading {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 19px !important;
+    border-radius: 18px !important;
+  }
+  .vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-owner-page-actions {
+    width: 100%;
+  }
+  .vm-owner-v15-shell .vm-owner-pets-page > .vm-owner-section-title .vm-owner-page-actions > button {
+    flex: 1 1 125px;
+  }
+  .vm-owner-v15-shell .vm-member-page .vm-vet-card,
+  .vm-owner-v15-shell .vm-member-page .vm-store-card {
+    padding: 17px !important;
+  }
+}
+'''
+
+
+def run():
+    if not MAIN.is_file():
+        raise RuntimeError('No encuentro web/src/main.jsx. Copia este .py a ProyectoVetMap (raíz).')
+
+    original = MAIN.read_bytes()
+    code = original.decode('utf-8-sig')
+    if 'vm-owner-v15-shell' not in code or 'VetMapOwnerHome' not in code:
+        raise RuntimeError('Tu main.jsx no coincide con el VetMap revisado. No se modificó nada.')
+    already = CSS_IMPORT in code
+    style_ok = STYLE.is_file() and STYLE.read_text(encoding='utf-8') == STYLE_TEXT
+    if already and style_ok:
+        print('VetMap V27.4 ya estaba aplicado. No se modificó nada.')
+        return
+
+    newline = '\r\n' if '\r\n' in code else '\n'
+    if not already:
+        lines = code.splitlines(keepends=True)
+        matches = [i for i, line in enumerate(lines[:180])
+                   if re.match(r'^\s*import\s+[\'\"][^\'\"]+\.css[\'\"];', line)]
+        if not matches:
+            raise RuntimeError('No encontré las importaciones CSS en main.jsx. No se modificó nada.')
+        last = matches[-1]
+        lines.insert(last + 1, CSS_IMPORT + newline)
+        updated = ''.join(lines)
+        if updated.count(CSS_IMPORT) != 1:
+            raise RuntimeError('La validación de importación falló. No se modificó nada.')
+    else:
+        updated = code
+
+    backup = ROOT / ('respaldo_antes_estilo_dueno_v27_4_' + datetime.now().strftime('%Y%m%d_%H%M%S'))
+    backup.mkdir(parents=True, exist_ok=False)
+    shutil.copy2(MAIN, backup / 'main.jsx')
+    if STYLE.is_file():
+        shutil.copy2(STYLE, backup / STYLE.name)
+
+    # El respaldo ya está creado; escribir únicamente main.jsx y la nueva hoja CSS.
+    if updated != code:
+        # Conserva BOM si existía.
+        MAIN.write_bytes((b'\xef\xbb\xbf' if original.startswith(b'\xef\xbb\xbf') else b'') + updated.encode('utf-8'))
+    STYLE.write_text(STYLE_TEXT, encoding='utf-8')
+
+    print('\nVETMAP V27.4 - ESTILO DEL DUENO UNIFICADO')
+    print(' + Inicio: sin modificaciones')
+    print(' + Mascotas, Reservas, Tiendas, Pedidos y Veterinarias')
+    print(' + Títulos sans, encabezados menta, tarjetas y botones consistentes')
+    print(' + Archivo nuevo: web/src/vetmap_owner_estilo_unificado_v27_4.css')
+    print(' + Respaldo original:', backup)
+    print('No se modificaron backend, mobile, PostgreSQL, chats, ni archivos .env.')
+    print('Actualiza el navegador con Ctrl + F5.')
+
+
+if __name__ == '__main__':
+    try:
+        run()
+    except Exception as exc:
+        print('NO SE APLICO EL CAMBIO:', str(exc))
+        sys.exit(1)

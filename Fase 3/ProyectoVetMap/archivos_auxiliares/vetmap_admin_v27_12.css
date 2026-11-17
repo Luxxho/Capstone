@@ -1,0 +1,334 @@
+/*
+ * VetMap V27.12 — Administrador: banner renovado + alineación.
+ * Aplicado SOLO dentro de .vm-admin-v10-mode.
+ * Se agrega al FINAL de web/src/index.css para prevalecer sobre V8/V10/V14.
+ * No modifica estado, JS, endpoints ni PostgreSQL.
+ */
+
+/* Panel inicio: banner contenido con margen, sin fusión con tarjetas. */
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main {
+  padding: 20px 0 26px !important;
+  background: #edf4fb !important;
+  min-width: 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+  min-height: 258px !important;
+  margin: 0 24px 0 !important;
+  width: calc(100% - 48px) !important;
+  padding: 0 !important;
+  border: 1px solid #3668a2 !important;
+  border-radius: 26px !important;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(115,208,250,.25) 0 5%, transparent 29%),
+    radial-gradient(circle at 72% 108%, rgba(55,135,236,.30), transparent 42%),
+    linear-gradient(113deg, #11294c 0%, #204b80 58%, #296fa0 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 32px rgba(22,61,102,.16) !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  width: 340px !important;
+  height: 340px !important;
+  right: -65px !important;
+  top: -129px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle,rgba(255,255,255,.04),transparent 70%) !important;
+  pointer-events: none;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  width: 210px !important;
+  height: 210px !important;
+  right: 53px !important;
+  bottom: -165px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 50% !important;
+  pointer-events: none;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-copy {
+  z-index: 2 !important;
+  max-width: calc(100% - 210px) !important;
+  padding: 34px 40px !important;
+  min-width: 0;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-copy > p {
+  color: #9ef1e8 !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .16em !important;
+  margin: 0 0 13px !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-copy > h1 {
+  color: #fff !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(30px,3.2vw,47px) !important;
+  font-weight: 900 !important;
+  line-height: 1.10 !important;
+  letter-spacing: -.035em !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-copy > span {
+  color: #e4f2ff !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-chart-icon {
+  top: 50% !important;
+  right: 61px !important;
+  transform: translateY(-50%) !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 96px !important;
+  height: 96px !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
+  border-radius: 25px !important;
+  background: rgba(236,251,255,.94) !important;
+  color: #147cba !important;
+  box-shadow: 0 20px 40px rgba(6,38,78,.19) !important;
+  z-index: 2 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-chart-icon svg {
+  width: 47px !important;
+  height: 47px !important;
+}
+
+/* Tarjetas resumen: alineadas con el banner y SIN superponerse. */
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-content {
+  display: grid !important;
+  gap: 18px !important;
+  padding: 19px 24px 24px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metric-card {
+  min-width: 0 !important;
+  min-height: 116px !important;
+  padding: 18px 20px !important;
+  gap: 14px !important;
+  align-items: center !important;
+  border: 1px solid #dce8f2 !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 18px rgba(18,59,103,.06) !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metric-icon {
+  flex: 0 0 55px !important;
+  width: 55px !important;
+  height: 55px !important;
+  border-radius: 16px !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metric-card strong {
+  font-size: clamp(24px,2.3vw,31px) !important;
+  line-height: 1.05 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metric-card small {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-primary-grid,
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-secondary-grid {
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+/* Gestión usuarios / productos / mascotas: misma banda, mismo margen. */
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading {
+  position: relative !important;
+  overflow: hidden !important;
+  width: calc(100% - 48px) !important;
+  max-width: none !important;
+  min-height: 198px !important;
+  margin: 22px 24px 16px !important;
+  padding: 29px 36px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  border: 1px solid #3568a0 !important;
+  border-radius: 25px !important;
+  background:
+    radial-gradient(circle at 88% 0%,rgba(131,208,253,.20),transparent 33%),
+    linear-gradient(112deg,#132f57 0%,#214f83 65%,#2b70a0 100%) !important;
+  box-shadow: 0 12px 26px rgba(20,60,104,.13) !important;
+  color: #fff !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading > div {max-width: 72% !important;min-width:0!important;}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading span {
+  color: #98f1ec !important;
+  font-size: 11px !important;
+  letter-spacing: .13em !important;
+  font-weight: 900 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading h1 {
+  color: #fff !important;
+  margin: 10px 0 13px !important;
+  font-size: clamp(28px,2.9vw,40px) !important;
+  line-height: 1.13 !important;
+  font-weight: 900 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading p {
+  color: #e7f1fc !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading button {
+  flex: none !important;
+  min-height: 48px !important;
+  padding: 12px 19px !important;
+  border: 1px solid rgba(255,255,255,.45) !important;
+  border-radius: 13px !important;
+  background: rgba(255,255,255,.13) !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading button:hover {
+  background: rgba(255,255,255,.23) !important;
+}
+
+/* Tarjeta de usuarios registrados: mismo ancho y distancia respecto al banner. */
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section {
+  width: calc(100% - 48px) !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 24px 24px !important;
+  padding: 24px 26px 28px !important;
+  border: 1px solid #d7e6f2 !important;
+  border-radius: 22px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 25px rgba(16,55,100,.05) !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section > .vm-admin-section-heading {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 0 0 22px !important;
+  padding: 0 0 20px !important;
+  border-bottom: 1px solid #e1ebf3 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section .vm-admin-section-heading h2 {
+  font-size: clamp(22px,2vw,29px) !important;
+  font-weight: 850 !important;
+  color: #123459 !important;
+  margin: 6px 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section .vm-admin-section-heading p:not(.vm-kicker) {
+  color: #6c8296 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section > .vm-admin-user-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: stretch !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  min-width: 0 !important;
+  min-height: 236px !important;
+  padding: 20px !important;
+  border: 1px solid #d8e6ee !important;
+  border-radius: 19px !important;
+  background: #fafdfd !important;
+  box-shadow: 0 4px 12px rgba(17,60,104,.03) !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-card-top {
+  display: grid !important;
+  grid-template-columns: 52px minmax(0,1fr) auto !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-card-top .vm-admin-user-main {
+  min-width: 0 !important;
+  overflow-wrap: anywhere !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-main h3 {
+  margin: 4px 0 !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-main p {
+  margin: 0 !important;
+  color: #72899d !important;
+  overflow-wrap: anywhere !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-summary {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  gap: 7px !important;
+  margin: 0 !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-summary > span {
+  max-width: 100% !important;
+  overflow-wrap: anywhere !important;
+}
+.vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-card-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: auto 0 0 !important;
+  padding-top: 10px !important;
+}
+
+@media(max-width:1190px) {
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metrics {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section > .vm-admin-user-grid {grid-template-columns:1fr!important;}
+}
+@media(max-width:800px) {
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main {padding-top:12px!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero,
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading,
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section {
+    width:calc(100% - 24px)!important;
+    margin-left:12px!important;
+    margin-right:12px!important;
+  }
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-content {padding:14px 12px 24px!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero {min-height:206px!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-copy {padding:25px!important;max-width:100%!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-main .vmv8-hero-chart-icon {display:none!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading {min-height:165px!important;padding:23px!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading > div {max-width:100%!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section {padding:18px!important;}
+}
+@media(max-width:540px) {
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vmv8-shell .vmv8-metrics {grid-template-columns:1fr!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading {display:grid!important;justify-content:stretch!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vmv10-management-heading button {width:100%!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body > .vm-admin-people-section > .vm-admin-section-heading {align-items:flex-start!important;flex-direction:column!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-card-top {grid-template-columns:44px minmax(0,1fr)!important;}
+  .vm-member-shell.vm-admin-v10-mode .vmv10-route-body .vm-admin-user-card-top .vm-admin-id-pill {grid-column:2!important;justify-self:start!important;}
+}

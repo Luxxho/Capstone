@@ -1,0 +1,161 @@
+/* VetMap V27.16 - corrección puntual de los banners de Veterinaria.
+   Agenda: botón accesible, separado del icono.
+   Pacientes / Fichas / Recetas / Perfil: iconos discretos, sin círculos que cruzan textos.
+   No modifica interacciones ni componentes JS. Sin imágenes externas. */
+
+/* Scope al rol veterinaria: no afecta Dueño, Tienda ni Administrador. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 26px !important;
+  min-height: 205px !important;
+  padding: 30px clamp(24px, 3vw, 38px) !important;
+  border-radius: 23px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+/* El arco de izquierda se superponía al texto: se quita por completo. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::before,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* El icono decorativo no debe tapar títulos ni formularios. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+  content: "" !important;
+  display: block !important;
+  width: 64px !important;
+  height: 64px !important;
+  top: 50% !important;
+  right: 44px !important;
+  transform: translateY(-50%) !important;
+  opacity: .55 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  position: relative !important;
+  z-index: 2 !important;
+  flex: 1 1 auto !important;
+  max-width: calc(100% - 140px) !important;
+  min-width: 0 !important;
+}
+
+/* Agenda con botones: mover el icono lejos de "Actualizar" y dar espacio real a las acciones. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading::after {
+  right: 218px !important;
+  width: 56px !important;
+  height: 56px !important;
+  opacity: .38 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child {
+  flex: 1 1 auto !important;
+  max-width: calc(100% - 335px) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading .vm-history-clean-actions {
+  position: relative !important;
+  z-index: 5 !important;
+  flex: 0 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  gap: 9px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  margin: 0 0 0 auto !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading .vm-history-clean-actions > button {
+  position: relative !important;
+  z-index: 6 !important;
+  min-width: 135px !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+}
+
+/* Botón de perfil: igual que Agenda, sin chocar con la decoración. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+  right: 218px !important;
+  width: 56px !important;
+  height: 56px !important;
+  opacity: .38 !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+  max-width: calc(100% - 310px) !important;
+}
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading .vm-my-profile-heading-actions {
+  position: relative !important;
+  z-index: 5 !important;
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+}
+
+/* Sin controles de acción: reservar sitio para el icono. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:not(:has(.vm-history-clean-actions)) > .vm-clinic-section-heading > div:first-child {
+  max-width: calc(100% - 115px) !important;
+}
+
+/* El texto conserva la jerarquía del prototipo, sin quedar tapado. */
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading h2,
+body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading h2 {
+  font-size: clamp(26px, 2.8vw, 41px) !important;
+  line-height: 1.15 !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Pantallas medias: no forzar un espacio estrecho entre iconos y controles. */
+@media (max-width: 1120px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading::after,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+    display: none !important;
+    content: none !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child {
+    max-width: calc(100% - 190px) !important;
+  }
+}
+@media (max-width: 780px) {
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    gap: 16px !important;
+    padding: 24px 20px !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading::after,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading::after {
+    display: none !important;
+    content: none !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading > div:first-child,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page:has(.vm-history-clean-actions) > .vm-clinic-section-heading > div:first-child {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-clinic-page > .vm-clinic-section-heading .vm-history-clean-actions,
+  body .vm-member-shell.vmh16-shell:has(nav.vm-member-nav--vet) .vm-my-profile > .vm-my-profile-heading .vm-my-profile-heading-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+}
